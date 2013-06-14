@@ -99,7 +99,7 @@
   [self sendScreenshot];
 }
 -(UIImage*)captureScreen:(UIView*) viewToCapture{
- UIGraphicsBeginImageContextWithOptions(viewToCapture.bounds.size,NO, 0.0);
+ UIGraphicsBeginImageContextWithOptions(viewToCapture.bounds.size,NO, 2.0);
  // UIGraphicsBeginImageContext(viewToCapture.bounds.size);
   
   [viewToCapture.layer renderInContext:UIGraphicsGetCurrentContext()];

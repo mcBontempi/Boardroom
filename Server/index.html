@@ -1,0 +1,20 @@
+
+<html>
+
+<head>
+<script language="JavaScript"><!--
+function refreshIt() {
+   if (!document.images) return;
+   document.images['pic'].src = 'temp.png?' + Math.random();
+  //setTimeout('refreshIt()',5000); // refresh every 5 secs
+}
+//--></script>
+</head>
+
+<body onLoad="refreshIt()">
+
+	<img  onLoad="setTimeout('refreshIt()',1000);" id="pic" src="" width = "100%">
+
+</body>
+
+</html>

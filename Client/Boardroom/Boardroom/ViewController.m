@@ -12,7 +12,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *hiddenTextView;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 
 @implementation ViewController 
@@ -33,6 +35,8 @@
   _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://162.13.5.127:8080"]];
   
   self.webView.scalesPageToFit=YES ;
+    
+    [self.textView becomeFirstResponder];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -63,9 +67,8 @@
 - (void)sendScreenshot
 {
   
-
   NSLog(@"start");
-  UIImage *image = [self captureScreen:[self webView]];
+  UIImage *image = [self captureScreen:[self hiddenTextView]];
   
   NSLog(@"end");
   
@@ -103,6 +106,11 @@
   UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
   UIGraphicsEndImageContext();
   return viewImage;
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.hiddenTextView.text = self.textView.text;
 }
 
 @end

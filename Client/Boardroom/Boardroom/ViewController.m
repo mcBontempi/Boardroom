@@ -14,6 +14,7 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *hiddenTextView;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIView *renderView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 

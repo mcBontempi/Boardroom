@@ -19,26 +19,39 @@
                                 </constraints>
                             </webView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p41-cR-Vus">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="174" id="Eje-dY-TdH"/>
                                 </constraints>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="26"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="SyH-FP-zRb"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY9-dq-R14">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuY-nX-zmM">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="stone.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ilr-Kj-Vzu"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY9-dq-R14">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="174" id="66J-mo-3Zl"/>
+                                    <constraint firstItem="Ilr-Kj-Vzu" firstAttribute="bottom" secondItem="MuY-nX-zmM" secondAttribute="bottom" type="default" id="5mG-Of-fpg"/>
+                                    <constraint firstItem="sY9-dq-R14" firstAttribute="trailing" secondItem="MuY-nX-zmM" secondAttribute="trailing" type="default" id="6Tu-2v-GsF"/>
+                                    <constraint firstItem="Ilr-Kj-Vzu" firstAttribute="top" secondItem="MuY-nX-zmM" secondAttribute="top" type="default" id="6a1-G9-rhY"/>
+                                    <constraint firstItem="Ilr-Kj-Vzu" firstAttribute="leading" secondItem="MuY-nX-zmM" secondAttribute="leading" type="default" id="9hI-Hb-HtM"/>
+                                    <constraint firstItem="Ilr-Kj-Vzu" firstAttribute="trailing" secondItem="MuY-nX-zmM" secondAttribute="trailing" type="default" id="E8b-TL-OVr"/>
+                                    <constraint firstItem="sY9-dq-R14" firstAttribute="top" secondItem="MuY-nX-zmM" secondAttribute="top" type="default" id="LVR-J7-lcK"/>
+                                    <constraint firstItem="sY9-dq-R14" firstAttribute="leading" secondItem="MuY-nX-zmM" secondAttribute="leading" type="default" id="aMY-UU-RrY"/>
+                                    <constraint firstItem="sY9-dq-R14" firstAttribute="bottom" secondItem="MuY-nX-zmM" secondAttribute="bottom" type="default" id="c4n-U8-Wel"/>
                                 </constraints>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -46,17 +59,18 @@
                             <constraint firstItem="p41-cR-Vus" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="7Tf-4U-0GN"/>
                             <constraint firstItem="Qj3-LT-7Ix" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="user" id="Aan-IL-WYK"/>
                             <constraint firstItem="Qj3-LT-7Ix" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="user" id="FX6-t9-C6b"/>
-                            <constraint firstItem="sY9-dq-R14" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Jza-YF-Ooi"/>
+                            <constraint firstItem="MuY-nX-zmM" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="JKk-oI-Pbj"/>
                             <constraint firstItem="Qj3-LT-7Ix" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="Sm3-hl-hD3"/>
                             <constraint firstItem="p41-cR-Vus" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="XxW-Qp-wnJ"/>
-                            <constraint firstItem="sY9-dq-R14" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="YXw-fp-Wa9"/>
-                            <constraint firstItem="sY9-dq-R14" firstAttribute="top" secondItem="3" secondAttribute="top" constant="266" id="aNH-qS-4ZK"/>
+                            <constraint firstItem="MuY-nX-zmM" firstAttribute="top" secondItem="3" secondAttribute="top" constant="274" id="eqU-24-fWG"/>
                             <constraint firstItem="Qj3-LT-7Ix" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="gU7-ki-95k"/>
+                            <constraint firstAttribute="bottom" secondItem="MuY-nX-zmM" secondAttribute="bottom" constant="-74" id="hW8-oG-9WJ"/>
                             <constraint firstItem="p41-cR-Vus" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="w5f-1Z-7rN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hiddenTextView" destination="sY9-dq-R14" id="fpf-k6-A4q"/>
+                        <outlet property="renderView" destination="MuY-nX-zmM" id="wJQ-ru-3aZ"/>
                         <outlet property="textView" destination="p41-cR-Vus" id="rHB-Re-IDe"/>
                         <outlet property="webView" destination="Qj3-LT-7Ix" id="p9e-AP-tkF"/>
                     </connections>
@@ -66,6 +80,9 @@
             <point key="canvasLocation" x="28" y="33"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stone.jpg" width="640" height="480"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

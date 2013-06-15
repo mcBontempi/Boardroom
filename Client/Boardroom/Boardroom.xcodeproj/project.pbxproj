@@ -27,6 +27,7 @@
 		D63E4432173C01BD001F609A /* BoardroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D63E4431173C01BD001F609A /* BoardroomTests.m */; };
 		D63E443C173C42E0001F609A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D63E443B173C42E0001F609A /* Podfile */; };
 		D645649E173C64F500D08090 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D645649D173C64F500D08090 /* QuartzCore.framework */; };
+		FD9F0769176D18D2008E2C0F /* stone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD9F0768176D18D2008E2C0F /* stone.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D645649D173C64F500D08090 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F08A1817487747F4A8340BA6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB194935F9C04F928286643D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		FD9F0768176D18D2008E2C0F /* stone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		D63E4403173C01BD001F609A /* Boardroom */ = {
 			isa = PBXGroup;
 			children = (
+				FD9F0768176D18D2008E2C0F /* stone.jpg */,
 				D63E440C173C01BD001F609A /* AppDelegate.h */,
 				D63E440D173C01BD001F609A /* AppDelegate.m */,
 				D63E4415173C01BD001F609A /* MainStoryboard_iPhone.storyboard */,
@@ -255,6 +258,7 @@
 				D63E4417173C01BD001F609A /* MainStoryboard_iPhone.storyboard in Resources */,
 				D63E441A173C01BD001F609A /* MainStoryboard_iPad.storyboard in Resources */,
 				D63E443C173C42E0001F609A /* Podfile in Resources */,
+				FD9F0769176D18D2008E2C0F /* stone.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

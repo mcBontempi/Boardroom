@@ -1,4 +1,4 @@
-import cherrypy
+import cherrypyxxx
 import os
 class FileDemo(object):
 	def index(self):
@@ -15,7 +15,7 @@ class FileDemo(object):
 		"""
 	index.exposed = True
 	
-	def view(self):
+	def view(self):   
 		return """
 		<html>
 		<head><meta http-equiv="refresh" content="1"></head>

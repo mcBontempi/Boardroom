@@ -43,8 +43,6 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
   [self setupNewTimer];
-  
-  
 }
 
 - (void)setupNewTimer
@@ -54,29 +52,25 @@
 
 - (void)timerTick
 {
-  
-  
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
       [self sendScreenshot];
     });
-  
-  
-  
-  
 }
 
 - (void)sendScreenshot
 {
   
   NSLog(@"start");
-  UIImage *image = [self captureScreen:[self hiddenTextView]];
+  UIImage *image = [self captureScreen:[self renderView]];
+  
+  NSLog(@"image size %d", UIImagePNGRepresentation(image).length);
   
   NSLog(@"end");
   
   NSLog(@"height = %f", image.size.height);
   
   NSMutableURLRequest *request = [_client multipartFormRequestWithMethod:@"POST" path:@"upload" parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
-    [formData appendPartWithFileData:UIImagePNGRepresentation(image) name:@"myFile" fileName:@"temp.png" mimeType:@"image/png"];
+    [formData appendPartWithFileData:UIImagePNGRepresentation(image) name:@"myFile" fileName:@"temp2.png" mimeType:@"image/png"];
   }];
   
   __weak id weakSelf = self;
@@ -87,6 +81,8 @@
     [weakSelf setupNewTimer];
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+    NSString *response = [operation responseString];
+    NSLog(@"response: [%@]",response);
     [weakSelf setupNewTimer];
   }];
 
@@ -100,8 +96,8 @@
   [self sendScreenshot];
 }
 -(UIImage*)captureScreen:(UIView*) viewToCapture{
- UIGraphicsBeginImageContextWithOptions(viewToCapture.bounds.size,NO, 2.0);
- // UIGraphicsBeginImageContext(viewToCapture.bounds.size);
+  UIGraphicsBeginImageContextWithOptions(viewToCapture.bounds.size,NO, 2.0);
+  //UIGraphicsBeginImageContext(viewToCapture.bounds.size);
   
   [viewToCapture.layer renderInContext:UIGraphicsGetCurrentContext()];
   UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();

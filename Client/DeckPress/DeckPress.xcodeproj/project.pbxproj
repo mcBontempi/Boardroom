@@ -24,6 +24,13 @@
 		FD6BC1F017730B3C008D17E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C817730B3C008D17E3 /* Foundation.framework */; };
 		FD6BC1F817730B3C008D17E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1F617730B3C008D17E3 /* InfoPlist.strings */; };
 		FD6BC1FB17730B3C008D17E3 /* DeckPressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1FA17730B3C008D17E3 /* DeckPressTests.m */; };
+		FD6BC20617732B5A008D17E3 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */; };
+		FD6BC20917733674008D17E3 /* SessionHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20817733674008D17E3 /* SessionHashViewController.m */; };
+		FD6BC20C1773459A008D17E3 /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20B1773459A008D17E3 /* PresentationViewController.m */; };
+		FD6BC20E17735861008D17E3 /* plainTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20D17735861008D17E3 /* plainTitle.xib */; };
+		FD6BC21017735DEE008D17E3 /* plainBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20F17735DEE008D17E3 /* plainBody.xib */; };
+		FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC211177362DB008D17E3 /* plainPic.xib */; };
+		FD6BC2141773638C008D17E3 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,16 @@
 		FD6BC1F717730B3C008D17E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD6BC1F917730B3C008D17E3 /* DeckPressTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckPressTests.h; sourceTree = "<group>"; };
 		FD6BC1FA17730B3C008D17E3 /* DeckPressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckPressTests.m; sourceTree = "<group>"; };
+		FD6BC20417732B5A008D17E3 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
+		FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
+		FD6BC20717733674008D17E3 /* SessionHashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionHashViewController.h; sourceTree = "<group>"; };
+		FD6BC20817733674008D17E3 /* SessionHashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHashViewController.m; sourceTree = "<group>"; };
+		FD6BC20A1773459A008D17E3 /* PresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationViewController.h; sourceTree = "<group>"; };
+		FD6BC20B1773459A008D17E3 /* PresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationViewController.m; sourceTree = "<group>"; };
+		FD6BC20D17735861008D17E3 /* plainTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = plainTitle.xib; sourceTree = "<group>"; };
+		FD6BC20F17735DEE008D17E3 /* plainBody.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = plainBody.xib; sourceTree = "<group>"; };
+		FD6BC211177362DB008D17E3 /* plainPic.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = plainPic.xib; sourceTree = "<group>"; };
+		FD6BC2131773638C008D17E3 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +143,16 @@
 				FD6BC1E417730B3C008D17E3 /* ViewController.h */,
 				FD6BC1E517730B3C008D17E3 /* ViewController.m */,
 				FD6BC1CD17730B3C008D17E3 /* Supporting Files */,
+				FD6BC20417732B5A008D17E3 /* ConnectionViewController.h */,
+				FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */,
+				FD6BC20717733674008D17E3 /* SessionHashViewController.h */,
+				FD6BC20817733674008D17E3 /* SessionHashViewController.m */,
+				FD6BC20A1773459A008D17E3 /* PresentationViewController.h */,
+				FD6BC20B1773459A008D17E3 /* PresentationViewController.m */,
+				FD6BC20D17735861008D17E3 /* plainTitle.xib */,
+				FD6BC20F17735DEE008D17E3 /* plainBody.xib */,
+				FD6BC211177362DB008D17E3 /* plainPic.xib */,
+				FD6BC2131773638C008D17E3 /* building.jpg */,
 			);
 			path = DeckPress;
 			sourceTree = "<group>";
@@ -240,6 +267,10 @@
 				FD6BC1DD17730B3C008D17E3 /* Default-568h@2x.png in Resources */,
 				FD6BC1E017730B3C008D17E3 /* MainStoryboard_iPhone.storyboard in Resources */,
 				FD6BC1E317730B3C008D17E3 /* MainStoryboard_iPad.storyboard in Resources */,
+				FD6BC20E17735861008D17E3 /* plainTitle.xib in Resources */,
+				FD6BC21017735DEE008D17E3 /* plainBody.xib in Resources */,
+				FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */,
+				FD6BC2141773638C008D17E3 /* building.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +308,9 @@
 				FD6BC1D317730B3C008D17E3 /* main.m in Sources */,
 				FD6BC1D717730B3C008D17E3 /* AppDelegate.m in Sources */,
 				FD6BC1E617730B3C008D17E3 /* ViewController.m in Sources */,
+				FD6BC20617732B5A008D17E3 /* ConnectionViewController.m in Sources */,
+				FD6BC20917733674008D17E3 /* SessionHashViewController.m in Sources */,
+				FD6BC20C1773459A008D17E3 /* PresentationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +501,7 @@
 				FD6BC20017730B3C008D17E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD6BC20117730B3C008D17E3 /* Build configuration list for PBXNativeTarget "DeckPressTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +510,7 @@
 				FD6BC20317730B3C008D17E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

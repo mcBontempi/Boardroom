@@ -1,6 +1,6 @@
 import cherrypy
 import os
-import logging
+import logging 
 class FileDemo(object):
 	def index(self):
 		return """

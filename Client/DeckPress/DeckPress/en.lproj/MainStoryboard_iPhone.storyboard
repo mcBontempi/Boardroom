@@ -266,12 +266,15 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnX-rj-IaI"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnX-rj-IaI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" type="user" id="gKt-5R-zhD"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TnX-rj-IaI" firstAttribute="top" secondItem="0X4-a7-tO3" secondAttribute="top" type="default" id="8dw-cz-AwK"/>
-                            <constraint firstAttribute="bottom" secondItem="TnX-rj-IaI" secondAttribute="bottom" constant="374" id="CZA-gN-AUX"/>
+                            <constraint firstItem="TnX-rj-IaI" firstAttribute="top" secondItem="0X4-a7-tO3" secondAttribute="top" type="user" id="8dw-cz-AwK"/>
                             <constraint firstItem="TnX-rj-IaI" firstAttribute="trailing" secondItem="0X4-a7-tO3" secondAttribute="trailing" type="default" id="lam-zr-uq3"/>
                             <constraint firstItem="TnX-rj-IaI" firstAttribute="leading" secondItem="0X4-a7-tO3" secondAttribute="leading" type="default" id="mtZ-wb-1bi"/>
                         </constraints>
@@ -288,9 +291,6 @@
     <classes>
         <class className="ConnectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="connectPressed:"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -300,9 +300,6 @@
         </class>
         <class className="SessionHashViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionHashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

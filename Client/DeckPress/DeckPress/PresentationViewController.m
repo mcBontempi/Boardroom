@@ -7,10 +7,10 @@
 //
 
 #import "PresentationViewController.h"
-
-@interface PresentationViewController ()
-
-@end
+#import <AFNetworking/AFHTTPClient.h>
+#import <AFNetworking/AFHTTPRequestOperation.h>
+#import <QuartzCore/QuartzCore.h>
+#import "CNLayoutConstraintBuilder.h"
 
 @implementation PresentationViewController{
   
@@ -44,59 +44,68 @@
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
   
   
   
   NSLog(@"%d", _scrollView.subviews.count);
-
+  
   
   _currentView = [_scrollView subviews][0];
+  
+  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://162.13.5.127:8080"]];
+  
+  
+  [self setupNewTimer];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
   
+  _scrollView.frame = CGRectMake(0,0,320,174);
+  
   [_scrollView.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
     CGRect rect = view.frame;
     rect.origin.x = idx*320;
     rect.size.width = 320;
+    rect.size.height = 174;
     view.frame = rect;
   }];
   _scrollView.contentSize = CGSizeMake(_scrollView.subviews.count*320, 174);
   
+  
 }
 
-- (void)didReceiveMemoryWarning
+
+- (void)logSubviews:(UIView *)view
 {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+  [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+    
+    NSLog(@">>");
+    NSLog(@"%@: %@", NSStringFromClass(subview.class),  NSStringFromCGRect(subview.frame));
+    
+    [self logSubviews:subview];
+    
+    NSLog(@"<<");
+  }];
 }
 
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-  int pageNum = (int)(_scrollView.contentOffset.x / _scrollView.frame.size.width) +1;
+  int pageNum = (int)(_scrollView.contentOffset.x / _scrollView.frame.size.width);
   
   NSLog(@"%d", pageNum);
-
+  _currentView = _scrollView.subviews[pageNum];
+  
 }
-
-
-
-
-
-
-
-
 
 
 
 - (void)setupNewTimer
 {
-  _timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(timerTick) userInfo:nil repeats:NO];
+  _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick) userInfo:nil repeats:NO];
 }
 
 - (void)timerTick
@@ -108,9 +117,9 @@
 
 - (void)sendScreenshot
 {
-  
   NSLog(@"start");
-  UIImage *image = [self captureScreen:[self renderView]];
+  UIImage *image = [self captureScreen:_currentView];
+  
   
   NSLog(@"image size %d", UIImagePNGRepresentation(image).length);
   
@@ -140,17 +149,48 @@
   [_client enqueueHTTPRequestOperation:operation];
   
 }
-- (IBAction)send:(id)sender
+
+- (UIView *)zoom:(CGFloat)zoom view:(UIView *)view
 {
-  [self sendScreenshot];
-}
--(UIImage*)captureScreen:(UIView*) viewToCapture{
-  UIGraphicsBeginImageContextWithOptions(viewToCapture.bounds.size,NO, 2.0);
-  //UIGraphicsBeginImageContext(viewToCapture.bounds.size);
+  UIView *retView = nil;
   
-  [viewToCapture.layer renderInContext:UIGraphicsGetCurrentContext()];
+  if(view) {
+    if(view.class == [UIView class]) {
+      retView =  [[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
+    }
+    else if(view.class == [UIImageView class]) {
+      retView =  [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
+      
+    //  [retView setImage: [view image]];
+    }
+    
+    
+    
+    [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+      [view addSubview:[self zoom:zoom view:subview]];
+    }];
+  }
+  return retView;
+}
+
+
+
+-(UIImage*)captureScreen:(UIView*) viewToCapture{
+  
+  
+  UIView *duplicatedView =  viewToCapture;//[self zoom:2 view:viewToCapture];
+  
+  [self logSubviews:duplicatedView];
+  
+  UIGraphicsBeginImageContextWithOptions(duplicatedView.bounds.size,NO, 2.0);
+  
+  [duplicatedView layoutSubviews];
+  
+  [duplicatedView.layer renderInContext:UIGraphicsGetCurrentContext()];
   UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+  
   UIGraphicsEndImageContext();
+  
   return viewImage;
 }
 

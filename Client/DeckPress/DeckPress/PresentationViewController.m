@@ -257,11 +257,17 @@
   return viewImage;
 }
 
-- (void)textViewDidChange:(UITextView *)textView
+
+- (void)delayedTextChange
 {
+  
   _changeCount ++;
   _quality = 2.0;
   [self tryUpload];
+}
+- (void)textViewDidChange:(UITextView *)textView
+{
+  [self performSelector:@selector(delayedTextChange) withObject:nil afterDelay:0.1];
 }
 
 

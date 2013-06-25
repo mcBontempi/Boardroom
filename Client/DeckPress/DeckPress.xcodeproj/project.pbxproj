@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1063E5BAECF74579A1154E05 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE75B0BCA544B458C01132B /* libPods.a */; };
+		FD1CAEC81779300F008BEECC /* yellowy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC71779300F008BEECC /* yellowy.jpg */; };
+		FD1CAECA17793042008BEECC /* yellowDouble.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC917793042008BEECC /* yellowDouble.xib */; };
 		FD6BC1C717730B3C008D17E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C617730B3C008D17E3 /* UIKit.framework */; };
 		FD6BC1C917730B3C008D17E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C817730B3C008D17E3 /* Foundation.framework */; };
 		FD6BC1CB17730B3C008D17E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1CA17730B3C008D17E3 /* CoreGraphics.framework */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		1AE75B0BCA544B458C01132B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC15E605E62F46C48B2B9419 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		FD1CAEC71779300F008BEECC /* yellowy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowy.jpg; sourceTree = "<group>"; };
+		FD1CAEC917793042008BEECC /* yellowDouble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = yellowDouble.xib; sourceTree = "<group>"; };
 		FD6BC1C317730B3C008D17E3 /* DeckPress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckPress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6BC1C617730B3C008D17E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD6BC1C817730B3C008D17E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,9 +165,11 @@
 				FD6BC20D17735861008D17E3 /* plainTitle.xib */,
 				FD6BC20F17735DEE008D17E3 /* plainBody.xib */,
 				FD6BC211177362DB008D17E3 /* plainPic.xib */,
+				FD1CAEC917793042008BEECC /* yellowDouble.xib */,
 				FD6BC2131773638C008D17E3 /* building.jpg */,
 				FD6BC21517737C6D008D17E3 /* CNLayoutConstraintBuilder.h */,
 				FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */,
+				FD1CAEC71779300F008BEECC /* yellowy.jpg */,
 			);
 			path = DeckPress;
 			sourceTree = "<group>";
@@ -284,6 +290,8 @@
 				FD6BC21017735DEE008D17E3 /* plainBody.xib in Resources */,
 				FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */,
 				FD6BC2141773638C008D17E3 /* building.jpg in Resources */,
+				FD1CAEC81779300F008BEECC /* yellowy.jpg in Resources */,
+				FD1CAECA17793042008BEECC /* yellowDouble.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

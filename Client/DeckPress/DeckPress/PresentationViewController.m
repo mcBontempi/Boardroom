@@ -21,7 +21,13 @@
   NSTimer *_timer;
   AFHTTPClient *_client;
   
-  BOOL _nowUploading;
+  NSInteger _changeCount;
+  BOOL _uploading;
+  
+  NSInteger _pageNum;
+  
+  
+  double _quality;
   
 }
 
@@ -37,14 +43,18 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
- 
-  _nowUploading = NO;
+  
+  _changeCount = 1;
+  _uploading = NO;
+  _pageNum = 0;
+  
+  _quality = 0.2;
   
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
   
-  NSLog(@"%d", _scrollView.subviews.count);
-  
+  //  NSLog(@"%d", _scrollView.subviews.count);
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"yellowDouble" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
@@ -52,7 +62,7 @@
   
   
   
-  NSLog(@"%d", _scrollView.subviews.count);
+  // NSLog(@"%d", _scrollView.subviews.count);
   
   
   _currentView = [_scrollView subviews][0];
@@ -60,7 +70,33 @@
   _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://162.13.5.127:8080"]];
   
   
-  [self setupNewTimer];
+  [self tryUpload];
+}
+
+- (void)tryUpload
+{
+  if (!_uploading && _changeCount) {
+    
+    
+    _uploading = YES;
+    _changeCount = 0;
+    
+    
+    [self sendScreenshot];
+    
+    NSLog(@"a - send quality %f - page %d" , _quality, _pageNum);
+  } else if(!_uploading && _quality <2.0 && !_changeCount) {
+    _uploading = YES;
+    if(_quality == 0.2) _quality = 1.0;
+    else if(_quality == 1.0) _quality = 2.0;
+    
+    [self sendScreenshot];
+    
+    NSLog(@"b - send quality %f - page %d" , _quality, _pageNum);
+  }
+  
+  
+  
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -75,6 +111,10 @@
     rect.size.width = 320;
     rect.size.height = 174;
     view.frame = rect;
+    
+    
+    [self recursivelySetTextDelegate:view];
+    
   }];
   _scrollView.contentSize = CGSizeMake(_scrollView.subviews.count*320, 174);
   
@@ -86,69 +126,89 @@
 {
   [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
     
-    NSLog(@">>");
-    NSLog(@"%@: %@", NSStringFromClass(subview.class),  NSStringFromCGRect(subview.frame));
+    //  NSLog(@">>");
+    //  NSLog(@"%@: %@", NSStringFromClass(subview.class),  NSStringFromCGRect(subview.frame));
     
     [self logSubviews:subview];
     
-    NSLog(@"<<");
+    //  NSLog(@"<<");
   }];
 }
 
 
 
+- (void)recursivelySetTextDelegate:(UIView *)view
+{ 
+    if(view.class == [UITextView class]) {
+      [((UITextView *)view) setDelegate:self];
+    } else
+   
+      [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+ 
+      [self recursivelySetTextDelegate:subview];
+    }];
+}
+
+
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
-  int pageNum = (int)(_scrollView.contentOffset.x / _scrollView.frame.size.width);
+  int pageNum = (int)((_scrollView.contentOffset.x+(_scrollView.frame.size.width/2) ) / _scrollView.frame.size.width);
   
-  NSLog(@"%d", pageNum);
-  _currentView = _scrollView.subviews[pageNum];
+  
+  if(pageNum != _pageNum) {
+    NSLog(@"%d", pageNum);
+    _pageNum = pageNum;
+    _currentView = _scrollView.subviews[pageNum];
+    
+    _changeCount ++;
+    _quality = 0.2;
+    [self tryUpload];
+  }
+  
   
 }
 
 
 
-- (void)setupNewTimer
-{
-  _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick) userInfo:nil repeats:NO];
-}
-
-- (void)timerTick
-{
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-    [self sendScreenshot];
-  });
-}
 
 - (void)sendScreenshot
 {
-  NSLog(@"start");
+  //  NSLog(@"start");
   UIImage *image = [self captureScreen:_currentView];
   
   
-  NSLog(@"image size %d", UIImagePNGRepresentation(image).length);
+  NSData *data = UIImagePNGRepresentation(image);
   
-  NSLog(@"end");
+  // NSLog(@"image size %d", data.length);
   
-  NSLog(@"height = %f", image.size.height);
+  //  NSLog(@"end");
+  
+  //  NSLog(@"height = %f", image.size.height);
   
   NSMutableURLRequest *request = [_client multipartFormRequestWithMethod:@"POST" path:@"upload" parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
-    [formData appendPartWithFileData:UIImagePNGRepresentation(image) name:@"myFile" fileName:@"temp2.png" mimeType:@"image/png"];
+    [formData appendPartWithFileData:data name:@"myFile" fileName:@"temp2.png" mimeType:@"image/png"];
   }];
   
   __weak id weakSelf = self;
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
     NSString *response = [operation responseString];
-    NSLog(@"response: [%@]",response);
+    //  NSLog(@"response: [%@]",response);
     NSLog(@"complete");
-    [weakSelf setupNewTimer];
+    
+    _uploading = NO;
+    
+    [weakSelf tryUpload];
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
     NSString *response = [operation responseString];
-    NSLog(@"response: [%@]",response);
-    [weakSelf setupNewTimer];
+    //  NSLog(@"response: [%@]",response);
+    
+    _uploading = NO;
+    [weakSelf tryUpload];
   }];
   
-  NSLog(@"send");
+  // NSLog(@"send");
   
   [_client enqueueHTTPRequestOperation:operation];
   
@@ -165,7 +225,7 @@
     else if(view.class == [UIImageView class]) {
       retView =  [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
       
-    //  [retView setImage: [view image]];
+      //  [retView setImage: [view image]];
     }
     
     
@@ -185,7 +245,7 @@
   
   [self logSubviews:duplicatedView];
   
-  UIGraphicsBeginImageContextWithOptions(duplicatedView.bounds.size,NO, 2.0);
+  UIGraphicsBeginImageContextWithOptions(duplicatedView.bounds.size,NO, _quality);
   
   [duplicatedView layoutSubviews];
   
@@ -197,7 +257,12 @@
   return viewImage;
 }
 
-
+- (void)textViewDidChange:(UITextView *)textView
+{
+  _changeCount ++;
+  _quality = 2.0;
+  [self tryUpload];
+}
 
 
 @end

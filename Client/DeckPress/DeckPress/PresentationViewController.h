@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PresentationViewController : UIViewController <UIScrollViewDelegate>
+@interface PresentationViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate>
 
 @end

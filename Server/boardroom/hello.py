@@ -2,29 +2,29 @@ import cherrypy
 import os
 import logging 
 class FileDemo(object):
-	def index(self):
-		return """
-		<html><body>
-		<h2>Upload a file</h2>
-		<form action="upload" method="post" enctype="multipart/form-data">
-		filename: <input type="file" name="myFile" /><br />
-		<input type="submit" />
-		</form>
-		<h2>Download a file</h2>
-		<a href='download'>This one</a>
-		</body></html>
-		"""
-	index.exposed = True
-	
-	def view(self):
-		return """
-		<html>
-		<head><meta http-equiv="refresh" content="1"></head>
-		<body>
-		<img src="http://192.168.1.64:9000/temp.png" alt="Smiley face" height="1000" width="1000"/>
-		</body></html>
-		"""
-	view.exposed = True
+	#def index(self):
+#		return """
+#		<html><body>
+#		<h2>Upload a file</h2>
+#		<form action="upload" method="post" enctype="multipart/form-data">
+#		filename: <input type="file" name="myFile" /><br />
+#		<input type="submit" />
+#		</form>
+#		<h2>Download a file</h2>
+#		<a href='download'>This one</a>
+#		</body></html>
+#		"""
+#	index.exposed = True
+#	
+#	def view(self):
+#		return """
+#		<html>
+#		<head><meta http-equiv="refresh" content="1"></head>
+#		<body>
+#		<img src="http://192.168.1.64:9000/temp.png" alt="Smiley face" height="1000" width="1000"/>
+#		</body></html>
+#		"""
+#	view.exposed = True
 		
 	def upload(self, myFile):
 		out = """<html>

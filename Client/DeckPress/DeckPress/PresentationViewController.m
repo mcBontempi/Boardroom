@@ -21,6 +21,8 @@
   NSTimer *_timer;
   AFHTTPClient *_client;
   
+  BOOL _nowUploading;
+  
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,6 +37,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+ 
+  _nowUploading = NO;
   
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
@@ -175,9 +179,8 @@
 
 
 
--(UIImage*)captureScreen:(UIView*) viewToCapture{
-  
-  
+-(UIImage*)captureScreen:(UIView*) viewToCapture
+{
   UIView *duplicatedView =  viewToCapture;//[self zoom:2 view:viewToCapture];
   
   [self logSubviews:duplicatedView];

@@ -138,13 +138,13 @@
 
 
 - (void)recursivelySetTextDelegate:(UIView *)view
-{ 
-    if(view.class == [UITextView class]) {
-      [((UITextView *)view) setDelegate:self];
-    } else
-   
-      [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
- 
+{
+  if(view.class == [UITextView class]) {
+    [((UITextView *)view) setDelegate:self];
+  } else
+    
+    [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+      
       [self recursivelySetTextDelegate:subview];
     }];
 }
@@ -216,32 +216,35 @@
 
 - (UIView *)zoom:(CGFloat)zoom view:(UIView *)view
 {
-  UIView *retView = nil;
-  
   if(view) {
-    if(view.class == [UIView class]) {
-      retView =  [[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
-    }
-    else if(view.class == [UIImageView class]) {
-      retView =  [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
+    if([view.class isSubclassOfClass:[UIImageView class]]) {
+      UIImageView *srcImageView = (UIImageView *)view;
+      UIImageView *retImageView =  [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
       
-      //  [retView setImage: [view image]];
+      retImageView.image = srcImageView.image;
     }
-    
-    
-    
-    [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
-      [view addSubview:[self zoom:zoom view:subview]];
-    }];
+    else if([view.class isSubclassOfClass:[UITextView class]]) {
+      UITextView *srcTextView = (UITextView *)view;
+      UITextView *retTextView =  [[UITextView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
+      retTextView.text = srcTextView.text;
+      retTextView.font = [UIFont fontWithName:srcTextView.font.fontName size:srcTextView.font.pointSize*zoom];
+      return retTextView;
+    }
+    else if([view.class isSubclassOfClass:[UIView class]]) {
+      UIView *retView =  [[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
+      [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+        [retView addSubview:[self zoom:zoom view:subview]];
+      }];
+      
+      return retView;
+    }
   }
-  return retView;
+  return nil;
 }
-
-
 
 -(UIImage*)captureScreen:(UIView*) viewToCapture
 {
-  UIView *duplicatedView =  viewToCapture;//[self zoom:2 view:viewToCapture];
+  UIView *duplicatedView = [self zoom:8 view:viewToCapture];
   
   [self logSubviews:duplicatedView];
   

@@ -11,10 +11,13 @@
 #import <AFNetworking/AFHTTPRequestOperation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "CNLayoutConstraintBuilder.h"
+#import "LXReorderableCollectionViewFlowLayout.h"
 
 @implementation PresentationViewController{
   
   __weak IBOutlet UIScrollView *_scrollView;
+  
+  __weak IBOutlet UICollectionView *_collectionView;
   
   UIView *_currentView;
   
@@ -40,9 +43,19 @@
   return self;
 }
 
+- (void)setCollectionView
+{
+  LXReorderableCollectionViewFlowLayout *layout = [[LXReorderableCollectionViewFlowLayout alloc] init];
+  
+  _col
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  [self setupCollectionView];
+  
   
   _changeCount = 1;
   _uploading = NO;

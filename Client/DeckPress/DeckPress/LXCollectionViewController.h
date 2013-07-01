@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LXReorderableCollectionViewFlowLayout.h"
+#import <LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h>
 
-@interface LXCollectionViewController : UIViewController <LXReorderableCollectionViewDataSource, LXReorderableCollectionViewDelegateFlowLayout>
+@interface LXCollectionViewController : UIViewController <LXReorderableCollectionViewDatasource, LXReorderableCollectionViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *deck;
 

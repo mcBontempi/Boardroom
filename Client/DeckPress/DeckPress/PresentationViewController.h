@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h>
 
-@interface PresentationViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate>
+@interface PresentationViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate, LXReorderableCollectionViewDatasource, LXReorderableCollectionViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *deck;
 
 @end

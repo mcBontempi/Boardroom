@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) PlayingCard *playingCard;
 @property (strong, nonatomic) IBOutlet UIImageView *playingCardImageView;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end

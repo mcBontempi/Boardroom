@@ -35,6 +35,11 @@
 		FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC211177362DB008D17E3 /* plainPic.xib */; };
 		FD6BC2141773638C008D17E3 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
 		FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
+		FDC7FA17177DE20600E7EFD5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA10177DE20600E7EFD5 /* MainStoryboard.storyboard */; };
+		FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
+		FDC7FA19177DE20600E7EFD5 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */; };
+		FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */; };
+		FDC7FA1C177DE5E700E7EFD5 /* pageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,14 @@
 		FD6BC2131773638C008D17E3 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
 		FD6BC21517737C6D008D17E3 /* CNLayoutConstraintBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLayoutConstraintBuilder.h; sourceTree = "<group>"; };
 		FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLayoutConstraintBuilder.m; sourceTree = "<group>"; };
+		FDC7FA10177DE20600E7EFD5 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FDC7FA11177DE20600E7EFD5 /* LXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCollectionViewController.h; sourceTree = "<group>"; };
+		FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCollectionViewController.m; sourceTree = "<group>"; };
+		FDC7FA13177DE20600E7EFD5 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		FDC7FA15177DE20600E7EFD5 /* PlayingCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardCell.h; sourceTree = "<group>"; };
+		FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardCell.m; sourceTree = "<group>"; };
+		FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pageicon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +162,7 @@
 		FD6BC1CC17730B3C008D17E3 /* DeckPress */ = {
 			isa = PBXGroup;
 			children = (
+				FDC7FA0F177DE1CD00E7EFD5 /* ExistingFlowCode */,
 				FD6BC1D517730B3C008D17E3 /* AppDelegate.h */,
 				FD6BC1D617730B3C008D17E3 /* AppDelegate.m */,
 				FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */,
@@ -170,6 +184,7 @@
 				FD6BC21517737C6D008D17E3 /* CNLayoutConstraintBuilder.h */,
 				FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */,
 				FD1CAEC71779300F008BEECC /* yellowy.jpg */,
+				FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */,
 			);
 			path = DeckPress;
 			sourceTree = "<group>";
@@ -205,6 +220,20 @@
 				FD6BC1F617730B3C008D17E3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDC7FA0F177DE1CD00E7EFD5 /* ExistingFlowCode */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7FA10177DE20600E7EFD5 /* MainStoryboard.storyboard */,
+				FDC7FA11177DE20600E7EFD5 /* LXCollectionViewController.h */,
+				FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */,
+				FDC7FA13177DE20600E7EFD5 /* PlayingCard.h */,
+				FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */,
+				FDC7FA15177DE20600E7EFD5 /* PlayingCardCell.h */,
+				FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */,
+			);
+			name = ExistingFlowCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +321,8 @@
 				FD6BC2141773638C008D17E3 /* building.jpg in Resources */,
 				FD1CAEC81779300F008BEECC /* yellowy.jpg in Resources */,
 				FD1CAECA17793042008BEECC /* yellowDouble.xib in Resources */,
+				FDC7FA17177DE20600E7EFD5 /* MainStoryboard.storyboard in Resources */,
+				FDC7FA1C177DE5E700E7EFD5 /* pageicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +392,9 @@
 				FD6BC20917733674008D17E3 /* SessionHashViewController.m in Sources */,
 				FD6BC20C1773459A008D17E3 /* PresentationViewController.m in Sources */,
 				FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */,
+				FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */,
+				FDC7FA19177DE20600E7EFD5 /* PlayingCard.m in Sources */,
+				FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

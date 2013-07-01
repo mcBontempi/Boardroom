@@ -12,12 +12,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import "CNLayoutConstraintBuilder.h"
 #import "LXReorderableCollectionViewFlowLayout.h"
+#import "PlayingCardCell.h"
+
+
+#import "PlayingCard.h"
 
 @implementation PresentationViewController{
   
   __weak IBOutlet UIScrollView *_scrollView;
-  
-  __weak IBOutlet UICollectionView *_collectionView;
   
   UIView *_currentView;
   
@@ -43,19 +45,52 @@
   return self;
 }
 
-- (void)setCollectionView
-{
-  LXReorderableCollectionViewFlowLayout *layout = [[LXReorderableCollectionViewFlowLayout alloc] init];
+- (NSMutableArray *)constructsDeck {
+  NSMutableArray *newDeck = [NSMutableArray arrayWithCapacity:52];
   
-  _col
+  for (NSInteger rank = 1; rank <= 13; rank++) {
+    // Spade
+    {
+      PlayingCard *playingCard = [[PlayingCard alloc] init];
+      playingCard.suit = PlayingCardSuitSpade;
+      playingCard.rank = rank;
+      [newDeck addObject:playingCard];
+    }
+    
+    // Heart
+    {
+      PlayingCard *playingCard = [[PlayingCard alloc] init];
+      playingCard.suit = PlayingCardSuitHeart;
+      playingCard.rank = rank;
+      [newDeck addObject:playingCard];
+    }
+    
+    // Club
+    {
+      PlayingCard *playingCard = [[PlayingCard alloc] init];
+      playingCard.suit = PlayingCardSuitClub;
+      playingCard.rank = rank;
+      [newDeck addObject:playingCard];
+    }
+    
+    // Diamond
+    {
+      PlayingCard *playingCard = [[PlayingCard alloc] init];
+      playingCard.suit = PlayingCardSuitDiamond;
+      playingCard.rank = rank;
+      [newDeck addObject:playingCard];
+    }
+  }
+  
+  return newDeck;
 }
+
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-  [self setupCollectionView];
-  
+  self.deck = [self constructsDeck];
   
   _changeCount = 1;
   _uploading = NO;
@@ -284,6 +319,70 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
   [self performSelector:@selector(delayedTextChange) withObject:nil afterDelay:0.1];
+}
+
+
+
+
+
+
+
+
+
+#pragma mark - UICollectionViewDataSource methods
+
+- (NSInteger)collectionView:(UICollectionView *)theCollectionView numberOfItemsInSection:(NSInteger)theSectionIndex {
+  return self.deck.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  PlayingCard *playingCard = [self.deck objectAtIndex:indexPath.item];
+  PlayingCardCell *playingCardCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayingCardCell" forIndexPath:indexPath];
+  playingCardCell.playingCard = playingCard;
+  
+  return playingCardCell;
+}
+
+#pragma mark - LXReorderableCollectionViewDataSource methods
+
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath willMoveToIndexPath:(NSIndexPath *)toIndexPath {
+  PlayingCard *playingCard = [self.deck objectAtIndex:fromIndexPath.item];
+  
+  [self.deck removeObjectAtIndex:fromIndexPath.item];
+  [self.deck insertObject:playingCard atIndex:toIndexPath.item];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
+#if LX_LIMITED_MOVEMENT == 1
+  PlayingCard *playingCard = [deck objectAtIndex:indexPath.item];
+  
+  switch (playingCard.suit) {
+    case PlayingCardSuitSpade:
+    case PlayingCardSuitClub:
+      return YES;
+    default:
+      return NO;
+  }
+#else
+  return YES;
+#endif
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath canMoveToIndexPath:(NSIndexPath *)toIndexPath {
+#if LX_LIMITED_MOVEMENT == 1
+  PlayingCard *fromPlayingCard = [deck objectAtIndex:fromIndexPath.item];
+  PlayingCard *toPlayingCard = [deck objectAtIndex:toIndexPath.item];
+  
+  switch (toPlayingCard.suit) {
+    case PlayingCardSuitSpade:
+    case PlayingCardSuitClub:
+      return fromPlayingCard.rank == toPlayingCard.rank;
+    default:
+      return NO;
+  }
+#else
+  return YES;
+#endif
 }
 
 

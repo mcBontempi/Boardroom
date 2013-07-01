@@ -271,12 +271,51 @@
                                     <constraint firstAttribute="height" constant="174" type="user" id="gKt-5R-zhD"/>
                                 </constraints>
                             </scrollView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-Tc-Y7f">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="vZ6-SA-o7K"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DQe-oF-MnO" customClass="LXReorderableCollectionViewFlowLayout">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayingCardCell" id="3Ix-7t-rAU" customClass="PlayingCardCell">
+                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pageicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="K6n-cQ-NQX"/>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="K6n-cQ-NQX" firstAttribute="bottom" secondItem="3Ix-7t-rAU" secondAttribute="bottom" type="default" id="4XX-8d-bHN"/>
+                                            <constraint firstItem="K6n-cQ-NQX" firstAttribute="top" secondItem="3Ix-7t-rAU" secondAttribute="top" type="default" id="FRy-b9-CUU"/>
+                                            <constraint firstItem="K6n-cQ-NQX" firstAttribute="trailing" secondItem="3Ix-7t-rAU" secondAttribute="trailing" type="default" id="K4P-nU-u2O"/>
+                                            <constraint firstItem="K6n-cQ-NQX" firstAttribute="leading" secondItem="3Ix-7t-rAU" secondAttribute="leading" type="default" id="rTf-r4-NrL"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="53v-pX-kfP" id="3iM-rE-IOY"/>
+                                    <outlet property="delegate" destination="53v-pX-kfP" id="rSZ-2Y-zmY"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eG0-Tc-Y7f" firstAttribute="trailing" secondItem="0X4-a7-tO3" secondAttribute="trailing" type="default" id="813-cJ-dqX"/>
                             <constraint firstItem="TnX-rj-IaI" firstAttribute="top" secondItem="0X4-a7-tO3" secondAttribute="top" type="user" id="8dw-cz-AwK"/>
                             <constraint firstItem="TnX-rj-IaI" firstAttribute="trailing" secondItem="0X4-a7-tO3" secondAttribute="trailing" type="default" id="lam-zr-uq3"/>
                             <constraint firstItem="TnX-rj-IaI" firstAttribute="leading" secondItem="0X4-a7-tO3" secondAttribute="leading" type="default" id="mtZ-wb-1bi"/>
+                            <constraint firstItem="eG0-Tc-Y7f" firstAttribute="top" secondItem="0X4-a7-tO3" secondAttribute="top" constant="176" id="onn-kg-tl0"/>
+                            <constraint firstItem="eG0-Tc-Y7f" firstAttribute="leading" secondItem="0X4-a7-tO3" secondAttribute="leading" type="default" id="ydp-uk-9Ux"/>
                         </constraints>
                     </view>
                     <connections>
@@ -288,12 +327,28 @@
             <point key="canvasLocation" x="1445" y="318"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pageicon.png" width="512" height="512"/>
+    </resources>
     <classes>
         <class className="ConnectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="connectPressed:"/>
+            </relationships>
+        </class>
+        <class className="LXReorderableCollectionViewFlowLayout" superclassName="UICollectionViewFlowLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LXReorderableCollectionViewFlowLayout.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayingCardCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="playingCardImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="PresentationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PresentationViewController.h"/>
@@ -303,6 +358,18 @@
             <relationships>
                 <relationship kind="action" name="cancelPressed:"/>
             </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

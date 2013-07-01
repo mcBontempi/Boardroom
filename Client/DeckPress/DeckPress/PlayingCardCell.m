@@ -15,7 +15,14 @@
 - (void)setPlayingCard:(PlayingCard *)thePlayingCard
 {
     playingCard = thePlayingCard;
-    self.playingCardImageView.image = [UIImage imageNamed:playingCard.imageName];
+ //   self.playingCardImageView.image = [UIImage imageNamed:playingCard.imageName];
+  
+  
+  for (UIGestureRecognizer *recognizer in self.textView.gestureRecognizers) {
+    if ([recognizer isKindOfClass:[UILongPressGestureRecognizer class]]){
+      recognizer.enabled = NO;
+    }
+  }
 }
 
 - (void)setHighlighted:(BOOL)highlighted

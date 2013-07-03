@@ -70,7 +70,11 @@ static NSString * const kLXCollectionViewKeyPath = @"collectionView";
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                                              action:@selector(handleLongPressGesture:)];
     longPressGestureRecognizer.delegate = self;
+  longPressGestureRecognizer.minimumPressDuration = 0.2;
     [self.collectionView addGestureRecognizer:longPressGestureRecognizer];
+  
+  
+  
     
     // Links the default long press gesture recognizer to the custom long press gesture recognizer we are creating now
     // by enforcing failure dependency so that they doesn't clash.
@@ -286,7 +290,7 @@ static NSString * const kLXCollectionViewKeyPath = @"collectionView";
              animations:^{
                  __strong typeof(self) strongSelf = weakSelf;
                  if (strongSelf) {
-                     strongSelf.currentView.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+                     strongSelf.currentView.transform = CGAffineTransformMakeScale(1.4f, 1.4f);
                      highlightedImageView.alpha = 0.0f;
                      imageView.alpha = 1.0f;
                  }

@@ -21,6 +21,7 @@
   
   __weak IBOutlet UIScrollView *_scrollView;
   
+  __weak IBOutlet UICollectionView *_collectionView;
   UIView *_currentView;
   
   NSTimer *_timer;
@@ -48,12 +49,9 @@
 - (NSMutableArray *)constructsDeck {
   NSMutableArray *newDeck = [NSMutableArray arrayWithCapacity:52];
   
-  for (NSInteger rank = 1; rank <= 13; rank++) {
-    // Spade
     {
       PlayingCard *playingCard = [[PlayingCard alloc] init];
       playingCard.suit = PlayingCardSuitSpade;
-      playingCard.rank = rank;
       [newDeck addObject:playingCard];
     }
     
@@ -61,7 +59,6 @@
     {
       PlayingCard *playingCard = [[PlayingCard alloc] init];
       playingCard.suit = PlayingCardSuitHeart;
-      playingCard.rank = rank;
       [newDeck addObject:playingCard];
     }
     
@@ -69,7 +66,6 @@
     {
       PlayingCard *playingCard = [[PlayingCard alloc] init];
       playingCard.suit = PlayingCardSuitClub;
-      playingCard.rank = rank;
       [newDeck addObject:playingCard];
     }
     
@@ -77,10 +73,8 @@
     {
       PlayingCard *playingCard = [[PlayingCard alloc] init];
       playingCard.suit = PlayingCardSuitDiamond;
-      playingCard.rank = rank;
       [newDeck addObject:playingCard];
     }
-  }
   
   return newDeck;
 }
@@ -101,17 +95,10 @@
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
   
-  //  NSLog(@"%d", _scrollView.subviews.count);
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"yellowDouble" owner:self options:nil][0]];
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
-  
-  
-  
-  // NSLog(@"%d", _scrollView.subviews.count);
-  
   
   _currentView = [_scrollView subviews][0];
   
@@ -153,11 +140,14 @@
   
   _scrollView.frame = CGRectMake(0,0,320,174);
   
+  CGFloat padding = 5;
+  
   [_scrollView.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
     CGRect rect = view.frame;
-    rect.origin.x = idx*320;
-    rect.size.width = 320;
-    rect.size.height = 174;
+    rect.origin.y = padding;
+    rect.origin.x = (idx*320) + padding;
+    rect.size.width = 320 - (padding *2);
+    rect.size.height = 174 - (padding *2);
     view.frame = rect;
     
     
@@ -205,8 +195,11 @@
   
   
   if(pageNum != _pageNum) {
+    
     NSLog(@"%d", pageNum);
     _pageNum = pageNum;
+    [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_pageNum inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    
     _currentView = _scrollView.subviews[pageNum];
     
     _changeCount ++;
@@ -252,6 +245,8 @@
     NSString *response = [operation responseString];
     //  NSLog(@"response: [%@]",response);
     
+    NSLog(@"error");
+    
     _uploading = NO;
     [weakSelf tryUpload];
   }];
@@ -270,12 +265,14 @@
       UIImageView *retImageView =  [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
       
       retImageView.image = srcImageView.image;
+      return retImageView;
     }
     else if([view.class isSubclassOfClass:[UITextView class]]) {
       UITextView *srcTextView = (UITextView *)view;
       UITextView *retTextView =  [[UITextView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
       retTextView.text = srcTextView.text;
       retTextView.font = [UIFont fontWithName:srcTextView.font.fontName size:srcTextView.font.pointSize*zoom];
+      retTextView.textAlignment = srcTextView.textAlignment;
       return retTextView;
     }
     else if([view.class isSubclassOfClass:[UIView class]]) {
@@ -292,7 +289,7 @@
 
 -(UIImage*)captureScreen:(UIView*) viewToCapture
 {
-  UIView *duplicatedView = [self zoom:8 view:viewToCapture];
+  UIView *duplicatedView = [self zoom:1 view:viewToCapture];
   
   [self logSubviews:duplicatedView];
   
@@ -325,7 +322,15 @@
 
 
 
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+  CGRect rect = CGRectMake(indexPath.row*320,0,320,174);
+  
+  
+  [_scrollView scrollRectToVisible:rect animated:YES];
+  
+  
+}
 
 
 

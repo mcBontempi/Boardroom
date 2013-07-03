@@ -29,6 +29,19 @@
 {
     [super setHighlighted:highlighted];
     self.playingCardImageView.alpha = highlighted ? 0.75f : 1.0f;
+  
+
+  self.backgroundColor = highlighted ? [UIColor blueColor] : [UIColor clearColor];
+}
+
+- (void)setSelected:(BOOL)selected
+{
+  [super setSelected:selected];
+  self.backgroundColor = selected ? [UIColor lightGrayColor] : [UIColor clearColor];
+
+  self.playingCardImageView.image = selected ? [UIImage imageNamed:@"pageiconopen"] : [UIImage imageNamed:@"pageicon"];
+
+
 }
 
 @end

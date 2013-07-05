@@ -39,7 +39,7 @@
   [super setSelected:selected];
   self.backgroundColor = selected ? [UIColor lightGrayColor] : [UIColor clearColor];
 
-  self.playingCardImageView.image = selected ? [UIImage imageNamed:@"pageiconopen"] : [UIImage imageNamed:@"pageicon"];
+ // self.playingCardImageView.image = selected ? [UIImage imageNamed:@"pageiconopen"] : [UIImage imageNamed:@"pageicon"];
 
 
 }

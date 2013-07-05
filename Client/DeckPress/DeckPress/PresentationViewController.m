@@ -49,32 +49,32 @@
 - (NSMutableArray *)constructsDeck {
   NSMutableArray *newDeck = [NSMutableArray arrayWithCapacity:52];
   
-    {
-      PlayingCard *playingCard = [[PlayingCard alloc] init];
-      playingCard.suit = PlayingCardSuitSpade;
-      [newDeck addObject:playingCard];
-    }
-    
-    // Heart
-    {
-      PlayingCard *playingCard = [[PlayingCard alloc] init];
-      playingCard.suit = PlayingCardSuitHeart;
-      [newDeck addObject:playingCard];
-    }
-    
-    // Club
-    {
-      PlayingCard *playingCard = [[PlayingCard alloc] init];
-      playingCard.suit = PlayingCardSuitClub;
-      [newDeck addObject:playingCard];
-    }
-    
-    // Diamond
-    {
-      PlayingCard *playingCard = [[PlayingCard alloc] init];
-      playingCard.suit = PlayingCardSuitDiamond;
-      [newDeck addObject:playingCard];
-    }
+  {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
+    playingCard.suit = PlayingCardSuitSpade;
+    [newDeck addObject:playingCard];
+  }
+  
+  // Heart
+  {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
+    playingCard.suit = PlayingCardSuitHeart;
+    [newDeck addObject:playingCard];
+  }
+  
+  // Club
+  {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
+    playingCard.suit = PlayingCardSuitClub;
+    [newDeck addObject:playingCard];
+  }
+  
+  // Diamond
+  {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
+    playingCard.suit = PlayingCardSuitDiamond;
+    [newDeck addObject:playingCard];
+  }
   
   return newDeck;
 }
@@ -218,7 +218,13 @@
   //  NSLog(@"start");
   UIImage *image = [self captureScreen:_currentView];
   
+  if(_collectionView.indexPathsForSelectedItems.count) {
+  NSIndexPath *indexPath = _collectionView.indexPathsForSelectedItems[0];
   
+  PlayingCardCell *playingCardCell = (PlayingCardCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+  
+  playingCardCell.playingCardImageView.image = image;
+  }
   NSData *data = UIImagePNGRepresentation(image);
   
   // NSLog(@"image size %d", data.length);
@@ -276,7 +282,9 @@
       return retTextView;
     }
     else if([view.class isSubclassOfClass:[UIView class]]) {
+      UIView *srcView = (UIView *)view;
       UIView *retView =  [[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
+      retView.backgroundColor = srcView.backgroundColor;
       [view.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         [retView addSubview:[self zoom:zoom view:subview]];
       }];

@@ -35,6 +35,8 @@
   
   double _quality;
   
+  NSMutableArray *_slideDeck;
+  
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

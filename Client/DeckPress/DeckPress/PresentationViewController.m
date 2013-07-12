@@ -103,8 +103,8 @@
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
   
   _currentView = [_scrollView subviews][0];
-  
-  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://162.13.5.127:8080"]];
+  //@"http://162.13.5.127:8080
+  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://localhost:8080"]];
   
   
   [self tryUpload];

@@ -96,10 +96,10 @@
   
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
- 
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
+  
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellSmall" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
@@ -225,11 +225,11 @@
   UIImage *image = [self captureScreen:_currentView];
   
   if(_collectionView.indexPathsForSelectedItems.count) {
-  NSIndexPath *indexPath = _collectionView.indexPathsForSelectedItems[0];
-  
-  PlayingCardCell *playingCardCell = (PlayingCardCell *)[_collectionView cellForItemAtIndexPath:indexPath];
-  
-  playingCardCell.playingCardImageView.image = image;
+    NSIndexPath *indexPath = _collectionView.indexPathsForSelectedItems[0];
+    
+    PlayingCardCell *playingCardCell = (PlayingCardCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+    
+    playingCardCell.playingCardImageView.image = image;
   }
   NSData *data = UIImagePNGRepresentation(image);
   

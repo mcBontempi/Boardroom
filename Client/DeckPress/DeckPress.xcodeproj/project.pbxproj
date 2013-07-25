@@ -10,6 +10,7 @@
 		1063E5BAECF74579A1154E05 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE75B0BCA544B458C01132B /* libPods.a */; };
 		D6D6E47117A161D00007694F /* hellTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47017A161D00007694F /* hellTitle.xib */; };
 		D6D6E47317A1643F0007694F /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
+		D6D6E47517A1672F0007694F /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
 		FD1CAEC81779300F008BEECC /* yellowy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC71779300F008BEECC /* yellowy.jpg */; };
 		FD1CAECA17793042008BEECC /* yellowDouble.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC917793042008BEECC /* yellowDouble.xib */; };
 		FD6BC1C717730B3C008D17E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C617730B3C008D17E3 /* UIKit.framework */; };
@@ -59,6 +60,7 @@
 		1AE75B0BCA544B458C01132B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D6E47017A161D00007694F /* hellTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellTitle.xib; sourceTree = "<group>"; };
 		D6D6E47217A1643F0007694F /* hellBody.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellBody.xib; sourceTree = "<group>"; };
+		D6D6E47417A1672F0007694F /* hellSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellSmall.xib; sourceTree = "<group>"; };
 		EC15E605E62F46C48B2B9419 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FD1CAEC71779300F008BEECC /* yellowy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowy.jpg; sourceTree = "<group>"; };
 		FD1CAEC917793042008BEECC /* yellowDouble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = yellowDouble.xib; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				FD6BC20817733674008D17E3 /* SessionHashViewController.m */,
 				FD6BC20A1773459A008D17E3 /* PresentationViewController.h */,
 				FD6BC20B1773459A008D17E3 /* PresentationViewController.m */,
+				D6D6E47417A1672F0007694F /* hellSmall.xib */,
 				D6D6E47017A161D00007694F /* hellTitle.xib */,
 				D6D6E47217A1643F0007694F /* hellBody.xib */,
 				FD6BC20D17735861008D17E3 /* plainTitle.xib */,
@@ -335,6 +338,7 @@
 				FDC7FA1E1781C6A300E7EFD5 /* pageiconopen.png in Resources */,
 				D6D6E47117A161D00007694F /* hellTitle.xib in Resources */,
 				D6D6E47317A1643F0007694F /* hellBody.xib in Resources */,
+				D6D6E47517A1672F0007694F /* hellSmall.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

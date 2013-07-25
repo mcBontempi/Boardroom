@@ -96,15 +96,19 @@
   
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
-  
+ 
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellBody" owner:self options:nil][0]];
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
   
   _currentView = [_scrollView subviews][0];
-  //@"http://162.13.5.127:8080
-  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://localhost:8080"]];
+  //http://162.13.5.127:8080
+  //http://localhost:8080
+  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://162.13.5.127:8080"]];
   
   
   [self tryUpload];
@@ -280,6 +284,8 @@
       UITextView *retTextView =  [[UITextView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
       retTextView.text = srcTextView.text;
       retTextView.font = [UIFont fontWithName:srcTextView.font.fontName size:srcTextView.font.pointSize*zoom];
+      retTextView.textColor = srcTextView.textColor;
+      retTextView.backgroundColor = srcTextView.backgroundColor;
       retTextView.textAlignment = srcTextView.textAlignment;
       return retTextView;
     }
@@ -299,7 +305,7 @@
 
 -(UIImage*)captureScreen:(UIView*) viewToCapture
 {
-  UIView *duplicatedView = [self zoom:1 view:viewToCapture];
+  UIView *duplicatedView = [self zoom:2 view:viewToCapture];
   
   [self logSubviews:duplicatedView];
   

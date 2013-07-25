@@ -78,6 +78,21 @@
     [newDeck addObject:playingCard];
   }
   
+  // Diamond
+  {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
+    playingCard.suit = PlayingCardSuitDiamond;
+    [newDeck addObject:playingCard];
+  }
+  
+  
+  // Diamond
+  {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
+    playingCard.suit = PlayingCardSuitDiamond;
+    [newDeck addObject:playingCard];
+  }
+  
   return newDeck;
 }
 
@@ -97,13 +112,14 @@
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
   
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"blank" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellBody" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellSmall" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainTitle" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainBody" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"plainPic" owner:self options:nil][0]];
+  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
+ 
+  
   
   _currentView = [_scrollView subviews][0];
   //http://162.13.5.127:8080

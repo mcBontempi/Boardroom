@@ -8,6 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		1063E5BAECF74579A1154E05 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE75B0BCA544B458C01132B /* libPods.a */; };
+		D69ACACC17A274CA00CA5C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1D217730B3C008D17E3 /* main.m */; };
+		D69ACACD17A274CA00CA5C0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1D617730B3C008D17E3 /* AppDelegate.m */; };
+		D69ACACE17A274CA00CA5C0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1E517730B3C008D17E3 /* ViewController.m */; };
+		D69ACACF17A274CA00CA5C0E /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */; };
+		D69ACAD017A274CA00CA5C0E /* SessionHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20817733674008D17E3 /* SessionHashViewController.m */; };
+		D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20B1773459A008D17E3 /* PresentationViewController.m */; };
+		D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
+		D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
+		D69ACAD417A274CA00CA5C0E /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */; };
+		D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */; };
+		D69ACAD717A274CA00CA5C0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C617730B3C008D17E3 /* UIKit.framework */; };
+		D69ACAD817A274CA00CA5C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C817730B3C008D17E3 /* Foundation.framework */; };
+		D69ACAD917A274CA00CA5C0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1CA17730B3C008D17E3 /* CoreGraphics.framework */; };
+		D69ACADA17A274CA00CA5C0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE75B0BCA544B458C01132B /* libPods.a */; };
+		D69ACADC17A274CA00CA5C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1CF17730B3C008D17E3 /* InfoPlist.strings */; };
+		D69ACADD17A274CA00CA5C0E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1D817730B3C008D17E3 /* Default.png */; };
+		D69ACADE17A274CA00CA5C0E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DA17730B3C008D17E3 /* Default@2x.png */; };
+		D69ACADF17A274CA00CA5C0E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DC17730B3C008D17E3 /* Default-568h@2x.png */; };
+		D69ACAE017A274CA00CA5C0E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */; };
+		D69ACAE117A274CA00CA5C0E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1E117730B3C008D17E3 /* MainStoryboard_iPad.storyboard */; };
+		D69ACAE217A274CA00CA5C0E /* plainTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20D17735861008D17E3 /* plainTitle.xib */; };
+		D69ACAE317A274CA00CA5C0E /* plainBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20F17735DEE008D17E3 /* plainBody.xib */; };
+		D69ACAE417A274CA00CA5C0E /* plainPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC211177362DB008D17E3 /* plainPic.xib */; };
+		D69ACAE517A274CA00CA5C0E /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
+		D69ACAE617A274CA00CA5C0E /* yellowy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC71779300F008BEECC /* yellowy.jpg */; };
+		D69ACAE717A274CA00CA5C0E /* yellowDouble.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC917793042008BEECC /* yellowDouble.xib */; };
+		D69ACAE817A274CA00CA5C0E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA10177DE20600E7EFD5 /* MainStoryboard.storyboard */; };
+		D69ACAE917A274CA00CA5C0E /* pageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */; };
+		D69ACAEA17A274CA00CA5C0E /* pageiconopen.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1D1781C6A200E7EFD5 /* pageiconopen.png */; };
+		D69ACAEB17A274CA00CA5C0E /* hellTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47017A161D00007694F /* hellTitle.xib */; };
+		D69ACAEC17A274CA00CA5C0E /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
+		D69ACAED17A274CA00CA5C0E /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
+		D69ACAEE17A274CA00CA5C0E /* blank.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47617A169A40007694F /* blank.xib */; };
 		D6D6E47117A161D00007694F /* hellTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47017A161D00007694F /* hellTitle.xib */; };
 		D6D6E47317A1643F0007694F /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
 		D6D6E47517A1672F0007694F /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
@@ -59,6 +92,8 @@
 
 /* Begin PBXFileReference section */
 		1AE75B0BCA544B458C01132B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69ACAF317A274CA00CA5C0E /* DeckPress copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeckPress copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D69ACAF417A274CA00CA5C0E /* DeckPress copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DeckPress copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Boardroom/Client/DeckPress/DeckPress copy-Info.plist"; sourceTree = "<absolute>"; };
 		D6D6E47017A161D00007694F /* hellTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellTitle.xib; sourceTree = "<group>"; };
 		D6D6E47217A1643F0007694F /* hellBody.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellBody.xib; sourceTree = "<group>"; };
 		D6D6E47417A1672F0007694F /* hellSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellSmall.xib; sourceTree = "<group>"; };
@@ -113,6 +148,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D69ACAD617A274CA00CA5C0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69ACAD717A274CA00CA5C0E /* UIKit.framework in Frameworks */,
+				D69ACAD817A274CA00CA5C0E /* Foundation.framework in Frameworks */,
+				D69ACAD917A274CA00CA5C0E /* CoreGraphics.framework in Frameworks */,
+				D69ACADA17A274CA00CA5C0E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6BC1C017730B3C008D17E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +191,7 @@
 				FD6BC1C517730B3C008D17E3 /* Frameworks */,
 				FD6BC1C417730B3C008D17E3 /* Products */,
 				EC15E605E62F46C48B2B9419 /* Pods.xcconfig */,
+				D69ACAF417A274CA00CA5C0E /* DeckPress copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +200,7 @@
 			children = (
 				FD6BC1C317730B3C008D17E3 /* DeckPress.app */,
 				FD6BC1EC17730B3C008D17E3 /* DeckPressTests.octest */,
+				D69ACAF317A274CA00CA5C0E /* DeckPress copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +302,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D69ACAC917A274CA00CA5C0E /* DeckPress local */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D69ACAF017A274CA00CA5C0E /* Build configuration list for PBXNativeTarget "DeckPress local" */;
+			buildPhases = (
+				D69ACACA17A274CA00CA5C0E /* Check Pods Manifest.lock */,
+				D69ACACB17A274CA00CA5C0E /* Sources */,
+				D69ACAD617A274CA00CA5C0E /* Frameworks */,
+				D69ACADB17A274CA00CA5C0E /* Resources */,
+				D69ACAEF17A274CA00CA5C0E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DeckPress local";
+			productName = DeckPress;
+			productReference = D69ACAF317A274CA00CA5C0E /* DeckPress copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FD6BC1C217730B3C008D17E3 /* DeckPress */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD6BC1FE17730B3C008D17E3 /* Build configuration list for PBXNativeTarget "DeckPress" */;
@@ -315,11 +382,38 @@
 			targets = (
 				FD6BC1C217730B3C008D17E3 /* DeckPress */,
 				FD6BC1EB17730B3C008D17E3 /* DeckPressTests */,
+				D69ACAC917A274CA00CA5C0E /* DeckPress local */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D69ACADB17A274CA00CA5C0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69ACADC17A274CA00CA5C0E /* InfoPlist.strings in Resources */,
+				D69ACADD17A274CA00CA5C0E /* Default.png in Resources */,
+				D69ACADE17A274CA00CA5C0E /* Default@2x.png in Resources */,
+				D69ACADF17A274CA00CA5C0E /* Default-568h@2x.png in Resources */,
+				D69ACAE017A274CA00CA5C0E /* MainStoryboard_iPhone.storyboard in Resources */,
+				D69ACAE117A274CA00CA5C0E /* MainStoryboard_iPad.storyboard in Resources */,
+				D69ACAE217A274CA00CA5C0E /* plainTitle.xib in Resources */,
+				D69ACAE317A274CA00CA5C0E /* plainBody.xib in Resources */,
+				D69ACAE417A274CA00CA5C0E /* plainPic.xib in Resources */,
+				D69ACAE517A274CA00CA5C0E /* building.jpg in Resources */,
+				D69ACAE617A274CA00CA5C0E /* yellowy.jpg in Resources */,
+				D69ACAE717A274CA00CA5C0E /* yellowDouble.xib in Resources */,
+				D69ACAE817A274CA00CA5C0E /* MainStoryboard.storyboard in Resources */,
+				D69ACAE917A274CA00CA5C0E /* pageicon.png in Resources */,
+				D69ACAEA17A274CA00CA5C0E /* pageiconopen.png in Resources */,
+				D69ACAEB17A274CA00CA5C0E /* hellTitle.xib in Resources */,
+				D69ACAEC17A274CA00CA5C0E /* hellBody.xib in Resources */,
+				D69ACAED17A274CA00CA5C0E /* hellSmall.xib in Resources */,
+				D69ACAEE17A274CA00CA5C0E /* blank.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6BC1C117730B3C008D17E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +451,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		D69ACACA17A274CA00CA5C0E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		D69ACAEF17A274CA00CA5C0E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		E5F4A4CD27B944C49B9442C7 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +523,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D69ACACB17A274CA00CA5C0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69ACACC17A274CA00CA5C0E /* main.m in Sources */,
+				D69ACACD17A274CA00CA5C0E /* AppDelegate.m in Sources */,
+				D69ACACE17A274CA00CA5C0E /* ViewController.m in Sources */,
+				D69ACACF17A274CA00CA5C0E /* ConnectionViewController.m in Sources */,
+				D69ACAD017A274CA00CA5C0E /* SessionHashViewController.m in Sources */,
+				D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */,
+				D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */,
+				D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */,
+				D69ACAD417A274CA00CA5C0E /* PlayingCard.m in Sources */,
+				D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD6BC1BF17730B3C008D17E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +611,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D69ACAF117A274CA00CA5C0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC15E605E62F46C48B2B9419 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeckPress/DeckPress-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"LOCAL=1",
+				);
+				INFOPLIST_FILE = "DeckPress copy-Info.plist";
+				PRODUCT_NAME = "DeckPress copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D69ACAF217A274CA00CA5C0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC15E605E62F46C48B2B9419 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeckPress/DeckPress-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"LOCAL=1",
+				);
+				INFOPLIST_FILE = "DeckPress copy-Info.plist";
+				PRODUCT_NAME = "DeckPress copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		FD6BC1FC17730B3C008D17E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -591,6 +764,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D69ACAF017A274CA00CA5C0E /* Build configuration list for PBXNativeTarget "DeckPress local" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D69ACAF117A274CA00CA5C0E /* Debug */,
+				D69ACAF217A274CA00CA5C0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD6BC1BE17730B3C008D17E3 /* Build configuration list for PBXProject "DeckPress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

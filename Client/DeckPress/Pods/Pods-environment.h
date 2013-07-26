@@ -19,3 +19,9 @@
 // Please contact the author.
 // Version: 0.1.0.beta1.
 
+// NeoveraColorPicker
+#define COCOAPODS_POD_AVAILABLE_NeoveraColorPicker
+#define COCOAPODS_VERSION_MAJOR_NeoveraColorPicker 1
+#define COCOAPODS_VERSION_MINOR_NeoveraColorPicker 0
+#define COCOAPODS_VERSION_PATCH_NeoveraColorPicker 0
+

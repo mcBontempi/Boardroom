@@ -2,3 +2,4 @@ platform :ios, :deployment_target => '6.1'
 
 pod 'AFNetworking'
 pod 'LXReorderableCollectionViewFlowLayout'
+pod 'NeoveraColorPicker', :git => 'https://github.com/kartech/colorpicker.git'

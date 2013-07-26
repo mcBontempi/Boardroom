@@ -122,9 +122,16 @@
   
   
   _currentView = [_scrollView subviews][0];
-  //http://162.13.5.127:8080
-  //http://localhost:8080
-  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://162.13.5.127:8080"]];
+  
+  NSString *address;
+  
+#if LOCAL
+  address  = @"http://localhost:8080";
+#else
+  address = @"http://162.13.5.127:8080";
+#endif
+  
+  _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:address]];
   
   
   [self tryUpload];

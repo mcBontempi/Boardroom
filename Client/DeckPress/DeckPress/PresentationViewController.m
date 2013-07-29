@@ -270,7 +270,7 @@
   __weak id weakSelf = self;
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
     NSString *response = [operation responseString];
-    //  NSLog(@"response: [%@]",response);
+      NSLog(@"response: [%@]",response);
     NSLog(@"complete");
     
     _uploading = NO;
@@ -279,7 +279,7 @@
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
     NSString *response = [operation responseString];
-    //  NSLog(@"response: [%@]",response);
+      NSLog(@"response: [%@]",response);
     
     NSLog(@"error");
     

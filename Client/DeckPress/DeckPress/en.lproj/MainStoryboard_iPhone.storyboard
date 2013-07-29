@@ -351,6 +351,9 @@
     <classes>
         <class className="ConnectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="connectPressed:"/>
+            </relationships>
         </class>
         <class className="LXReorderableCollectionViewFlowLayout" superclassName="UICollectionViewFlowLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LXReorderableCollectionViewFlowLayout.h"/>
@@ -367,6 +370,9 @@
         </class>
         <class className="PresentationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PresentationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="longPress:"/>
+            </relationships>
         </class>
         <class className="SessionHashViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionHashViewController.h"/>
@@ -382,6 +388,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

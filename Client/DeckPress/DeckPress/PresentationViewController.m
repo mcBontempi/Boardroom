@@ -17,6 +17,7 @@
 
 #import "PlayingCard.h"
 
+
 @implementation PresentationViewController{
   
   __weak IBOutlet UIScrollView *_scrollView;
@@ -118,7 +119,7 @@
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellSmall" owner:self options:nil][0]];
   [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
- 
+  
   
   
   _currentView = [_scrollView subviews][0];
@@ -429,5 +430,23 @@
 #endif
 }
 
+- (IBAction)longPress:(id)sender {
+  NEOColorPickerViewController *controller = [[NEOColorPickerViewController alloc] init];
+  controller.delegate = self;
+  controller.selectedColor = [UIColor redColor];
+  controller.title = @"My dialog title";
+  UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:controller];
+  [self presentViewController:navVC animated:YES completion:nil];
+}
+
+- (void) colorPickerViewController:(NEOColorPickerBaseViewController *)controller didSelectColor:(UIColor *)color {
+  // Do something with the color.
+  _currentView.backgroundColor = color;
+  [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) colorPickerViewControllerDidCancel:(NEOColorPickerBaseViewController *)controller {
+  [controller dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

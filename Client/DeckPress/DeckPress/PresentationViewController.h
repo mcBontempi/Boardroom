@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h>
 
-@interface PresentationViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate, LXReorderableCollectionViewDatasource, LXReorderableCollectionViewDelegate>
+#import <NeoveraColorPicker/NEOColorPickerViewController.h>
+
+@interface PresentationViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate, LXReorderableCollectionViewDatasource, LXReorderableCollectionViewDelegate, NEOColorPickerViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *deck;
 

@@ -102,7 +102,7 @@
 {
   [super viewDidLoad];
   
-  self.deck = [self constructsDeck];
+  self.oldDeck = [self constructsDeck];
   
   _changeCount = 1;
   _uploading = NO;
@@ -377,11 +377,11 @@
 #pragma mark - UICollectionViewDataSource methods
 
 - (NSInteger)collectionView:(UICollectionView *)theCollectionView numberOfItemsInSection:(NSInteger)theSectionIndex {
-  return self.deck.count;
+  return self.oldDeck.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  PlayingCard *playingCard = [self.deck objectAtIndex:indexPath.item];
+  PlayingCard *playingCard = [self.oldDeck objectAtIndex:indexPath.item];
   PlayingCardCell *playingCardCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayingCardCell" forIndexPath:indexPath];
   playingCardCell.playingCard = playingCard;
   
@@ -391,10 +391,10 @@
 #pragma mark - LXReorderableCollectionViewDataSource methods
 
 - (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath willMoveToIndexPath:(NSIndexPath *)toIndexPath {
-  PlayingCard *playingCard = [self.deck objectAtIndex:fromIndexPath.item];
+  PlayingCard *playingCard = [self.oldDeck objectAtIndex:fromIndexPath.item];
   
-  [self.deck removeObjectAtIndex:fromIndexPath.item];
-  [self.deck insertObject:playingCard atIndex:toIndexPath.item];
+  [self.oldDeck removeObjectAtIndex:fromIndexPath.item];
+  [self.oldDeck insertObject:playingCard atIndex:toIndexPath.item];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {

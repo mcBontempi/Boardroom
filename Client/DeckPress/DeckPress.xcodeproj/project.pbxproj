@@ -39,7 +39,12 @@
 		D69ACAEC17A274CA00CA5C0E /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
 		D69ACAED17A274CA00CA5C0E /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
 		D69ACAEE17A274CA00CA5C0E /* blank.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47617A169A40007694F /* blank.xib */; };
-		D69ACBD417A6B25500CA5C0E /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD317A6B25500CA5C0E /* Model.m */; };
+		D69ACBD417A6B25500CA5C0E /* UserDefaultsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */; };
+		D69ACBDA17A6B5F500CA5C0E /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD917A6B5F500CA5C0E /* Deck.m */; };
+		D69ACBDD17A6B60500CA5C0E /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBDC17A6B60500CA5C0E /* Slide.m */; };
+		D69ACBDE17A6B71C00CA5C0E /* UserDefaultsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */; };
+		D69ACBDF17A6B89E00CA5C0E /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD917A6B5F500CA5C0E /* Deck.m */; };
+		D69ACBE017A6B89E00CA5C0E /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBDC17A6B60500CA5C0E /* Slide.m */; };
 		D6D6E47117A161D00007694F /* hellTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47017A161D00007694F /* hellTitle.xib */; };
 		D6D6E47317A1643F0007694F /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
 		D6D6E47517A1672F0007694F /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
@@ -91,8 +96,13 @@
 		1AE75B0BCA544B458C01132B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69ACAF317A274CA00CA5C0E /* DeckPress copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeckPress copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69ACAF417A274CA00CA5C0E /* DeckPress copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DeckPress copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Boardroom/Client/DeckPress/DeckPress copy-Info.plist"; sourceTree = "<absolute>"; };
-		D69ACBD217A6B25500CA5C0E /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = DeckPress/Model.h; sourceTree = "<group>"; };
-		D69ACBD317A6B25500CA5C0E /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = DeckPress/Model.m; sourceTree = "<group>"; };
+		D69ACBD217A6B25500CA5C0E /* UserDefaultsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDefaultsModel.h; path = DeckPress/UserDefaultsModel.h; sourceTree = "<group>"; };
+		D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDefaultsModel.m; path = DeckPress/UserDefaultsModel.m; sourceTree = "<group>"; };
+		D69ACBD717A6B5A000CA5C0E /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Model.h; path = DeckPress/Model.h; sourceTree = "<group>"; };
+		D69ACBD817A6B5F500CA5C0E /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = DeckPress/Deck.h; sourceTree = "<group>"; };
+		D69ACBD917A6B5F500CA5C0E /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = DeckPress/Deck.m; sourceTree = "<group>"; };
+		D69ACBDB17A6B60500CA5C0E /* Slide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slide.h; path = DeckPress/Slide.h; sourceTree = "<group>"; };
+		D69ACBDC17A6B60500CA5C0E /* Slide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slide.m; path = DeckPress/Slide.m; sourceTree = "<group>"; };
 		D6D6E47017A161D00007694F /* hellTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellTitle.xib; sourceTree = "<group>"; };
 		D6D6E47217A1643F0007694F /* hellBody.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellBody.xib; sourceTree = "<group>"; };
 		D6D6E47417A1672F0007694F /* hellSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellSmall.xib; sourceTree = "<group>"; };
@@ -183,8 +193,13 @@
 		FD6BC1BA17730B3C008D17E3 = {
 			isa = PBXGroup;
 			children = (
-				D69ACBD217A6B25500CA5C0E /* Model.h */,
-				D69ACBD317A6B25500CA5C0E /* Model.m */,
+				D69ACBD817A6B5F500CA5C0E /* Deck.h */,
+				D69ACBD917A6B5F500CA5C0E /* Deck.m */,
+				D69ACBDB17A6B60500CA5C0E /* Slide.h */,
+				D69ACBDC17A6B60500CA5C0E /* Slide.m */,
+				D69ACBD717A6B5A000CA5C0E /* Model.h */,
+				D69ACBD217A6B25500CA5C0E /* UserDefaultsModel.h */,
+				D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */,
 				FD6BC1CC17730B3C008D17E3 /* DeckPress */,
 				FD6BC1F317730B3C008D17E3 /* DeckPressTests */,
 				FD6BC1C517730B3C008D17E3 /* Frameworks */,
@@ -530,6 +545,9 @@
 				D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */,
 				D69ACAD417A274CA00CA5C0E /* PlayingCard.m in Sources */,
 				D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */,
+				D69ACBDE17A6B71C00CA5C0E /* UserDefaultsModel.m in Sources */,
+				D69ACBDF17A6B89E00CA5C0E /* Deck.m in Sources */,
+				D69ACBE017A6B89E00CA5C0E /* Slide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +565,9 @@
 				FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */,
 				FDC7FA19177DE20600E7EFD5 /* PlayingCard.m in Sources */,
 				FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */,
-				D69ACBD417A6B25500CA5C0E /* Model.m in Sources */,
+				D69ACBD417A6B25500CA5C0E /* UserDefaultsModel.m in Sources */,
+				D69ACBDA17A6B5F500CA5C0E /* Deck.m in Sources */,
+				D69ACBDD17A6B60500CA5C0E /* Slide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

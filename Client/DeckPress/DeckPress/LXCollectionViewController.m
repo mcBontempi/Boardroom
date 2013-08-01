@@ -7,62 +7,11 @@
 //
 
 #import "LXCollectionViewController.h"
-#import "PlayingCard.h"
 #import "PlayingCardCell.h"
-
-// LX_LIMITED_MOVEMENT:
-// 0 = Any card can move anywhere
-// 1 = Only Spade/Club can move within same rank
 
 #define LX_LIMITED_MOVEMENT 0
 
 @implementation LXCollectionViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.deck = [self constructsDeck];
-}
-
-- (NSMutableArray *)constructsDeck {
-    NSMutableArray *newDeck = [NSMutableArray arrayWithCapacity:52];
-    
-    for (NSInteger rank = 1; rank <= 13; rank++) {
-        // Spade
-        {
-            PlayingCard *playingCard = [[PlayingCard alloc] init];
-            playingCard.suit = PlayingCardSuitSpade;
-            playingCard.rank = rank;
-            [newDeck addObject:playingCard];
-        }
-        
-        // Heart
-        {
-            PlayingCard *playingCard = [[PlayingCard alloc] init];
-            playingCard.suit = PlayingCardSuitHeart;
-            playingCard.rank = rank;
-            [newDeck addObject:playingCard];
-        }
-        
-        // Club
-        {
-            PlayingCard *playingCard = [[PlayingCard alloc] init];
-            playingCard.suit = PlayingCardSuitClub;
-            playingCard.rank = rank;
-            [newDeck addObject:playingCard];
-        }
-        
-        // Diamond
-        {
-            PlayingCard *playingCard = [[PlayingCard alloc] init];
-            playingCard.suit = PlayingCardSuitDiamond;
-            playingCard.rank = rank;
-            [newDeck addObject:playingCard];
-        }
-    }
-    
-    return newDeck;
-}
 
 #pragma mark - UICollectionViewDataSource methods
 

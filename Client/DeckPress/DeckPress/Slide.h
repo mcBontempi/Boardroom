@@ -11,5 +11,6 @@
 @interface Slide : NSObject
 
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) UIImage *cachedImage;
 
 @end

@@ -16,7 +16,6 @@
 		D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20B1773459A008D17E3 /* PresentationViewController.m */; };
 		D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
 		D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
-		D69ACAD417A274CA00CA5C0E /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */; };
 		D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */; };
 		D69ACAD717A274CA00CA5C0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C617730B3C008D17E3 /* UIKit.framework */; };
 		D69ACAD817A274CA00CA5C0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C817730B3C008D17E3 /* Foundation.framework */; };
@@ -76,7 +75,6 @@
 		FD6BC2141773638C008D17E3 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
 		FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
 		FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
-		FDC7FA19177DE20600E7EFD5 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */; };
 		FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */; };
 		FDC7FA1C177DE5E700E7EFD5 /* pageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */; };
 		FDC7FA1E1781C6A300E7EFD5 /* pageiconopen.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1D1781C6A200E7EFD5 /* pageiconopen.png */; };
@@ -146,8 +144,6 @@
 		FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLayoutConstraintBuilder.m; sourceTree = "<group>"; };
 		FDC7FA11177DE20600E7EFD5 /* LXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCollectionViewController.h; sourceTree = "<group>"; };
 		FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCollectionViewController.m; sourceTree = "<group>"; };
-		FDC7FA13177DE20600E7EFD5 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
-		FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
 		FDC7FA15177DE20600E7EFD5 /* PlayingCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardCell.h; sourceTree = "<group>"; };
 		FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardCell.m; sourceTree = "<group>"; };
 		FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pageicon.png; sourceTree = "<group>"; };
@@ -303,8 +299,6 @@
 			children = (
 				FDC7FA11177DE20600E7EFD5 /* LXCollectionViewController.h */,
 				FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */,
-				FDC7FA13177DE20600E7EFD5 /* PlayingCard.h */,
-				FDC7FA14177DE20600E7EFD5 /* PlayingCard.m */,
 				FDC7FA15177DE20600E7EFD5 /* PlayingCardCell.h */,
 				FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */,
 			);
@@ -543,7 +537,6 @@
 				D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */,
 				D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */,
 				D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */,
-				D69ACAD417A274CA00CA5C0E /* PlayingCard.m in Sources */,
 				D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */,
 				D69ACBDE17A6B71C00CA5C0E /* UserDefaultsModel.m in Sources */,
 				D69ACBDF17A6B89E00CA5C0E /* Deck.m in Sources */,
@@ -563,7 +556,6 @@
 				FD6BC20C1773459A008D17E3 /* PresentationViewController.m in Sources */,
 				FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */,
 				FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */,
-				FDC7FA19177DE20600E7EFD5 /* PlayingCard.m in Sources */,
 				FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */,
 				D69ACBD417A6B25500CA5C0E /* UserDefaultsModel.m in Sources */,
 				D69ACBDA17A6B5F500CA5C0E /* Deck.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "PlayingCardCell.h"
-#import "PlayingCard.h"
 
 @implementation PlayingCardCell
 @synthesize playingCard;

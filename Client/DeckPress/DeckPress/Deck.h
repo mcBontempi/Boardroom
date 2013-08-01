@@ -10,8 +10,10 @@
 
 @interface Deck : NSObject
 
-  @property(nonatomic, strong) NSArray *slides;
+  @property(nonatomic, strong) NSMutableArray *slides;
 
 - (void)makeTestData;
+
+- (void)moveFrom:(NSUInteger)from to:(NSUInteger)to;
 
 @end

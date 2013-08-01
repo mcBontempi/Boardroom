@@ -14,8 +14,6 @@
 
 @interface PresentationViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate, LXReorderableCollectionViewDatasource, LXReorderableCollectionViewDelegate, NEOColorPickerViewControllerDelegate>
 
-@property (strong, nonatomic) NSMutableArray *oldDeck;
-
 @property (nonatomic, strong) Deck *deck;
 
 @end

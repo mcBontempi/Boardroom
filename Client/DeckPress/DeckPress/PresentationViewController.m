@@ -13,9 +13,7 @@
 #import "CNLayoutConstraintBuilder.h"
 #import "LXReorderableCollectionViewFlowLayout.h"
 #import "PlayingCardCell.h"
-
-
-#import "PlayingCard.h"
+#import "Slide.h"
 
 
 @implementation PresentationViewController{
@@ -49,60 +47,25 @@
   return self;
 }
 
-- (NSMutableArray *)constructsDeck {
-  NSMutableArray *newDeck = [NSMutableArray arrayWithCapacity:52];
-  
-  {
-    PlayingCard *playingCard = [[PlayingCard alloc] init];
-    playingCard.suit = PlayingCardSuitSpade;
-    [newDeck addObject:playingCard];
-  }
-  
-  // Heart
-  {
-    PlayingCard *playingCard = [[PlayingCard alloc] init];
-    playingCard.suit = PlayingCardSuitHeart;
-    [newDeck addObject:playingCard];
-  }
-  
-  // Club
-  {
-    PlayingCard *playingCard = [[PlayingCard alloc] init];
-    playingCard.suit = PlayingCardSuitClub;
-    [newDeck addObject:playingCard];
-  }
-  
-  // Diamond
-  {
-    PlayingCard *playingCard = [[PlayingCard alloc] init];
-    playingCard.suit = PlayingCardSuitDiamond;
-    [newDeck addObject:playingCard];
-  }
-  
-  // Diamond
-  {
-    PlayingCard *playingCard = [[PlayingCard alloc] init];
-    playingCard.suit = PlayingCardSuitDiamond;
-    [newDeck addObject:playingCard];
-  }
-  
-  
-  // Diamond
-  {
-    PlayingCard *playingCard = [[PlayingCard alloc] init];
-    playingCard.suit = PlayingCardSuitDiamond;
-    [newDeck addObject:playingCard];
-  }
-  
-  return newDeck;
+- (void)refreshScrollViewSlides
+{
+  [self.deck.slides enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    Slide *slide =  self.deck.slides[idx];
+    UIView *slideView = [[UIView alloc] initWithFrame:CGRectMake(0,0,310,174)];
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0,0,310,174)];
+    textView.backgroundColor = [UIColor greenColor];
+    textView.text = slide.text;
+    textView.font = [UIFont fontWithName:@"Helvetica" size:50];
+    textView.autocorrectionType = UITextAutocorrectionTypeNo;
+    textView.scrollEnabled = NO;
+    [slideView addSubview:textView];
+    [_scrollView addSubview:slideView];
+  }];
 }
-
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
-  self.oldDeck = [self constructsDeck];
   
   _changeCount = 1;
   _uploading = NO;
@@ -113,14 +76,7 @@
   _scrollView.pagingEnabled = YES;
   _scrollView.delegate = self;
   
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"blank" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellBody" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellSmall" owner:self options:nil][0]];
-  [_scrollView addSubview:[[NSBundle mainBundle] loadNibNamed:@"hellTitle" owner:self options:nil][0]];
-  
-  
+  [self refreshScrollViewSlides];
   
   _currentView = [_scrollView subviews][0];
   
@@ -149,7 +105,7 @@
     
     [self sendScreenshot];
     
-    NSLog(@"a - send quality %f - page %d" , _quality, _pageNum);
+    //   NSLog(@"a - send quality %f - page %d" , _quality, _pageNum);
   } else if(!_uploading && _quality <2.0 && !_changeCount) {
     _uploading = YES;
     if(_quality == 0.2) _quality = 1.0;
@@ -157,7 +113,7 @@
     
     [self sendScreenshot];
     
-    NSLog(@"b - send quality %f - page %d" , _quality, _pageNum);
+    //    NSLog(@"b - send quality %f - page %d" , _quality, _pageNum);
   }
   
   
@@ -226,7 +182,7 @@
   
   if(pageNum != _pageNum) {
     
-    NSLog(@"%d", pageNum);
+    //   NSLog(@"%d", pageNum);
     _pageNum = pageNum;
     [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:_pageNum inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     
@@ -251,9 +207,14 @@
   if(_collectionView.indexPathsForSelectedItems.count) {
     NSIndexPath *indexPath = _collectionView.indexPathsForSelectedItems[0];
     
-    PlayingCardCell *playingCardCell = (PlayingCardCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+    Slide *slide = self.deck.slides[indexPath.row];
+    slide.cachedImage = image;
     
-    playingCardCell.playingCardImageView.image = image;
+    PlayingCardCell *cell = (PlayingCardCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+    cell.playingCardImageView.image = image;
+    
+    //  [_collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    
   }
   NSData *data = UIImagePNGRepresentation(image);
   
@@ -269,19 +230,19 @@
   
   __weak id weakSelf = self;
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
-    NSString *response = [operation responseString];
-      NSLog(@"response: [%@]",response);
-    NSLog(@"complete");
+    //   NSString *response = [operation responseString];
+    //     NSLog(@"response: [%@]",response);
+    //  NSLog(@"complete");
     
     _uploading = NO;
     
     [weakSelf tryUpload];
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-    NSString *response = [operation responseString];
-      NSLog(@"response: [%@]",response);
+    // NSString *response = [operation responseString];
+    //   NSLog(@"response: [%@]",response);
     
-    NSLog(@"error");
+    //   NSLog(@"error");
     
     _uploading = NO;
     [weakSelf tryUpload];
@@ -377,24 +338,29 @@
 #pragma mark - UICollectionViewDataSource methods
 
 - (NSInteger)collectionView:(UICollectionView *)theCollectionView numberOfItemsInSection:(NSInteger)theSectionIndex {
-  return self.oldDeck.count;
+  return self.deck.slides.count;
 }
 
+
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  PlayingCard *playingCard = [self.oldDeck objectAtIndex:indexPath.item];
   PlayingCardCell *playingCardCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayingCardCell" forIndexPath:indexPath];
-  playingCardCell.playingCard = playingCard;
   
+  Slide *slide = self.deck.slides[indexPath.row];
+  
+  NSLog(@"%@", slide);
+  
+  playingCardCell.playingCardImageView.image = slide.cachedImage;
   return playingCardCell;
 }
 
 #pragma mark - LXReorderableCollectionViewDataSource methods
 
 - (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath willMoveToIndexPath:(NSIndexPath *)toIndexPath {
-  PlayingCard *playingCard = [self.oldDeck objectAtIndex:fromIndexPath.item];
   
-  [self.oldDeck removeObjectAtIndex:fromIndexPath.item];
-  [self.oldDeck insertObject:playingCard atIndex:toIndexPath.item];
+  [self.deck moveFrom:fromIndexPath.item to:toIndexPath.item];
+  
+  [_collectionView reloadData];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {

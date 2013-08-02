@@ -14,6 +14,7 @@
 #import "LXReorderableCollectionViewFlowLayout.h"
 #import "PlayingCardCell.h"
 #import "Slide.h"
+#import "EditSlideCell.h"
 
 
 @implementation PresentationViewController{
@@ -21,8 +22,10 @@
   __weak IBOutlet UIScrollView *_scrollView;
   
   __weak IBOutlet UICollectionView *_collectionView;
+  __weak IBOutlet UICollectionView *_editCollectionView;
   UIView *_currentView;
   
+  __weak IBOutlet UICollectionViewFlowLayout *_flowLayout;
   NSTimer *_timer;
   AFHTTPClient *_client;
   
@@ -89,6 +92,7 @@
 #endif
   
   _client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:address]];
+  
   
   
   [self tryUpload];
@@ -319,21 +323,14 @@
   [self performSelector:@selector(delayedTextChange) withObject:nil afterDelay:0.1];
 }
 
-
-
-
+#pragma mark - UICollectionViewDelegate methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  CGRect rect = CGRectMake(indexPath.row*320,0,320,174);
-  
-  
-  [_scrollView scrollRectToVisible:rect animated:YES];
-  
-  
+  if (_collectionView == collectionView) {
+    [_editCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+  }
 }
-
-
 
 #pragma mark - UICollectionViewDataSource methods
 
@@ -341,17 +338,29 @@
   return self.deck.slides.count;
 }
 
-
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  PlayingCardCell *playingCardCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayingCardCell" forIndexPath:indexPath];
   
-  Slide *slide = self.deck.slides[indexPath.row];
-  
-  NSLog(@"%@", slide);
-  
-  playingCardCell.playingCardImageView.image = slide.cachedImage;
-  return playingCardCell;
+  if(collectionView == _collectionView) {
+    PlayingCardCell *playingCardCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PlayingCardCell" forIndexPath:indexPath];
+    
+    Slide *slide = self.deck.slides[indexPath.row];
+    
+    NSLog(@"%@", slide);
+    
+    playingCardCell.playingCardImageView.image = slide.cachedImage;
+    return playingCardCell;
+  }
+  else {
+    EditSlideCell *editSlideCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EditSlideCellIdentifier" forIndexPath:indexPath];
+    
+    Slide *slide = self.deck.slides[indexPath.row];
+    
+    
+    
+    editSlideCell.slide = slide;
+    return editSlideCell;
+    
+  }
 }
 
 #pragma mark - LXReorderableCollectionViewDataSource methods

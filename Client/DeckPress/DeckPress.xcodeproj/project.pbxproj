@@ -74,6 +74,7 @@
 		FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC211177362DB008D17E3 /* plainPic.xib */; };
 		FD6BC2141773638C008D17E3 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
 		FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
+		FDA8E5A117ABFCFB00F39862 /* EditSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */; };
 		FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
 		FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */; };
 		FDC7FA1C177DE5E700E7EFD5 /* pageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */; };
@@ -142,6 +143,8 @@
 		FD6BC2131773638C008D17E3 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
 		FD6BC21517737C6D008D17E3 /* CNLayoutConstraintBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLayoutConstraintBuilder.h; sourceTree = "<group>"; };
 		FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLayoutConstraintBuilder.m; sourceTree = "<group>"; };
+		FDA8E59F17ABFCFB00F39862 /* EditSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditSlideCell.h; path = DeckPress/EditSlideCell.h; sourceTree = "<group>"; };
+		FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditSlideCell.m; path = DeckPress/EditSlideCell.m; sourceTree = "<group>"; };
 		FDC7FA11177DE20600E7EFD5 /* LXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCollectionViewController.h; sourceTree = "<group>"; };
 		FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCollectionViewController.m; sourceTree = "<group>"; };
 		FDC7FA15177DE20600E7EFD5 /* PlayingCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardCell.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 		FD6BC1BA17730B3C008D17E3 = {
 			isa = PBXGroup;
 			children = (
+				FDA8E59F17ABFCFB00F39862 /* EditSlideCell.h */,
+				FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */,
 				D69ACBD817A6B5F500CA5C0E /* Deck.h */,
 				D69ACBD917A6B5F500CA5C0E /* Deck.m */,
 				D69ACBDB17A6B60500CA5C0E /* Slide.h */,
@@ -550,6 +555,7 @@
 			files = (
 				FD6BC1D317730B3C008D17E3 /* main.m in Sources */,
 				FD6BC1D717730B3C008D17E3 /* AppDelegate.m in Sources */,
+				FDA8E5A117ABFCFB00F39862 /* EditSlideCell.m in Sources */,
 				FD6BC1E617730B3C008D17E3 /* ViewController.m in Sources */,
 				FD6BC20617732B5A008D17E3 /* ConnectionViewController.m in Sources */,
 				FD6BC20917733674008D17E3 /* SessionHashViewController.m in Sources */,
@@ -655,7 +661,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: daren taylor (7RBFWSSDU9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daren taylor (7RBFWSSDU9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -687,7 +694,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: daren taylor (7RBFWSSDU9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daren taylor (7RBFWSSDU9)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

@@ -19,7 +19,17 @@
 
 - (void)uploadSlide:(Slide *)slide
 {
-  [_queue]
+  assert(0);
+}
+
+- (void)uploadView:(UIView *)view
+{
+//  [_queue reset];
+  
+  UploadOperation *uploadOperation = [[UploadOperation alloc] initWithView:view];
+ 
+  [_queue addOperation:uploadOperation];
+  
 }
 
 @end

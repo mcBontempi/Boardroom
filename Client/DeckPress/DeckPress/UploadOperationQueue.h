@@ -13,4 +13,6 @@
 
 - (void)addOperation:(NSOperation *)operation;
 
+- (void)reset;
+
 @end

@@ -7,7 +7,4 @@
 @property (nonatomic, strong) Slide *slide;
 @property (nonatomic, weak) id<EditSlideCellDelegate> delegate;
 
-
-
-
 @end

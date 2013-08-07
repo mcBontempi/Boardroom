@@ -10,4 +10,6 @@
 
 @interface Uploader : NSObject
 
+- (void)uploadView:(UIView *)view;
+
 @end

@@ -7,6 +7,32 @@
 @end
 
 @implementation DeckViewController
+{
+  NSInteger _pageNum;
+}
+
+- (void)awakeFromNib
+{
+  [super awakeFromNib];
+  
+  UIScrollView *scrollView = self.collectionView;
+  scrollView.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  
+  [self uploadSlide:0];
+}
+
+- (void)uploadSlide:(NSUInteger)index
+{
+  EditSlideCell *editSlideCell = (EditSlideCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+  
+  [self.uploader uploadView:editSlideCell.contentView];
+
+}
 
 #pragma mark - UICollectionViewDataSource methods
 
@@ -20,8 +46,7 @@
   EditSlideCell *editSlideCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EditSlideCellIdentifier" forIndexPath:indexPath];
  
   editSlideCell.delegate = self;
-  Slide *slide = self.deck.slides[indexPath.row];
-  editSlideCell.slide = slide;
+  editSlideCell.slide = self.deck.slides[indexPath.row];
   
   return editSlideCell;
 }
@@ -44,6 +69,32 @@
 
 - (void)slideChanged:(Slide *)slide
 {
+  
+}
+
+- (void)viewChanged:(UIView *)view
+{
+  [_uploader uploadView:view];
+}
+
+
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+  
+  UIScrollView *scrollView = self.collectionView;
+  
+  int pageNum = (int)((scrollView.contentOffset.x+(scrollView.frame.size.width/2) ) / scrollView.frame.size.width);
+ 
+  NSLog(@"pageNum %d", pageNum);
+  
+  if(pageNum != _pageNum) {
+    _pageNum = pageNum;
+
+    [self uploadSlide:_pageNum];
+  }
+  
   
 }
 

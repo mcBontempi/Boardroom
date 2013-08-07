@@ -18,13 +18,17 @@
   if (self = [super init]) {
     _operationQueue = [[NSOperationQueue alloc] init];
   }
-  
   return self;
 }
 
 - (void)addOperation:(NSOperation *)operation
 {
   [_operationQueue addOperation:operation];
+}
+
+- (void)reset
+{
+  [_operationQueue cancelAllOperations];
 }
 
 @end

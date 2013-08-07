@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1063E5BAECF74579A1154E05 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE75B0BCA544B458C01132B /* libPods.a */; };
+		D638662417B2715D008ACB5B /* ImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D638662317B2715D008ACB5B /* ImageMaker.m */; };
+		D638662517B2715D008ACB5B /* ImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D638662317B2715D008ACB5B /* ImageMaker.m */; };
+		D638662617B272C4008ACB5B /* Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD95A3CB17B040030041CB69 /* Uploader.m */; };
+		D638662717B27310008ACB5B /* UploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD95A3C817B038750041CB69 /* UploadOperation.m */; };
 		D69ACACC17A274CA00CA5C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1D217730B3C008D17E3 /* main.m */; };
 		D69ACACD17A274CA00CA5C0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1D617730B3C008D17E3 /* AppDelegate.m */; };
 		D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20B1773459A008D17E3 /* PresentationViewController.m */; };
@@ -78,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		1AE75B0BCA544B458C01132B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D638662217B2715D008ACB5B /* ImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageMaker.h; path = DeckPress/ImageMaker.h; sourceTree = "<group>"; };
+		D638662317B2715D008ACB5B /* ImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageMaker.m; path = DeckPress/ImageMaker.m; sourceTree = "<group>"; };
 		D69ACAF317A274CA00CA5C0E /* DeckPress copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeckPress copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69ACAF417A274CA00CA5C0E /* DeckPress copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DeckPress copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Boardroom/Client/DeckPress/DeckPress copy-Info.plist"; sourceTree = "<absolute>"; };
 		D69ACBD217A6B25500CA5C0E /* UserDefaultsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDefaultsModel.h; path = DeckPress/UserDefaultsModel.h; sourceTree = "<group>"; };
@@ -173,6 +179,8 @@
 		FD6BC1BA17730B3C008D17E3 = {
 			isa = PBXGroup;
 			children = (
+				D638662217B2715D008ACB5B /* ImageMaker.h */,
+				D638662317B2715D008ACB5B /* ImageMaker.m */,
 				FD95A3CA17B040030041CB69 /* Uploader.h */,
 				FD95A3CB17B040030041CB69 /* Uploader.m */,
 				FD95A3C717B038750041CB69 /* UploadOperation.h */,
@@ -182,7 +190,6 @@
 				FDC18D8917AFB98300538387 /* EditSlideCellDelegate.h */,
 				FDC18D8517AFB3AB00538387 /* DPCollectionViewLayout.h */,
 				FDC18D8617AFB3AB00538387 /* DPCollectionViewLayout.m */,
-				FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */,
 				FDA9359B17AF9F8100EB5B5A /* DeckViewController.h */,
 				FDA9359C17AF9F8100EB5B5A /* DeckViewController.m */,
 				FDA8E59F17ABFCFB00F39862 /* EditSlideCell.h */,
@@ -194,6 +201,7 @@
 				D69ACBD717A6B5A000CA5C0E /* Model.h */,
 				D69ACBD217A6B25500CA5C0E /* UserDefaultsModel.h */,
 				D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */,
+				FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */,
 				FD6BC1CC17730B3C008D17E3 /* DeckPress */,
 				FD6BC1F317730B3C008D17E3 /* DeckPressTests */,
 				FD6BC1C517730B3C008D17E3 /* Frameworks */,
@@ -495,12 +503,15 @@
 			files = (
 				D69ACACC17A274CA00CA5C0E /* main.m in Sources */,
 				D69ACACD17A274CA00CA5C0E /* AppDelegate.m in Sources */,
+				D638662717B27310008ACB5B /* UploadOperation.m in Sources */,
+				D638662617B272C4008ACB5B /* Uploader.m in Sources */,
 				FDC18D8D17AFBC9B00538387 /* UploadOperationQueue.m in Sources */,
 				D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */,
 				D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */,
 				FDAD6EEA17AFA73C0040B9EE /* EditSlideCell.m in Sources */,
 				D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */,
 				D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */,
+				D638662517B2715D008ACB5B /* ImageMaker.m in Sources */,
 				D69ACBDE17A6B71C00CA5C0E /* UserDefaultsModel.m in Sources */,
 				FDC18D8817AFB3AB00538387 /* DPCollectionViewLayout.m in Sources */,
 				D69ACBDF17A6B89E00CA5C0E /* Deck.m in Sources */,
@@ -523,6 +534,7 @@
 				FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */,
 				FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */,
 				FDA9359D17AF9F8100EB5B5A /* DeckViewController.m in Sources */,
+				D638662417B2715D008ACB5B /* ImageMaker.m in Sources */,
 				FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */,
 				FDC18D8717AFB3AB00538387 /* DPCollectionViewLayout.m in Sources */,
 				D69ACBD417A6B25500CA5C0E /* UserDefaultsModel.m in Sources */,

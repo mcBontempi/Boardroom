@@ -4,5 +4,6 @@
 @protocol EditSlideCellDelegate <NSObject>
 
 - (void)slideChanged:(Slide *)slide;
+- (void)viewChanged:(UIView *)view;
 
 @end

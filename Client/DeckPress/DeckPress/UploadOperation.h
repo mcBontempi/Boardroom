@@ -2,4 +2,6 @@
 
 @interface UploadOperation : NSOperation
 
+- (id)initWithView:(UIView *)view;
+
 @end

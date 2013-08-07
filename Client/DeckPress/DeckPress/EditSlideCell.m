@@ -19,7 +19,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-  if (self = [super init]) {
+  if (self = [super initWithCoder:aDecoder]) {
     _textView.delegate = self;
   }
   return self;
@@ -27,7 +27,14 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-  [self.delegate slideChanged:self.slide];
+ // [self.delegate slideChanged:self.slide];
+  _slide.text = _textView.text;
+  [self.delegate viewChanged:self.contentView];
+}
+
+- (void)setSlide:(Slide *)slide
+{
+  _textView.text = slide.text;
 }
 
 

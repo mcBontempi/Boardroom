@@ -8,19 +8,27 @@
 
 #import "EditSlideCell.h"
 
+@interface EditSlideCell () <UITextViewDelegate>
+
+@end
+
 @implementation EditSlideCell
 {
-  
-  
+  __weak IBOutlet UITextView *_textView;
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+  if (self = [super init]) {
+    _textView.delegate = self;
+  }
+  return self;
 }
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+  [self.delegate slideChanged:self.slide];
+}
+
 
 @end

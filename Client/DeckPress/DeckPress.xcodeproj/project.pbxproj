@@ -10,9 +10,6 @@
 		1063E5BAECF74579A1154E05 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE75B0BCA544B458C01132B /* libPods.a */; };
 		D69ACACC17A274CA00CA5C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1D217730B3C008D17E3 /* main.m */; };
 		D69ACACD17A274CA00CA5C0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1D617730B3C008D17E3 /* AppDelegate.m */; };
-		D69ACACE17A274CA00CA5C0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1E517730B3C008D17E3 /* ViewController.m */; };
-		D69ACACF17A274CA00CA5C0E /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */; };
-		D69ACAD017A274CA00CA5C0E /* SessionHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20817733674008D17E3 /* SessionHashViewController.m */; };
 		D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20B1773459A008D17E3 /* PresentationViewController.m */; };
 		D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
 		D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
@@ -26,30 +23,16 @@
 		D69ACADE17A274CA00CA5C0E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DA17730B3C008D17E3 /* Default@2x.png */; };
 		D69ACADF17A274CA00CA5C0E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DC17730B3C008D17E3 /* Default-568h@2x.png */; };
 		D69ACAE017A274CA00CA5C0E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */; };
-		D69ACAE217A274CA00CA5C0E /* plainTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20D17735861008D17E3 /* plainTitle.xib */; };
-		D69ACAE317A274CA00CA5C0E /* plainBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20F17735DEE008D17E3 /* plainBody.xib */; };
-		D69ACAE417A274CA00CA5C0E /* plainPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC211177362DB008D17E3 /* plainPic.xib */; };
-		D69ACAE517A274CA00CA5C0E /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
 		D69ACAE617A274CA00CA5C0E /* yellowy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC71779300F008BEECC /* yellowy.jpg */; };
-		D69ACAE717A274CA00CA5C0E /* yellowDouble.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC917793042008BEECC /* yellowDouble.xib */; };
 		D69ACAE917A274CA00CA5C0E /* pageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */; };
 		D69ACAEA17A274CA00CA5C0E /* pageiconopen.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1D1781C6A200E7EFD5 /* pageiconopen.png */; };
-		D69ACAEB17A274CA00CA5C0E /* hellTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47017A161D00007694F /* hellTitle.xib */; };
-		D69ACAEC17A274CA00CA5C0E /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
-		D69ACAED17A274CA00CA5C0E /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
-		D69ACAEE17A274CA00CA5C0E /* blank.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47617A169A40007694F /* blank.xib */; };
 		D69ACBD417A6B25500CA5C0E /* UserDefaultsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */; };
 		D69ACBDA17A6B5F500CA5C0E /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD917A6B5F500CA5C0E /* Deck.m */; };
 		D69ACBDD17A6B60500CA5C0E /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBDC17A6B60500CA5C0E /* Slide.m */; };
 		D69ACBDE17A6B71C00CA5C0E /* UserDefaultsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD317A6B25500CA5C0E /* UserDefaultsModel.m */; };
 		D69ACBDF17A6B89E00CA5C0E /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBD917A6B5F500CA5C0E /* Deck.m */; };
 		D69ACBE017A6B89E00CA5C0E /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = D69ACBDC17A6B60500CA5C0E /* Slide.m */; };
-		D6D6E47117A161D00007694F /* hellTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47017A161D00007694F /* hellTitle.xib */; };
-		D6D6E47317A1643F0007694F /* hellBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47217A1643F0007694F /* hellBody.xib */; };
-		D6D6E47517A1672F0007694F /* hellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47417A1672F0007694F /* hellSmall.xib */; };
-		D6D6E47717A169A40007694F /* blank.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6D6E47617A169A40007694F /* blank.xib */; };
 		FD1CAEC81779300F008BEECC /* yellowy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC71779300F008BEECC /* yellowy.jpg */; };
-		FD1CAECA17793042008BEECC /* yellowDouble.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAEC917793042008BEECC /* yellowDouble.xib */; };
 		FD6BC1C717730B3C008D17E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C617730B3C008D17E3 /* UIKit.framework */; };
 		FD6BC1C917730B3C008D17E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C817730B3C008D17E3 /* Foundation.framework */; };
 		FD6BC1CB17730B3C008D17E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1CA17730B3C008D17E3 /* CoreGraphics.framework */; };
@@ -60,21 +43,23 @@
 		FD6BC1DB17730B3C008D17E3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DA17730B3C008D17E3 /* Default@2x.png */; };
 		FD6BC1DD17730B3C008D17E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DC17730B3C008D17E3 /* Default-568h@2x.png */; };
 		FD6BC1E017730B3C008D17E3 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */; };
-		FD6BC1E617730B3C008D17E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1E517730B3C008D17E3 /* ViewController.m */; };
 		FD6BC1EE17730B3C008D17E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1ED17730B3C008D17E3 /* SenTestingKit.framework */; };
 		FD6BC1EF17730B3C008D17E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C617730B3C008D17E3 /* UIKit.framework */; };
 		FD6BC1F017730B3C008D17E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC1C817730B3C008D17E3 /* Foundation.framework */; };
 		FD6BC1F817730B3C008D17E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC1F617730B3C008D17E3 /* InfoPlist.strings */; };
 		FD6BC1FB17730B3C008D17E3 /* DeckPressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC1FA17730B3C008D17E3 /* DeckPressTests.m */; };
-		FD6BC20617732B5A008D17E3 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */; };
-		FD6BC20917733674008D17E3 /* SessionHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20817733674008D17E3 /* SessionHashViewController.m */; };
 		FD6BC20C1773459A008D17E3 /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC20B1773459A008D17E3 /* PresentationViewController.m */; };
-		FD6BC20E17735861008D17E3 /* plainTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20D17735861008D17E3 /* plainTitle.xib */; };
-		FD6BC21017735DEE008D17E3 /* plainBody.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC20F17735DEE008D17E3 /* plainBody.xib */; };
-		FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC211177362DB008D17E3 /* plainPic.xib */; };
-		FD6BC2141773638C008D17E3 /* building.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6BC2131773638C008D17E3 /* building.jpg */; };
 		FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */; };
+		FD95A3C917B038750041CB69 /* UploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD95A3C817B038750041CB69 /* UploadOperation.m */; };
+		FD95A3CC17B040030041CB69 /* Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD95A3CB17B040030041CB69 /* Uploader.m */; };
 		FDA8E5A117ABFCFB00F39862 /* EditSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */; };
+		FDA9359D17AF9F8100EB5B5A /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA9359C17AF9F8100EB5B5A /* DeckViewController.m */; };
+		FDA9359E17AF9F8100EB5B5A /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA9359C17AF9F8100EB5B5A /* DeckViewController.m */; };
+		FDAD6EEA17AFA73C0040B9EE /* EditSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */; };
+		FDC18D8717AFB3AB00538387 /* DPCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC18D8617AFB3AB00538387 /* DPCollectionViewLayout.m */; };
+		FDC18D8817AFB3AB00538387 /* DPCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC18D8617AFB3AB00538387 /* DPCollectionViewLayout.m */; };
+		FDC18D8C17AFBC9B00538387 /* UploadOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC18D8B17AFBC9B00538387 /* UploadOperationQueue.m */; };
+		FDC18D8D17AFBC9B00538387 /* UploadOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC18D8B17AFBC9B00538387 /* UploadOperationQueue.m */; };
 		FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */; };
 		FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7FA16177DE20600E7EFD5 /* PlayingCardCell.m */; };
 		FDC7FA1C177DE5E700E7EFD5 /* pageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC7FA1B177DE5E700E7EFD5 /* pageicon.png */; };
@@ -102,13 +87,8 @@
 		D69ACBD917A6B5F500CA5C0E /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = DeckPress/Deck.m; sourceTree = "<group>"; };
 		D69ACBDB17A6B60500CA5C0E /* Slide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slide.h; path = DeckPress/Slide.h; sourceTree = "<group>"; };
 		D69ACBDC17A6B60500CA5C0E /* Slide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slide.m; path = DeckPress/Slide.m; sourceTree = "<group>"; };
-		D6D6E47017A161D00007694F /* hellTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellTitle.xib; sourceTree = "<group>"; };
-		D6D6E47217A1643F0007694F /* hellBody.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellBody.xib; sourceTree = "<group>"; };
-		D6D6E47417A1672F0007694F /* hellSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hellSmall.xib; sourceTree = "<group>"; };
-		D6D6E47617A169A40007694F /* blank.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = blank.xib; sourceTree = "<group>"; };
 		EC15E605E62F46C48B2B9419 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FD1CAEC71779300F008BEECC /* yellowy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellowy.jpg; sourceTree = "<group>"; };
-		FD1CAEC917793042008BEECC /* yellowDouble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = yellowDouble.xib; sourceTree = "<group>"; };
 		FD6BC1C317730B3C008D17E3 /* DeckPress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckPress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6BC1C617730B3C008D17E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD6BC1C817730B3C008D17E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,28 +103,29 @@
 		FD6BC1DA17730B3C008D17E3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FD6BC1DC17730B3C008D17E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FD6BC1DF17730B3C008D17E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		FD6BC1E417730B3C008D17E3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FD6BC1E517730B3C008D17E3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FD6BC1EC17730B3C008D17E3 /* DeckPressTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeckPressTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6BC1ED17730B3C008D17E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FD6BC1F517730B3C008D17E3 /* DeckPressTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeckPressTests-Info.plist"; sourceTree = "<group>"; };
 		FD6BC1F717730B3C008D17E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD6BC1F917730B3C008D17E3 /* DeckPressTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckPressTests.h; sourceTree = "<group>"; };
 		FD6BC1FA17730B3C008D17E3 /* DeckPressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckPressTests.m; sourceTree = "<group>"; };
-		FD6BC20417732B5A008D17E3 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
-		FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
-		FD6BC20717733674008D17E3 /* SessionHashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionHashViewController.h; sourceTree = "<group>"; };
-		FD6BC20817733674008D17E3 /* SessionHashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHashViewController.m; sourceTree = "<group>"; };
 		FD6BC20A1773459A008D17E3 /* PresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationViewController.h; sourceTree = "<group>"; };
 		FD6BC20B1773459A008D17E3 /* PresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationViewController.m; sourceTree = "<group>"; };
-		FD6BC20D17735861008D17E3 /* plainTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = plainTitle.xib; sourceTree = "<group>"; };
-		FD6BC20F17735DEE008D17E3 /* plainBody.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = plainBody.xib; sourceTree = "<group>"; };
-		FD6BC211177362DB008D17E3 /* plainPic.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = plainPic.xib; sourceTree = "<group>"; };
-		FD6BC2131773638C008D17E3 /* building.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building.jpg; sourceTree = "<group>"; };
 		FD6BC21517737C6D008D17E3 /* CNLayoutConstraintBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLayoutConstraintBuilder.h; sourceTree = "<group>"; };
 		FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLayoutConstraintBuilder.m; sourceTree = "<group>"; };
+		FD95A3C717B038750041CB69 /* UploadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadOperation.h; path = DeckPress/UploadOperation.h; sourceTree = "<group>"; };
+		FD95A3C817B038750041CB69 /* UploadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadOperation.m; path = DeckPress/UploadOperation.m; sourceTree = "<group>"; };
+		FD95A3CA17B040030041CB69 /* Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Uploader.h; sourceTree = "<group>"; };
+		FD95A3CB17B040030041CB69 /* Uploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Uploader.m; sourceTree = "<group>"; };
 		FDA8E59F17ABFCFB00F39862 /* EditSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditSlideCell.h; path = DeckPress/EditSlideCell.h; sourceTree = "<group>"; };
 		FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditSlideCell.m; path = DeckPress/EditSlideCell.m; sourceTree = "<group>"; };
+		FDA9359B17AF9F8100EB5B5A /* DeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeckViewController.h; path = DeckPress/DeckViewController.h; sourceTree = "<group>"; };
+		FDA9359C17AF9F8100EB5B5A /* DeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeckViewController.m; path = DeckPress/DeckViewController.m; sourceTree = "<group>"; };
+		FDC18D8517AFB3AB00538387 /* DPCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPCollectionViewLayout.h; path = DeckPress/DPCollectionViewLayout.h; sourceTree = "<group>"; };
+		FDC18D8617AFB3AB00538387 /* DPCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPCollectionViewLayout.m; path = DeckPress/DPCollectionViewLayout.m; sourceTree = "<group>"; };
+		FDC18D8917AFB98300538387 /* EditSlideCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EditSlideCellDelegate.h; path = DeckPress/EditSlideCellDelegate.h; sourceTree = "<group>"; };
+		FDC18D8A17AFBC9B00538387 /* UploadOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadOperationQueue.h; path = DeckPress/UploadOperationQueue.h; sourceTree = "<group>"; };
+		FDC18D8B17AFBC9B00538387 /* UploadOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadOperationQueue.m; path = DeckPress/UploadOperationQueue.m; sourceTree = "<group>"; };
 		FDC7FA11177DE20600E7EFD5 /* LXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCollectionViewController.h; sourceTree = "<group>"; };
 		FDC7FA12177DE20600E7EFD5 /* LXCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCollectionViewController.m; sourceTree = "<group>"; };
 		FDC7FA15177DE20600E7EFD5 /* PlayingCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardCell.h; sourceTree = "<group>"; };
@@ -192,6 +173,18 @@
 		FD6BC1BA17730B3C008D17E3 = {
 			isa = PBXGroup;
 			children = (
+				FD95A3CA17B040030041CB69 /* Uploader.h */,
+				FD95A3CB17B040030041CB69 /* Uploader.m */,
+				FD95A3C717B038750041CB69 /* UploadOperation.h */,
+				FD95A3C817B038750041CB69 /* UploadOperation.m */,
+				FDC18D8A17AFBC9B00538387 /* UploadOperationQueue.h */,
+				FDC18D8B17AFBC9B00538387 /* UploadOperationQueue.m */,
+				FDC18D8917AFB98300538387 /* EditSlideCellDelegate.h */,
+				FDC18D8517AFB3AB00538387 /* DPCollectionViewLayout.h */,
+				FDC18D8617AFB3AB00538387 /* DPCollectionViewLayout.m */,
+				FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */,
+				FDA9359B17AF9F8100EB5B5A /* DeckViewController.h */,
+				FDA9359C17AF9F8100EB5B5A /* DeckViewController.m */,
 				FDA8E59F17ABFCFB00F39862 /* EditSlideCell.h */,
 				FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */,
 				D69ACBD817A6B5F500CA5C0E /* Deck.h */,
@@ -238,25 +231,9 @@
 				FDC7FA0F177DE1CD00E7EFD5 /* ExistingFlowCode */,
 				FD6BC1D517730B3C008D17E3 /* AppDelegate.h */,
 				FD6BC1D617730B3C008D17E3 /* AppDelegate.m */,
-				FD6BC1DE17730B3C008D17E3 /* MainStoryboard_iPhone.storyboard */,
-				FD6BC1E417730B3C008D17E3 /* ViewController.h */,
-				FD6BC1E517730B3C008D17E3 /* ViewController.m */,
 				FD6BC1CD17730B3C008D17E3 /* Supporting Files */,
-				FD6BC20417732B5A008D17E3 /* ConnectionViewController.h */,
-				FD6BC20517732B5A008D17E3 /* ConnectionViewController.m */,
-				FD6BC20717733674008D17E3 /* SessionHashViewController.h */,
-				FD6BC20817733674008D17E3 /* SessionHashViewController.m */,
 				FD6BC20A1773459A008D17E3 /* PresentationViewController.h */,
 				FD6BC20B1773459A008D17E3 /* PresentationViewController.m */,
-				D6D6E47617A169A40007694F /* blank.xib */,
-				D6D6E47417A1672F0007694F /* hellSmall.xib */,
-				D6D6E47017A161D00007694F /* hellTitle.xib */,
-				D6D6E47217A1643F0007694F /* hellBody.xib */,
-				FD6BC20D17735861008D17E3 /* plainTitle.xib */,
-				FD6BC20F17735DEE008D17E3 /* plainBody.xib */,
-				FD6BC211177362DB008D17E3 /* plainPic.xib */,
-				FD1CAEC917793042008BEECC /* yellowDouble.xib */,
-				FD6BC2131773638C008D17E3 /* building.jpg */,
 				FD6BC21517737C6D008D17E3 /* CNLayoutConstraintBuilder.h */,
 				FD6BC21617737C6D008D17E3 /* CNLayoutConstraintBuilder.m */,
 				FD1CAEC71779300F008BEECC /* yellowy.jpg */,
@@ -408,18 +385,9 @@
 				D69ACADE17A274CA00CA5C0E /* Default@2x.png in Resources */,
 				D69ACADF17A274CA00CA5C0E /* Default-568h@2x.png in Resources */,
 				D69ACAE017A274CA00CA5C0E /* MainStoryboard_iPhone.storyboard in Resources */,
-				D69ACAE217A274CA00CA5C0E /* plainTitle.xib in Resources */,
-				D69ACAE317A274CA00CA5C0E /* plainBody.xib in Resources */,
-				D69ACAE417A274CA00CA5C0E /* plainPic.xib in Resources */,
-				D69ACAE517A274CA00CA5C0E /* building.jpg in Resources */,
 				D69ACAE617A274CA00CA5C0E /* yellowy.jpg in Resources */,
-				D69ACAE717A274CA00CA5C0E /* yellowDouble.xib in Resources */,
 				D69ACAE917A274CA00CA5C0E /* pageicon.png in Resources */,
 				D69ACAEA17A274CA00CA5C0E /* pageiconopen.png in Resources */,
-				D69ACAEB17A274CA00CA5C0E /* hellTitle.xib in Resources */,
-				D69ACAEC17A274CA00CA5C0E /* hellBody.xib in Resources */,
-				D69ACAED17A274CA00CA5C0E /* hellSmall.xib in Resources */,
-				D69ACAEE17A274CA00CA5C0E /* blank.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,18 +400,9 @@
 				FD6BC1DB17730B3C008D17E3 /* Default@2x.png in Resources */,
 				FD6BC1DD17730B3C008D17E3 /* Default-568h@2x.png in Resources */,
 				FD6BC1E017730B3C008D17E3 /* MainStoryboard_iPhone.storyboard in Resources */,
-				FD6BC20E17735861008D17E3 /* plainTitle.xib in Resources */,
-				FD6BC21017735DEE008D17E3 /* plainBody.xib in Resources */,
-				FD6BC212177362DB008D17E3 /* plainPic.xib in Resources */,
-				FD6BC2141773638C008D17E3 /* building.jpg in Resources */,
 				FD1CAEC81779300F008BEECC /* yellowy.jpg in Resources */,
-				FD1CAECA17793042008BEECC /* yellowDouble.xib in Resources */,
 				FDC7FA1C177DE5E700E7EFD5 /* pageicon.png in Resources */,
 				FDC7FA1E1781C6A300E7EFD5 /* pageiconopen.png in Resources */,
-				D6D6E47117A161D00007694F /* hellTitle.xib in Resources */,
-				D6D6E47317A1643F0007694F /* hellBody.xib in Resources */,
-				D6D6E47517A1672F0007694F /* hellSmall.xib in Resources */,
-				D6D6E47717A169A40007694F /* blank.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,15 +495,16 @@
 			files = (
 				D69ACACC17A274CA00CA5C0E /* main.m in Sources */,
 				D69ACACD17A274CA00CA5C0E /* AppDelegate.m in Sources */,
-				D69ACACE17A274CA00CA5C0E /* ViewController.m in Sources */,
-				D69ACACF17A274CA00CA5C0E /* ConnectionViewController.m in Sources */,
-				D69ACAD017A274CA00CA5C0E /* SessionHashViewController.m in Sources */,
+				FDC18D8D17AFBC9B00538387 /* UploadOperationQueue.m in Sources */,
 				D69ACAD117A274CA00CA5C0E /* PresentationViewController.m in Sources */,
 				D69ACAD217A274CA00CA5C0E /* CNLayoutConstraintBuilder.m in Sources */,
+				FDAD6EEA17AFA73C0040B9EE /* EditSlideCell.m in Sources */,
 				D69ACAD317A274CA00CA5C0E /* LXCollectionViewController.m in Sources */,
 				D69ACAD517A274CA00CA5C0E /* PlayingCardCell.m in Sources */,
 				D69ACBDE17A6B71C00CA5C0E /* UserDefaultsModel.m in Sources */,
+				FDC18D8817AFB3AB00538387 /* DPCollectionViewLayout.m in Sources */,
 				D69ACBDF17A6B89E00CA5C0E /* Deck.m in Sources */,
+				FDA9359E17AF9F8100EB5B5A /* DeckViewController.m in Sources */,
 				D69ACBE017A6B89E00CA5C0E /* Slide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,14 +515,16 @@
 			files = (
 				FD6BC1D317730B3C008D17E3 /* main.m in Sources */,
 				FD6BC1D717730B3C008D17E3 /* AppDelegate.m in Sources */,
+				FD95A3CC17B040030041CB69 /* Uploader.m in Sources */,
+				FDC18D8C17AFBC9B00538387 /* UploadOperationQueue.m in Sources */,
 				FDA8E5A117ABFCFB00F39862 /* EditSlideCell.m in Sources */,
-				FD6BC1E617730B3C008D17E3 /* ViewController.m in Sources */,
-				FD6BC20617732B5A008D17E3 /* ConnectionViewController.m in Sources */,
-				FD6BC20917733674008D17E3 /* SessionHashViewController.m in Sources */,
+				FD95A3C917B038750041CB69 /* UploadOperation.m in Sources */,
 				FD6BC20C1773459A008D17E3 /* PresentationViewController.m in Sources */,
 				FD6BC21717737C6D008D17E3 /* CNLayoutConstraintBuilder.m in Sources */,
 				FDC7FA18177DE20600E7EFD5 /* LXCollectionViewController.m in Sources */,
+				FDA9359D17AF9F8100EB5B5A /* DeckViewController.m in Sources */,
 				FDC7FA1A177DE20600E7EFD5 /* PlayingCardCell.m in Sources */,
+				FDC18D8717AFB3AB00538387 /* DPCollectionViewLayout.m in Sources */,
 				D69ACBD417A6B25500CA5C0E /* UserDefaultsModel.m in Sources */,
 				D69ACBDA17A6B5F500CA5C0E /* Deck.m in Sources */,
 				D69ACBDD17A6B60500CA5C0E /* Slide.m in Sources */,
@@ -602,6 +564,7 @@
 				FD6BC1DF17730B3C008D17E3 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
+			path = DeckPress;
 			sourceTree = "<group>";
 		};
 		FD6BC1F617730B3C008D17E3 /* InfoPlist.strings */ = {

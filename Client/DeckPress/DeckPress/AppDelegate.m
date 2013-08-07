@@ -2,7 +2,7 @@
 #import "Model.h"
 #import "UserDefaultsModel.h"
 
-#import "PresentationViewController.h"
+#import "DeckViewController.h"
 
 @implementation AppDelegate {
   id<Model> _model;
@@ -13,9 +13,9 @@
   _model = [[UserDefaultsModel alloc] init];
   [_model makeTestData];
   
-  PresentationViewController *presentationViewController = (PresentationViewController *)self.window.rootViewController;
+  DeckViewController *deckViewController = (DeckViewController *)self.window.rootViewController;
   
-  presentationViewController.deck = _model.currentDeck;
+  deckViewController.deck = _model.currentDeck;
   
   return YES;
 }

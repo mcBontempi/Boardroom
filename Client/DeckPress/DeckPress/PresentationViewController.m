@@ -211,8 +211,8 @@
   if(_collectionView.indexPathsForSelectedItems.count) {
     NSIndexPath *indexPath = _collectionView.indexPathsForSelectedItems[0];
     
-    Slide *slide = self.deck.slides[indexPath.row];
-    slide.cachedImage = image;
+  //  Slide *slide = self.deck.slides[indexPath.row];
+ //compatability   slide.cachedImage = image;
     
     PlayingCardCell *cell = (PlayingCardCell *)[_collectionView cellForItemAtIndexPath:indexPath];
     cell.playingCardImageView.image = image;
@@ -347,7 +347,7 @@
     
     NSLog(@"%@", slide);
     
-    playingCardCell.playingCardImageView.image = slide.cachedImage;
+ //compatability   playingCardCell.playingCardImageView.image = slide.cachedImage;
     return playingCardCell;
   }
   else {

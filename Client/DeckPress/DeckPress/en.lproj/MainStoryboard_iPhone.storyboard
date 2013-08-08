@@ -12,25 +12,26 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="oZO-CG-O5n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aId-Uj-Xdr" customClass="DPCollectionViewLayout">
-                            <size key="itemSize" width="320" height="200"/>
+                            <size key="itemSize" width="320" height="180"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EditSlideCellIdentifier" id="5ro-z1-lmB" customClass="EditSlideCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" text="x" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" text="Daren" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="27"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <connections>
                                                 <outlet property="delegate" destination="5ro-z1-lmB" id="QeO-oc-Sv4"/>
@@ -39,9 +40,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.81092489919999999" green="0.2732484879" blue="0.1350176411" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="customSize" width="320" height="200"/>
+                                <size key="customSize" width="320" height="180"/>
                                 <connections>
                                     <outlet property="_textView" destination="fqN-cJ-X3T" id="Yho-NF-pYj"/>
                                 </connections>
@@ -50,10 +51,23 @@
                         <connections>
                             <outlet property="dataSource" destination="CWb-2c-z06" id="TU6-bU-X4f"/>
                             <outlet property="delegate" destination="CWb-2c-z06" id="XTf-qJ-ldH"/>
+                            <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="UIn-ti-daS"/>
+                            <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="04Q-j3-VZO"/>
+                            <outletCollection property="gestureRecognizers" destination="bgX-pv-atc" appends="YES" id="Y87-Xj-oPq"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbi-nR-qBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="zZc-ln-SWb">
+                    <connections>
+                        <action selector="swipeUp:" destination="CWb-2c-z06" id="Izx-wn-uk5"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="bgX-pv-atc">
+                    <connections>
+                        <action selector="swipeDown:" destination="CWb-2c-z06" id="7m2-Kw-6N4"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="350" y="54"/>
         </scene>

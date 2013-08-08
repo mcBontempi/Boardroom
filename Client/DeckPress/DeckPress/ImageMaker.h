@@ -10,6 +10,7 @@
 
 @interface ImageMaker : NSObject
 
-+(UIImage*)captureScreen:(UIView*) viewToCapture;
++ (UIImage*)captureScreen:(UIView*) viewToCapture scale:(float)scale;
++ (UIView *)createZoomedView:(CGFloat)zoom view:(UIView *)view;
 
 @end

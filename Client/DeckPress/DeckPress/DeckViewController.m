@@ -1,14 +1,19 @@
 #import "DeckViewController.h"
 #import "EditSlideCell.h"
 #import "EditSlideCellDelegate.h"
+#import <NeoveraColorPicker/NEOColorPickerViewController.h>
 
-@interface DeckViewController () <EditSlideCellDelegate>
+@interface DeckViewController () <EditSlideCellDelegate, NEOColorPickerViewControllerDelegate>
 
 @end
 
 @implementation DeckViewController
 {
   NSInteger _pageNum;
+  BOOL initialPageSent;
+
+
+  BOOL swipedUp;
 }
 
 - (void)awakeFromNib
@@ -22,16 +27,25 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-  
-  [self uploadSlide:0];
+
+  if (!initialPageSent) {
+    [self progressivelyUploadCellAtIndex:0];
+    initialPageSent = YES;
+  }
 }
 
-- (void)uploadSlide:(NSUInteger)index
+- (void)progressivelyUploadCurrentCell
+{
+  [self progressivelyUploadCellAtIndex:_pageNum];
+}
+
+- (void)progressivelyUploadCellAtIndex:(NSUInteger)index
 {
   EditSlideCell *editSlideCell = (EditSlideCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
   
-  [self.uploader uploadView:editSlideCell.contentView];
-
+  assert(editSlideCell);
+  
+  [self.uploader progressivelyUploadView:editSlideCell.contentView];
 }
 
 #pragma mark - UICollectionViewDataSource methods
@@ -47,6 +61,8 @@
  
   editSlideCell.delegate = self;
   editSlideCell.slide = self.deck.slides[indexPath.row];
+  
+  NSLog(@"in cellforitem %@", editSlideCell.slide.text);
   
   return editSlideCell;
 }
@@ -69,34 +85,76 @@
 
 - (void)slideChanged:(Slide *)slide
 {
-  
 }
 
 - (void)viewChanged:(UIView *)view
 {
-  [_uploader uploadView:view];
+  [_uploader progressivelyUploadView:view];
 }
 
-
-
-
+#pragma mark - UIScrollViewDelegate methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
   
   UIScrollView *scrollView = self.collectionView;
-  
   int pageNum = (int)((scrollView.contentOffset.x+(scrollView.frame.size.width/2) ) / scrollView.frame.size.width);
- 
-  NSLog(@"pageNum %d", pageNum);
-  
   if(pageNum != _pageNum) {
     _pageNum = pageNum;
 
-    [self uploadSlide:_pageNum];
+    [self progressivelyUploadCellAtIndex:_pageNum];
   }
+}
+
+#pragma mark - actions
+- (IBAction)swipeUp:(id)sender
+{
+  
+  swipedUp = YES;
+
+  [self showColorPicker];
+}
+- (IBAction)swipeDown:(id)sender
+{
+  swipedUp = NO;
+  
+  [self showColorPicker];
+}
+
+- (void)showColorPicker
+{
+  NEOColorPickerViewController *controller = [[NEOColorPickerViewController alloc] init];
+  controller.delegate = self;
+  controller.selectedColor = [UIColor redColor];
+  controller.title = @"My dialog title";
+  UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:controller];
+  [self presentViewController:navVC animated:YES completion:nil];
+
+}
+
+#pragma mark - NEOColorPickerViewControllerDelegate methods
+
+- (void) colorPickerViewController:(NEOColorPickerBaseViewController *)controller didSelectColor:(UIColor *)color {
+  
+  [controller dismissViewControllerAnimated:NO completion:^{Slide *slide = self.deck.slides[_pageNum];
+    
+    if(swipedUp) {
+      slide.backgroundColor = color;
+    }
+    else {
+      slide.textColor = color;
+    }
+    [self.collectionView reloadData];
+    
+    [self performSelector:@selector(progressivelyUploadCurrentCell) withObject:Nil afterDelay:0.1];
+  }];
   
   
 }
+
+- (void) colorPickerViewControllerDidCancel:(NEOColorPickerBaseViewController *)controller {
+  [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 @end

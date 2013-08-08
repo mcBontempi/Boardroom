@@ -2,6 +2,6 @@
 
 @interface UploadOperation : NSOperation
 
-- (id)initWithView:(UIView *)view;
+- (id)initWithImage:(UIImage *)image scale:(float)scale;
 
 @end

@@ -11,5 +11,6 @@
 @interface Uploader : NSObject
 
 - (void)uploadView:(UIView *)view;
+- (void)progressivelyUploadView:(UIView *)view;
 
 @end

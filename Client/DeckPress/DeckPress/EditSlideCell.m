@@ -27,15 +27,16 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
- // [self.delegate slideChanged:self.slide];
   _slide.text = _textView.text;
   [self.delegate viewChanged:self.contentView];
 }
 
 - (void)setSlide:(Slide *)slide
 {
+  _slide = slide;
   _textView.text = slide.text;
+  _textView.backgroundColor = slide.backgroundColor;
+  _textView.textColor = slide.textColor;
 }
-
 
 @end

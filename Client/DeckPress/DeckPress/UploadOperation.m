@@ -18,15 +18,17 @@ typedef NS_ENUM(NSInteger, UploadState) {
 
 @implementation UploadOperation
 {
-  UIView *_view;
+  UIImage *_image;
+  float _scale;
   AFHTTPClient *_client;
 }
 
-- (id)initWithView:(UIView *)view
+- (id)initWithImage:(UIImage *)image scale:(float)scale
 {
   if (self = [super init]) {
     _state = UploadStateNotStarted;
-    _view = view;
+    _image = image;
+    _scale = scale;
     
     NSString *address;
 #if LOCAL
@@ -46,31 +48,65 @@ typedef NS_ENUM(NSInteger, UploadState) {
   return self.state == UploadStateRequestSucceeded;
 }
 
-- (void)start
+- (BOOL)isExecuting
 {
-  UIImage *image = [ImageMaker captureScreen:_view];
-  
-  
-  NSData *data = UIImagePNGRepresentation(image);
+  return self.state == UploadStateRequestQueued;
+}
+
+- (BOOL)isReady
+{
+  return self.state == UploadStateNotStarted;
+}
+
+- (BOOL)isConcurrent
+{
+  return NO;
+}
+
+- (void)main
+{
+  NSData *data = UIImagePNGRepresentation(_image);
   
   NSLog(@"image size %d", data.length);
   
   NSLog(@"end");
   
-  NSLog(@"height = %f", image.size.height);
+  NSLog(@"height = %f", _image.size.height);
   
-  _state = UploadStateRequestQueued;
+  [self transitionToState:UploadStateRequestQueued
+     notifyChangesForKeys:@[@"isExecuting"]];
   
   NSMutableURLRequest *request = [_client multipartFormRequestWithMethod:@"POST" path:@"upload" parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
     [formData appendPartWithFileData:data name:@"myFile" fileName:@"temp2.png" mimeType:@"image/png"];
   }];
   __weak UploadOperation *weakSelf = self;
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
-    weakSelf.state = UploadStateRequestSucceeded;
+    [weakSelf transitionToState:UploadStateRequestSucceeded notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
+    
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-    weakSelf.state = UploadStateRequestFailed;
+    [weakSelf transitionToState:UploadStateRequestFailed notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
   }];
   [_client enqueueHTTPRequestOperation:operation];
 }
+
+- (void)cancel
+{
+  [[_client operationQueue] cancelAllOperations];
+}
+
+- (void)transitionToState:(UploadState)newState notifyChangesForKeys:(NSArray *)keys
+{
+  for (NSString *key in keys) {
+    [self willChangeValueForKey:key];
+  }
+  
+  _state = newState;
+  
+  for (NSString *key in keys) {
+    [self didChangeValueForKey:key];
+  }
+}
+
+
 
 @end

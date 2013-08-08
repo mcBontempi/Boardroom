@@ -17,6 +17,7 @@
 {
   if (self = [super init]) {
     _operationQueue = [[NSOperationQueue alloc] init];
+    _operationQueue.maxConcurrentOperationCount = 1;
   }
   return self;
 }
@@ -29,6 +30,8 @@
 - (void)reset
 {
   [_operationQueue cancelAllOperations];
+  _operationQueue = [[NSOperationQueue alloc] init];
+  _operationQueue.maxConcurrentOperationCount = 1;
 }
 
 @end

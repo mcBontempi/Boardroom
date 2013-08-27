@@ -1,81 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CWb-2c-z06">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4504" systemVersion="12E3067" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sDX-km-qIv">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <scenes>
         <!--Deck View Controller-->
-        <scene sceneID="UdB-jo-bv8">
+        <scene sceneID="wZx-gQ-CiW">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="CWb-2c-z06" customClass="DeckViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="oZO-CG-O5n">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <gestureRecognizers/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aId-Uj-Xdr" customClass="DPCollectionViewLayout">
-                            <size key="itemSize" width="320" height="180"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EditSlideCellIdentifier" id="5ro-z1-lmB" customClass="EditSlideCell">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Lb-Q8-T2E">
+                <viewController id="sDX-km-qIv" customClass="DeckViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mgM-Kc-cIT"/>
+                        <viewControllerLayoutGuide type="bottom" id="SSv-6X-da0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uez-kn-m0y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-CG-O5n">
+                                <rect key="frame" x="0.0" y="25" width="320" height="249"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.81092489919999999" green="0.2732484879" blue="0.1350176411" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="249" id="7jj-DQ-jDG"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aId-Uj-Xdr" customClass="DPCollectionViewLayout">
+                                    <size key="itemSize" width="320" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EditSlideCellIdentifier" id="5ro-z1-lmB" customClass="EditSlideCell">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" text="Daren" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="5ro-z1-lmB" id="QeO-oc-Sv4"/>
-                                            </connections>
-                                        </textView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.81092489919999999" green="0.2732484879" blue="0.1350176411" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="customSize" width="320" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Lb-Q8-T2E">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" text="Daren" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="29"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="5ro-z1-lmB" id="QeO-oc-Sv4"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.81092489919999999" green="0.2732484879" blue="0.1350176411" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="customSize" width="320" height="180"/>
+                                        <connections>
+                                            <outlet property="_imageView" destination="9Lb-Q8-T2E" id="8OK-pk-ggY"/>
+                                            <outlet property="_textView" destination="fqN-cJ-X3T" id="Yho-NF-pYj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="_imageView" destination="9Lb-Q8-T2E" id="8OK-pk-ggY"/>
-                                    <outlet property="_textView" destination="fqN-cJ-X3T" id="Yho-NF-pYj"/>
+                                    <outlet property="dataSource" destination="sDX-km-qIv" id="ons-Rf-Bu6"/>
+                                    <outlet property="delegate" destination="sDX-km-qIv" id="AjO-Gc-9As"/>
+                                    <outletCollection property="gestureRecognizers" destination="bgX-pv-atc" appends="YES" id="Y87-Xj-oPq"/>
+                                    <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="UIn-ti-daS"/>
+                                    <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="04Q-j3-VZO"/>
                                 </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="CWb-2c-z06" id="TU6-bU-X4f"/>
-                            <outlet property="delegate" destination="CWb-2c-z06" id="XTf-qJ-ldH"/>
-                            <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="UIn-ti-daS"/>
-                            <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="04Q-j3-VZO"/>
-                            <outletCollection property="gestureRecognizers" destination="bgX-pv-atc" appends="YES" id="Y87-Xj-oPq"/>
-                        </connections>
-                    </collectionView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbi-nR-qBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="zZc-ln-SWb">
+                            </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-ib-XAb">
+                                <rect key="frame" x="112" y="294" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="HOI-VW-K8e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w7i-ib-XAb" firstAttribute="top" secondItem="Uez-kn-m0y" secondAttribute="top" constant="294" id="6oG-cV-lnC"/>
+                            <constraint firstAttribute="centerX" secondItem="w7i-ib-XAb" secondAttribute="centerX" id="H7J-aa-GEg"/>
+                            <constraint firstItem="oZO-CG-O5n" firstAttribute="top" secondItem="Uez-kn-m0y" secondAttribute="top" constant="25" id="SGe-3v-Wlg"/>
+                            <constraint firstItem="oZO-CG-O5n" firstAttribute="leading" secondItem="Uez-kn-m0y" secondAttribute="leading" id="nfw-b9-fOY"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <action selector="swipeUp:" destination="CWb-2c-z06" id="Izx-wn-uk5"/>
+                        <outlet property="ROOMTEXTFIELD" destination="w7i-ib-XAb" id="0iU-Wd-bbw"/>
+                        <outlet property="collectionView" destination="oZO-CG-O5n" id="Cwg-pe-4R9"/>
                     </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="bgX-pv-atc">
-                    <connections>
-                        <action selector="swipeDown:" destination="CWb-2c-z06" id="7m2-Kw-6N4"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cto-Pb-K86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="zZc-ln-SWb"/>
+                <swipeGestureRecognizer direction="down" id="bgX-pv-atc"/>
             </objects>
-            <point key="canvasLocation" x="350" y="54"/>
+            <point key="canvasLocation" x="426" y="-308"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

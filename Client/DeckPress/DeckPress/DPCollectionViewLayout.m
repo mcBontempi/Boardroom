@@ -12,10 +12,11 @@
 
 - (void)setDefaults
 {
+  /*
   // only one row.
   CGRect bounds = [[UIScreen mainScreen] bounds];
   CGFloat spacing = bounds.size.height  - self.itemSize.height ;
   self.sectionInset = UIEdgeInsetsMake(0, 0, spacing, 0);
-}
+*/}
 
 @end

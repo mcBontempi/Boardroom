@@ -3,7 +3,7 @@
 #import "EditSlideCellDelegate.h"
 #import <NeoveraColorPicker/NEOColorPickerViewController.h>
 
-@interface DeckViewController () <EditSlideCellDelegate, NEOColorPickerViewControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DeckViewController () <EditSlideCellDelegate, NEOColorPickerViewControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIScrollViewDelegate>
 
 @end
 

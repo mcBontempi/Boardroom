@@ -11,8 +11,10 @@
 #import "Uploader.h"
 #import "DeckViewControllerDelegate.h"
 
-@interface DeckViewController : UICollectionViewController
+@interface DeckViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) Deck *deck;
 @property (nonatomic, strong) Uploader *uploader;
 @property (nonatomic, weak) id<DeckViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *ROOMTEXTFIELD;
 @end

@@ -47,4 +47,21 @@
   [self.slides removeObjectAtIndex:from];
   [self.slides insertObject:slide atIndex:to];
 }
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+  [coder encodeObject:self.slides forKey:@"slides"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder{
+  
+  if(self = [super init]){
+    self.slides = [decoder decodeObjectForKey:@"slides"];
+  }
+  return self;
+}
+
+
+
+
 @end

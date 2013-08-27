@@ -11,9 +11,8 @@
 @interface Slide : NSObject
 
 @property (nonatomic, strong) NSString *text;
-
 @property (nonatomic, strong) UIColor *backgroundColor;
-
 @property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, strong) UIImage *image;
 
 @end

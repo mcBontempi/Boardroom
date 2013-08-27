@@ -15,18 +15,17 @@
 {
 
   /*
+  // new method
   UIGraphicsBeginImageContextWithOptions(viewToCapture.frame.size, NO, scale);
   [viewToCapture drawViewHierarchyInRect:viewToCapture.bounds afterScreenUpdates:NO];
   UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
   UIGraphicsEndImageContext();
   */
-  
-  
+
+ // old method
   UIGraphicsBeginImageContextWithOptions(viewToCapture.bounds.size,NO,scale);
-  
   [viewToCapture.layer renderInContext:UIGraphicsGetCurrentContext()];
   UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
-  
   UIGraphicsEndImageContext();
   
   return snapshot;
@@ -39,6 +38,7 @@
       UIImageView *srcImageView = (UIImageView *)view;
       UIImageView *retImageView =  [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.origin.x * zoom, view.frame.origin.y *zoom, view.frame.size.width*zoom, view.frame.size.height*zoom)];
       
+      retImageView.contentMode = srcImageView.contentMode;
       retImageView.image = srcImageView.image;
       return retImageView;
     }

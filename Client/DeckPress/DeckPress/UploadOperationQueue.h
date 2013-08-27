@@ -15,4 +15,6 @@
 
 - (void)reset;
 
+- (BOOL)isBusy;
+
 @end

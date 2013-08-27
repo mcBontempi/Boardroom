@@ -84,6 +84,7 @@
 		1AE75B0BCA544B458C01132B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D638662217B2715D008ACB5B /* ImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageMaker.h; path = DeckPress/ImageMaker.h; sourceTree = "<group>"; };
 		D638662317B2715D008ACB5B /* ImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageMaker.m; path = DeckPress/ImageMaker.m; sourceTree = "<group>"; };
+		D67D8CB617BBD28A004356C0 /* DeckViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeckViewControllerDelegate.h; path = DeckPress/DeckViewControllerDelegate.h; sourceTree = "<group>"; };
 		D69ACAF317A274CA00CA5C0E /* DeckPress copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeckPress copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69ACAF417A274CA00CA5C0E /* DeckPress copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DeckPress copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Boardroom/Client/DeckPress/DeckPress copy-Info.plist"; sourceTree = "<absolute>"; };
 		D69ACBD217A6B25500CA5C0E /* UserDefaultsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDefaultsModel.h; path = DeckPress/UserDefaultsModel.h; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 				FDC18D8617AFB3AB00538387 /* DPCollectionViewLayout.m */,
 				FDA9359B17AF9F8100EB5B5A /* DeckViewController.h */,
 				FDA9359C17AF9F8100EB5B5A /* DeckViewController.m */,
+				D67D8CB617BBD28A004356C0 /* DeckViewControllerDelegate.h */,
 				FDA8E59F17ABFCFB00F39862 /* EditSlideCell.h */,
 				FDA8E5A017ABFCFB00F39862 /* EditSlideCell.m */,
 				D69ACBD817A6B5F500CA5C0E /* Deck.h */,

@@ -15,6 +15,7 @@
 @implementation EditSlideCell
 {
   __weak IBOutlet UITextView *_textView;
+  __weak IBOutlet UIImageView *_imageView;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -37,6 +38,11 @@
   _textView.text = slide.text;
   _textView.backgroundColor = slide.backgroundColor;
   _textView.textColor = slide.textColor;
+  
+  if(slide.image) {
+    _imageView.image = slide.image;
+    _textView.backgroundColor = [UIColor clearColor];
+  }
 }
 
 @end

@@ -34,4 +34,9 @@
   _operationQueue.maxConcurrentOperationCount = 1;
 }
 
+- (BOOL)isBusy
+{
+  return _operationQueue.operationCount;
+}
+
 @end

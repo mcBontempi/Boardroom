@@ -3,7 +3,7 @@
 #import "EditSlideCellDelegate.h"
 #import <NeoveraColorPicker/NEOColorPickerViewController.h>
 
-@interface DeckViewController () <EditSlideCellDelegate, NEOColorPickerViewControllerDelegate>
+@interface DeckViewController () <EditSlideCellDelegate, NEOColorPickerViewControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -11,8 +11,8 @@
 {
   NSInteger _pageNum;
   BOOL initialPageSent;
-
-
+  
+  
   BOOL swipedUp;
 }
 
@@ -27,7 +27,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-
+  
   if (!initialPageSent) {
     [self progressivelyUploadCellAtIndex:0];
     initialPageSent = YES;
@@ -58,7 +58,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   EditSlideCell *editSlideCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EditSlideCellIdentifier" forIndexPath:indexPath];
- 
+  
   editSlideCell.delegate = self;
   editSlideCell.slide = self.deck.slides[indexPath.row];
   
@@ -89,7 +89,11 @@
 
 - (void)viewChanged:(UIView *)view
 {
-  [_uploader progressivelyUploadView:view];
+  //[self.delegate saveDeck];
+  
+  //[_uploader progressivelyUploadView:view];
+  
+      [self performSelector:@selector(progressivelyUploadCurrentCell) withObject:Nil afterDelay:0.1];
 }
 
 #pragma mark - UIScrollViewDelegate methods
@@ -100,7 +104,7 @@
   int pageNum = (int)((scrollView.contentOffset.x+(scrollView.frame.size.width/2) ) / scrollView.frame.size.width);
   if(pageNum != _pageNum) {
     _pageNum = pageNum;
-
+    
     [self progressivelyUploadCellAtIndex:_pageNum];
   }
 }
@@ -108,10 +112,10 @@
 #pragma mark - actions
 - (IBAction)swipeUp:(id)sender
 {
+  [self showImagePicker];
   
-  swipedUp = YES;
-
-  [self showColorPicker];
+  // swipedUp = YES;
+  // [self showColorPicker];
 }
 - (IBAction)swipeDown:(id)sender
 {
@@ -119,6 +123,18 @@
   
   [self showColorPicker];
 }
+
+- (void)showImagePicker
+{
+  UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+  picker.delegate = self;
+  picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+  
+  [picker setMediaTypes:[NSArray arrayWithObjects:(NSString *) kUTTypeImage, nil]];
+  
+  [self presentViewController:picker animated:YES completion:nil];
+}
+
 
 - (void)showColorPicker
 {
@@ -128,7 +144,7 @@
   controller.title = @"My dialog title";
   UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:controller];
   [self presentViewController:navVC animated:YES completion:nil];
-
+  
 }
 
 #pragma mark - NEOColorPickerViewControllerDelegate methods
@@ -144,10 +160,11 @@
       slide.textColor = color;
     }
     [self.collectionView reloadData];
+    [self.delegate saveDeck];
     
-    [self performSelector:@selector(progressivelyUploadCurrentCell) withObject:Nil afterDelay:0.1];
+    [self performSelector:@selector(progressivelyUploadCurrentCell) withObject:Nil afterDelay:0.5];
+    
   }];
-  
   
 }
 
@@ -155,6 +172,22 @@
   [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UIImagePickerControllerDelegate methods
 
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+  [picker dismissViewControllerAnimated:YES completion:^{
+    UIImage* image = [info valueForKey:@"UIImagePickerControllerOriginalImage"];
+    Slide *slide = self.deck.slides[_pageNum];
+    
+    slide.image = image;
+
+    [self.collectionView reloadData];
+    
+    [self performSelector:@selector(progressivelyUploadCurrentCell) withObject:Nil afterDelay:0.5];
+    
+    [self.delegate saveDeck];
+  }];
+}
 
 @end

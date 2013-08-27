@@ -5,6 +5,7 @@
 
 - (void)makeTestData;
 - (Deck *)currentDeck;
+- (void)save;
 
 @end
 

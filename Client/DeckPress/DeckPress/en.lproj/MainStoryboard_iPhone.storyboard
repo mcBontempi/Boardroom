@@ -10,7 +10,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="CWb-2c-z06" customClass="DeckViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="oZO-CG-O5n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <gestureRecognizers/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aId-Uj-Xdr" customClass="DPCollectionViewLayout">
@@ -27,6 +27,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Lb-Q8-T2E">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" text="Daren" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +48,7 @@
                                 <color key="tintColor" red="0.81092489919999999" green="0.2732484879" blue="0.1350176411" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="customSize" width="320" height="180"/>
                                 <connections>
+                                    <outlet property="_imageView" destination="9Lb-Q8-T2E" id="8OK-pk-ggY"/>
                                     <outlet property="_textView" destination="fqN-cJ-X3T" id="Yho-NF-pYj"/>
                                 </connections>
                             </collectionViewCell>
@@ -56,6 +61,7 @@
                             <outletCollection property="gestureRecognizers" destination="bgX-pv-atc" appends="YES" id="Y87-Xj-oPq"/>
                         </connections>
                     </collectionView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbi-nR-qBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="zZc-ln-SWb">

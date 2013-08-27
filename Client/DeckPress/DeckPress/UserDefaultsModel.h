@@ -3,4 +3,6 @@
 
 @interface UserDefaultsModel : NSObject <Model>
 
+  @property (nonatomic, strong) NSString *currentDeckName;
+
 @end

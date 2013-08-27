@@ -18,11 +18,6 @@
   return self;
 }
 
-- (void)uploadSlide:(Slide *)slide
-{
-  assert(0);
-}
-
 - (void)progressivelyUploadView:(UIView *)view
 {
   [_queue reset];
@@ -33,19 +28,6 @@
     NSLog(@"scale = %f", i);
     [_queue addOperation:uploadOperation];
   }
-}
-
-- (void)uploadView:(UIView *)view
-{
-  [_queue reset];
-  
-  UIView *zoomedView = [ImageMaker createZoomedView:2 view:view];
-  
-  [_queue reset];
-  
-  // UploadOperation *uploadOperation = [[UploadOperation alloc] initWithView:zoomedView scale:2.0];
-  
-  //  [_queue addOperation:uploadOperation];
 }
 
 @end

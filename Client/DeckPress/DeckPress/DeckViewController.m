@@ -112,10 +112,10 @@
 #pragma mark - actions
 - (IBAction)swipeUp:(id)sender
 {
-  [self showImagePicker];
+  //[self showImagePicker];
   
-  // swipedUp = YES;
-  // [self showColorPicker];
+  swipedUp = YES;
+  [self showColorPicker];
 }
 - (IBAction)swipeDown:(id)sender
 {

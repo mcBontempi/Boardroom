@@ -11,10 +11,12 @@
 {
   NSInteger _pageNum;
   BOOL initialPageSent;
+  NSString *_room;
   
   
   BOOL swipedUp;
 }
+
 
 - (void)awakeFromNib
 {
@@ -34,6 +36,12 @@
   }
 }
 
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  
+  _room = @"public";
+}
 - (void)progressivelyUploadCurrentCell
 {
   [self progressivelyUploadCellAtIndex:_pageNum];
@@ -45,7 +53,7 @@
   
   assert(editSlideCell);
   
-  [self.uploader progressivelyUploadView:editSlideCell.contentView];
+  [self.uploader progressivelyUploadView:editSlideCell.contentView room:_room];
 }
 
 #pragma mark - UICollectionViewDataSource methods
@@ -188,6 +196,13 @@
     
     [self.delegate saveDeck];
   }];
+}
+
+- (IBAction)editingChanged:(id)sender {
+  
+  UITextField *textField = sender;
+  _room = textField.text;
+  [self progressivelyUploadCurrentCell];
 }
 
 @end

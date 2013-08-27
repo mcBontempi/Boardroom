@@ -19,16 +19,18 @@ typedef NS_ENUM(NSInteger, UploadState) {
 @implementation UploadOperation
 {
   UIImage *_image;
+  NSString *_room;
   float _scale;
   AFHTTPClient *_client;
 }
 
-- (id)initWithImage:(UIImage *)image scale:(float)scale
+- (id)initWithImage:(UIImage *)image scale:(float)scale room:(NSString *)room;
 {
   if (self = [super init]) {
     _state = UploadStateNotStarted;
     _image = image;
     _scale = scale;
+    _room = room;
     
     NSString *address;
 #if LOCAL
@@ -77,7 +79,7 @@ typedef NS_ENUM(NSInteger, UploadState) {
      notifyChangesForKeys:@[@"isExecuting"]];
   
   NSMutableURLRequest *request = [_client multipartFormRequestWithMethod:@"POST" path:@"upload" parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
-    [formData appendPartWithFileData:data name:@"myFile" fileName:@"temp2.png" mimeType:@"image/png"];
+    [formData appendPartWithFileData:data name:@"myFile" fileName:_room mimeType:@"image/png"];
   }];
   __weak UploadOperation *weakSelf = self;
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){

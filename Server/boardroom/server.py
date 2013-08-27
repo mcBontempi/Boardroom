@@ -53,11 +53,11 @@ class FileDemo(object):
         break
         
       size += len(allData)
-      savedFile=open(myFile.filename, 'wb')
+      savedFile=open(myFile.filename + "temp.png", 'wb')
       savedFile.write(allData)
       savedFile.close()
         
-      os.rename('temp2.png', 'temp.png')
+      os.rename(myFile.filename + "temp.png", myFile.filename+".png")
         
     return out % (size, myFile.filename, myFile.type)
 

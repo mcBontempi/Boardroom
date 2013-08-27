@@ -43,7 +43,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" text="Daren" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" text="Daren" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-cJ-X3T">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,6 +58,10 @@
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.81092489919999999" green="0.2732484879" blue="0.1350176411" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="fqN-cJ-X3T" firstAttribute="top" secondItem="5ro-z1-lmB" secondAttribute="top" id="0Nb-Hd-taB"/>
+                                            <constraint firstAttribute="bottom" secondItem="fqN-cJ-X3T" secondAttribute="bottom" id="gDO-fa-01D"/>
+                                        </constraints>
                                         <size key="customSize" width="320" height="180"/>
                                         <connections>
                                             <outlet property="_imageView" destination="9Lb-Q8-T2E" id="8OK-pk-ggY"/>
@@ -73,7 +77,7 @@
                                     <outletCollection property="gestureRecognizers" destination="zZc-ln-SWb" appends="YES" id="04Q-j3-VZO"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-ib-XAb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="public" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-ib-XAb">
                                 <rect key="frame" x="112" y="294" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -81,6 +85,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingChanged:" destination="sDX-km-qIv" eventType="editingChanged" id="a4A-vA-Rb7"/>
+                                    <outlet property="delegate" destination="sDX-km-qIv" id="z3k-R2-Fha"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -92,7 +100,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ROOMTEXTFIELD" destination="w7i-ib-XAb" id="0iU-Wd-bbw"/>
                         <outlet property="collectionView" destination="oZO-CG-O5n" id="Cwg-pe-4R9"/>
                     </connections>
                 </viewController>

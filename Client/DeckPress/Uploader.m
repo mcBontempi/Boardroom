@@ -18,13 +18,13 @@
   return self;
 }
 
-- (void)progressivelyUploadView:(UIView *)view
+- (void)progressivelyUploadView:(UIView *)view room:(NSString *)room
 {
   [_queue reset];
   //UIView *zoomedView = [ImageMaker createZoomedView:1 view:view];
   for (float i = 0.2 ; i <= 2.0 ; i+= i) {
     UIImage *image = [ImageMaker captureScreen:view scale:i];
-    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image scale:i];
+    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image scale:i room:room];
     NSLog(@"scale = %f", i);
     [_queue addOperation:uploadOperation];
   }

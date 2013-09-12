@@ -2,31 +2,33 @@
 //  DeckPressTests.m
 //  DeckPressTests
 //
-//  Created by Daren taylor on 20/06/2013.
-//  Copyright (c) 2013 Daren taylor. All rights reserved.
+//  Created by Daren David Taylor on 12/09/2013.
+//  Copyright (c) 2013 DarenDavidTaylor.com. All rights reserved.
 //
 
-#import "DeckPressTests.h"
+#import <XCTest/XCTest.h>
+
+@interface DeckPressTests : XCTestCase
+
+@end
 
 @implementation DeckPressTests
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in DeckPressTests");
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end

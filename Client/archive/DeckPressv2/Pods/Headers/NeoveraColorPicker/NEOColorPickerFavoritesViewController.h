@@ -1,0 +1,1 @@
+../../NeoveraColorPicker/Source/NEOColorPickerFavoritesViewController.h

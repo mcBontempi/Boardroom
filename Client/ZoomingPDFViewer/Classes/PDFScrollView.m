@@ -53,7 +53,6 @@
 @interface PDFScrollView ()
 
 // A low resolution image of the PDF page that is displayed until the TiledPDFView renders its content.
-@property (nonatomic, weak) UIImageView *backgroundImageView;
 
 // The TiledPDFView that is currently front most.
 @property (nonatomic, weak) TiledPDFView *tiledPDFView;
@@ -96,7 +95,7 @@
     
     // Determine the size of the PDF page.
     CGRect pageRect = CGPDFPageGetBoxRect(_PDFPage, kCGPDFMediaBox);
-  _PDFScale = self.frame.size.width/pageRect.size.width;
+  _PDFScale = 10;//self.frame.size.width/pageRect.size.width;
     pageRect.size = CGSizeMake(pageRect.size.width*_PDFScale, pageRect.size.height*_PDFScale);
   
     /*
@@ -104,13 +103,13 @@
      */
   
   UIGraphicsBeginImageContext(pageRect.size);
-    
+  
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // First fill the background with white.
     CGContextSetRGBFillColor(context, 1.0,1.0,1.0,1.0);
     CGContextFillRect(context,pageRect);
-    
+  
     CGContextSaveGState(context);
     // Flip the context so that the PDF page is rendered right side up.
     CGContextTranslateCTM(context, 0.0, pageRect.size.height);
@@ -126,17 +125,17 @@
     UIGraphicsEndImageContext();
     
     
-    if (self.backgroundImageView != nil) {
-        [self.backgroundImageView removeFromSuperview];
-    }
-    
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-    backgroundImageView.frame = pageRect;
-    backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self addSubview:backgroundImageView];
+ //   if (self.backgroundImageView != nil) {
+ //       [self.backgroundImageView removeFromSuperview];
+ //   }
+   
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+    self.backgroundImageView.frame = CGRectMake(0,0,320,480);
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:self.backgroundImageView];
    
 
-  /*
+/*
     // Create the TiledPDFView based on the size of the PDF page and scale it to fit the view.
     TiledPDFView *tiledPDFView = [[TiledPDFView alloc] initWithFrame:pageRect scale:_PDFScale];
     [tiledPDFView setPage:_PDFPage];
@@ -182,7 +181,7 @@
         frameToCenter.origin.y = 0;
     
     self.tiledPDFView.frame = frameToCenter;
-    self.backgroundImageView.frame = frameToCenter;
+  //  self.backgroundImageView.frame = frameToCenter;
     
     /*
      To handle the interaction between CATiledLayer and high resolution screens, set the tiling view's contentScaleFactor to 1.0.

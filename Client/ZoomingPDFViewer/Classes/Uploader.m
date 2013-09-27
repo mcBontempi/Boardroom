@@ -23,22 +23,26 @@
   //UIView *zoomedView = [ImageMaker createZoomedView:1 view:view];
   for (float i = 0.5 ; i <= 2.0 ; i+= 0.5) {
     UIImage *image = [ImageMaker captureScreen:view scale:i];
-    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image scale:i room:room];
+    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image room:room];
     NSLog(@"scale = %f", i);
     [_queue addOperation:uploadOperation];
   }
 }
 
-
-
 - (void)uploadView:(UIView *)view room:(NSString *)room
 {
   [_queue reset];
     UIImage *image = [ImageMaker captureScreen:view scale:1.0];
-    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image scale:1.0 room:room];
+    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image room:room];
     [_queue addOperation:uploadOperation];
 }
 
+- (void)uploadImage:(UIImage *)image room:(NSString *)room
+{
+  [_queue reset];
+  UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image room:room];
+  [_queue addOperation:uploadOperation];
+}
 
 - (BOOL)isBusy
 {

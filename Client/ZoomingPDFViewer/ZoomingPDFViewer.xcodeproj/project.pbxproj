@@ -27,14 +27,14 @@
 		AFE29EAC12079822003183E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE29EAB12079822003183E7 /* QuartzCore.framework */; };
 		AFE29EE412079C5C003183E7 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE29EE312079C5C003183E7 /* PDFScrollView.m */; };
 		AFE29EEE12079E88003183E7 /* TestPage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AFE29EED12079E88003183E7 /* TestPage.pdf */; };
+		D619AFBE17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */; };
+		D619AFC017F5E34D008CB66C /* DeckPress.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D619AFBF17F5E34D008CB66C /* DeckPress.pdf */; };
 		FD2353F917E5A11B00817A2D /* IMW.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353F817E5A11B00817A2D /* IMW.pdf */; };
 		FD2353FB17E6363300817A2D /* motorhome_heating_uk_22374.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */; };
 		FD23540417E73D1A00817A2D /* ImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2353FD17E73D1A00817A2D /* ImageMaker.m */; };
 		FD23540517E73D1A00817A2D /* Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2353FF17E73D1A00817A2D /* Uploader.m */; };
 		FD23540617E73D1A00817A2D /* UploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23540117E73D1A00817A2D /* UploadOperation.m */; };
 		FD23540717E73D1A00817A2D /* UploadOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23540317E73D1A00817A2D /* UploadOperationQueue.m */; };
-		FD23540917E745F600817A2D /* Particles_fire.png in Resources */ = {isa = PBXBuildFile; fileRef = FD23540817E745F600817A2D /* Particles_fire.png */; };
-		FD23540C17E7462600817A2D /* DWFParticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23540B17E7462600817A2D /* DWFParticleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +66,8 @@
 		AFE29EE212079C5C003183E7 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
 		AFE29EE312079C5C003183E7 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PDFScrollView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AFE29EED12079E88003183E7 /* TestPage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TestPage.pdf; sourceTree = "<group>"; };
+		D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Perfect Health Diet - Regain Health and Lose Weight.pdf"; sourceTree = "<group>"; };
+		D619AFBF17F5E34D008CB66C /* DeckPress.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DeckPress.pdf; sourceTree = "<group>"; };
 		FD2353F817E5A11B00817A2D /* IMW.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IMW.pdf; sourceTree = "<group>"; };
 		FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = motorhome_heating_uk_22374.pdf; sourceTree = "<group>"; };
 		FD2353FC17E73D1A00817A2D /* ImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMaker.h; sourceTree = "<group>"; };
@@ -76,9 +78,6 @@
 		FD23540117E73D1A00817A2D /* UploadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadOperation.m; sourceTree = "<group>"; };
 		FD23540217E73D1A00817A2D /* UploadOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOperationQueue.h; sourceTree = "<group>"; };
 		FD23540317E73D1A00817A2D /* UploadOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadOperationQueue.m; sourceTree = "<group>"; };
-		FD23540817E745F600817A2D /* Particles_fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Particles_fire.png; path = images/Particles_fire.png; sourceTree = "<group>"; };
-		FD23540A17E7462600817A2D /* DWFParticleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFParticleView.h; sourceTree = "<group>"; };
-		FD23540B17E7462600817A2D /* DWFParticleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFParticleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +99,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FD23540A17E7462600817A2D /* DWFParticleView.h */,
-				FD23540B17E7462600817A2D /* DWFParticleView.m */,
 				FD2353FC17E73D1A00817A2D /* ImageMaker.h */,
 				FD2353FD17E73D1A00817A2D /* ImageMaker.m */,
 				FD2353FE17E73D1A00817A2D /* Uploader.h */,
@@ -156,8 +153,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD23540817E745F600817A2D /* Particles_fire.png */,
+				D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */,
 				2842F69E151015EA00A1611D /* MainStoryboard.storyboard */,
+				D619AFBF17F5E34D008CB66C /* DeckPress.pdf */,
 				AF9862E91219FFA700843786 /* Icon-72.png */,
 				AF9862EA1219FFA700843786 /* Icon-Small-50.png */,
 				AF9862EB1219FFA700843786 /* Icon-Small.png */,
@@ -244,13 +242,14 @@
 				AF9862F01219FFA700843786 /* Icon-72.png in Resources */,
 				AF9862F11219FFA700843786 /* Icon-Small-50.png in Resources */,
 				AF9862F21219FFA700843786 /* Icon-Small.png in Resources */,
-				FD23540917E745F600817A2D /* Particles_fire.png in Resources */,
 				AF9862F31219FFA700843786 /* Icon-Small@2x.png in Resources */,
 				AF9862F41219FFA700843786 /* Icon.png in Resources */,
 				AF9862F51219FFA700843786 /* Icon@2x.png in Resources */,
 				FD2353FB17E6363300817A2D /* motorhome_heating_uk_22374.pdf in Resources */,
 				AF9862F61219FFA700843786 /* iTunesArtwork in Resources */,
 				28948FE2150F001600BCC1F2 /* ReadMe.txt in Resources */,
+				D619AFBE17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf in Resources */,
+				D619AFC017F5E34D008CB66C /* DeckPress.pdf in Resources */,
 				FD2353F917E5A11B00817A2D /* IMW.pdf in Resources */,
 				2842F6A0151015EA00A1611D /* MainStoryboard.storyboard in Resources */,
 			);
@@ -302,7 +301,6 @@
 				FD23540617E73D1A00817A2D /* UploadOperation.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ZoomingPDFViewerAppDelegate.m in Sources */,
-				FD23540C17E7462600817A2D /* DWFParticleView.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ZoomingPDFViewerViewController.m in Sources */,
 				AFE29EA212079441003183E7 /* TiledPDFView.m in Sources */,
 				AFE29EE412079C5C003183E7 /* PDFScrollView.m in Sources */,

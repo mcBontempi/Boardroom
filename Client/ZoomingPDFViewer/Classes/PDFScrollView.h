@@ -53,4 +53,6 @@
 
 - (void)setPDFPage:(CGPDFPageRef)PDFPage;
 
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
 @end

@@ -49,7 +49,6 @@
 #import "PDFScrollView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Uploader.h"
-#import "DWFParticleView.h"
 
 @interface ZoomingPDFViewerViewController ()
 @property (nonatomic) NSInteger page;
@@ -57,12 +56,7 @@
 
 @implementation ZoomingPDFViewerViewController {
   PDFScrollView *_currentPDFScrollView;
-  
   Uploader *_uploader;
-  
-  DWFParticleView *_fireView;
-  
-  
 }
 
 
@@ -77,6 +71,7 @@
 - (void)setPage:(NSInteger)page
 {
   // set the ivar
+  _page = page;
   
   // remove the old view
   [_currentPDFScrollView removeFromSuperview];
@@ -94,28 +89,20 @@
   [self.view addSubview:_currentPDFScrollView];
 
   // set the current page
-  NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"IMW" withExtension:@"pdf"];
+  NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"DeckPress" withExtension:@"pdf"];
   CGPDFDocumentRef PDFDocument = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
   CGPDFPageRef PDFPage = CGPDFDocumentGetPage(PDFDocument, page);
   [_currentPDFScrollView setPDFPage:PDFPage];
   CGPDFDocumentRelease(PDFDocument);
   
-  _fireView = [[DWFParticleView alloc] initWithFrame:self.view.frame];
-  _fireView.backgroundColor = [UIColor clearColor];
-  [self.view addSubview:_fireView];
-
-  [_uploader progressivelyUploadView:_currentPDFScrollView room:@"hello"];
-
+ // [_uploader progressivelyUploadView:_currentPDFScrollView room:@"hello"];
   
-}
+  [self performSelector:@selector(uploadIfNothingInQueueAtMax) withObject:Nil afterDelay:0.01];
+  }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /*
-     Open the PDF document, extract the first page, and pass the page to the PDF scroll view.
-     */
-  
   self.page = 1;
 }
 
@@ -133,36 +120,10 @@
   self.page++;
 }
 
-
-
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-  [_fireView setEmitterPositionFromTouch: [touches anyObject]];
-  
-  [self uploadIfNothingInQueueAtMax];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-  [_fireView setEmitterPositionFromTouch: [touches anyObject]];
-  [_fireView setIsEmitting:YES];
-
-  [self uploadIfNothingInQueueAtMax];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-  [_fireView setIsEmitting:NO];
-  
-
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-  [_fireView setIsEmitting:NO];
-}
-
 - (void)uploadIfNothingInQueueAtMax
 {
   if (!_uploader.isBusy) {
-    [_uploader uploadView:self.view room:@"hello"];
+    [_uploader uploadImage:_currentPDFScrollView.backgroundImageView.image room:@"hello"];
   }
 }
 

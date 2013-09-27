@@ -6,6 +6,8 @@
 
 - (void)uploadView:(UIView *)view room:(NSString *)room;
 
+- (void)uploadImage:(UIImage *)image room:(NSString *)room;
+
 - (BOOL)isBusy;
 
 @end

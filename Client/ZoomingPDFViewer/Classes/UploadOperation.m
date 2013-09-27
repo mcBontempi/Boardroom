@@ -20,21 +20,19 @@ typedef NS_ENUM(NSInteger, UploadState) {
 {
   UIImage *_image;
   NSString *_room;
-  float _scale;
   AFHTTPClient *_client;
 }
 
-- (id)initWithImage:(UIImage *)image scale:(float)scale room:(NSString *)room;
+- (id)initWithImage:(UIImage *)image room:(NSString *)room;
 {
   if (self = [super init]) {
     _state = UploadStateNotStarted;
     _image = image;
-    _scale = scale;
     _room = room;
     
     NSString *address;
     
-#define LOCAL 1
+#define LOCAL 0
     
 #if LOCAL
     address  = @"http://localhost:8080";

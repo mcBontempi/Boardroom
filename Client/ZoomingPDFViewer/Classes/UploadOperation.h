@@ -2,6 +2,6 @@
 
 @interface UploadOperation : NSOperation
 
-- (id)initWithData:(NSData *)data room:(NSString *)room;
+- (id)initWithData:(NSData *)data hash:(NSString*)hash room:(NSString *)room;
 
 @end

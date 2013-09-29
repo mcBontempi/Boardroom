@@ -1,5 +1,4 @@
-#import "UploadOperation.h"
-#import "ImageMaker.h"
+#import "CheckOperation.h"
 #import <AFNetworking/AFHTTPClient.h>
 
 typedef NS_ENUM(NSInteger, UploadState) {
@@ -12,23 +11,21 @@ typedef NS_ENUM(NSInteger, UploadState) {
   UploadStateRequestSucceeded,
 };
 
-@interface UploadOperation ()
+@interface CheckOperation ()
 @property UploadState state;
 @end
 
-@implementation UploadOperation
+@implementation CheckOperation
 {
-  NSData *_data;
   NSString *_hash;
   NSString *_room;
   AFHTTPClient *_client;
 }
 
-- (id)initWithData:(NSData *)data hash:(NSString*)hash room:(NSString *)room;
+- (id)initWithHash:(NSString*)hash room:(NSString *)room;
 {
   if (self = [super init]) {
     _state = UploadStateNotStarted;
-    _data = data;
     _room = room;
     _hash = hash;
     
@@ -71,24 +68,30 @@ typedef NS_ENUM(NSInteger, UploadState) {
 - (void)main
 {
   
-  NSLog(@"data size %d", _data.length);
+  NSLog(@"Checking");
   
   [self transitionToState:UploadStateRequestQueued
      notifyChangesForKeys:@[@"isExecuting"]];
   
-  NSMutableURLRequest *request = [_client multipartFormRequestWithMethod:@"POST" path:@"upload" parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
-    [formData appendPartWithFileData:_data name:@"myFile" fileName:_hash mimeType:@"image/png"];
-  }];
-  __weak UploadOperation *weakSelf = self;
+  NSMutableURLRequest *request = [_client requestWithMethod:@"POST" path:@"check" parameters:@{@"filename" : _hash}];
+  
+  __weak CheckOperation *weakSelf = self;
+ 
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
     [weakSelf transitionToState:UploadStateRequestSucceeded notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
-    NSLog(@"upload ok!");
+    NSLog(@"check ok!");
+    
+    NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    
+    
+    NSLog(@"responseObject = %@", responseStr);
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
     [weakSelf transitionToState:UploadStateRequestFailed notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
     NSLog(@"Shit something went wrong!");
   }];
   [_client enqueueHTTPRequestOperation:operation];
+
 }
 
 - (void)cancel

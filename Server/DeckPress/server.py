@@ -50,14 +50,14 @@ class FileDemo(object):
     var pusher = new Pusher('73117b00e748bfc50cb4');
     var channel = pusher.subscribe('test_channel');
     channel.bind('my_event', function(data) {
-   refreshIt()
+   refreshIt(data)
     });
 
 
 
-                  function refreshIt() {
+                  function refreshIt(data) {
                   if (!document.images) return;
-                    document.images['pic'].src = 'http://162.13.5.127:8001/%s.png?' + Math.random();
+                    document.images['pic'].src = 'http://162.13.5.127:8001/' +  data.message + '.png';
                   }
                 </script>
               </head>
@@ -66,12 +66,22 @@ class FileDemo(object):
               </body>
             </html> """
 
-        return out % room
+        return out
     serve.exposed = True
 
     def login(self):
         return "<form name='input' action='http://localhost:8080/serve'>Room: <input type='text' name='room'><input type='submit' value='Submit'></form>"
     login.exposed = True
+
+    def check(self, filename):
+        p = pusher.Pusher(
+        app_id='55201',
+        key='73117b00e748bfc50cb4',
+        secret='c192b64e3f803df1cbc6')
+        p['test_channel'].trigger('my_event', {'message': filename})
+        return "hey there"
+    check.exposed = True
+
 
     def upload(self, myFile):
         out = """<html>

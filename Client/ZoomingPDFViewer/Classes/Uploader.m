@@ -3,10 +3,16 @@
 #import "UploadOperationQueue.h"
 #import "ImageMaker.h"
 #include <CommonCrypto/CommonDigest.h>
+#import "CheckOperation.h"
+
+// uploader can only check for / upload one image at a time
 
 @implementation Uploader
 {
   UploadOperationQueue *_queue;
+  
+  NSData *_data;
+  NSString *_hash;
 }
 
 - (id) init
@@ -34,12 +40,19 @@
 {
   [_queue reset];
   
-  NSData *data = UIImagePNGRepresentation(image);
+  _data = UIImagePNGRepresentation(image);
+  _hash = [self MD5StringOfData:_data];
   
-  NSString *hash = [self MD5StringOfData:data];
+  NSLog(@"hash = %@", _hash);
   
-  UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:data room:room];
-  [_queue addOperation:uploadOperation];
+  
+  CheckOperation *checkOperation = [[CheckOperation alloc] initWithHash:_hash room:room];
+  [_queue addOperation:checkOperation];
+
+  
+  
+ // UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:_data hash:_hash room:room];
+ // [_queue addOperation:uploadOperation];
 }
 
 - (BOOL)isBusy

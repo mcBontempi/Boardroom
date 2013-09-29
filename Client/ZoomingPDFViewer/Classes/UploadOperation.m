@@ -18,16 +18,16 @@ typedef NS_ENUM(NSInteger, UploadState) {
 
 @implementation UploadOperation
 {
-  UIImage *_image;
+  NSData *_data;
   NSString *_room;
   AFHTTPClient *_client;
 }
 
-- (id)initWithImage:(UIImage *)image room:(NSString *)room;
+- (id)initWithData:(NSData *)data room:(NSString *)room;
 {
   if (self = [super init]) {
     _state = UploadStateNotStarted;
-    _image = image;
+    _data = data;
     _room = room;
     
     NSString *address;
@@ -68,26 +68,23 @@ typedef NS_ENUM(NSInteger, UploadState) {
 
 - (void)main
 {
-  NSData *data = UIImagePNGRepresentation(_image);
   
-  NSLog(@"image size %d", data.length);
-  
-  NSLog(@"end");
-  
-  NSLog(@"height = %f", _image.size.height);
+  NSLog(@"data size %d", _data.length);
   
   [self transitionToState:UploadStateRequestQueued
      notifyChangesForKeys:@[@"isExecuting"]];
   
   NSMutableURLRequest *request = [_client multipartFormRequestWithMethod:@"POST" path:@"upload" parameters:nil constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
-    [formData appendPartWithFileData:data name:@"myFile" fileName:_room mimeType:@"image/png"];
+    [formData appendPartWithFileData:_data name:@"myFile" fileName:_room mimeType:@"image/png"];
   }];
   __weak UploadOperation *weakSelf = self;
   AFHTTPRequestOperation *operation = [_client HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
     [weakSelf transitionToState:UploadStateRequestSucceeded notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
+    NSLog(@"upload ok!");
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
     [weakSelf transitionToState:UploadStateRequestFailed notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
+    NSLog(@"Shit something went wrong!");
   }];
   [_client enqueueHTTPRequestOperation:operation];
 }

@@ -2,6 +2,7 @@
 #import "UploadOperation.h"
 #import "UploadOperationQueue.h"
 #import "ImageMaker.h"
+#include <CommonCrypto/CommonDigest.h>
 
 @implementation Uploader
 {
@@ -13,34 +14,31 @@
   if (self = [super init]) {
     _queue = [[UploadOperationQueue alloc] init];
   }
-  
   return self;
 }
 
-- (void)progressivelyUploadView:(UIView *)view room:(NSString *)room
+- (NSString*)MD5StringOfData:(NSData*)inputData
 {
-  [_queue reset];
-  //UIView *zoomedView = [ImageMaker createZoomedView:1 view:view];
-  for (float i = 0.5 ; i <= 2.0 ; i+= 0.5) {
-    UIImage *image = [ImageMaker captureScreen:view scale:i];
-    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image room:room];
-    NSLog(@"scale = %f", i);
-    [_queue addOperation:uploadOperation];
-  }
-}
-
-- (void)uploadView:(UIView *)view room:(NSString *)room
-{
-  [_queue reset];
-    UIImage *image = [ImageMaker captureScreen:view scale:1.0];
-    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image room:room];
-    [_queue addOperation:uploadOperation];
+	unsigned char outputData[CC_MD5_DIGEST_LENGTH];
+	CC_MD5([inputData bytes], [inputData length], outputData);
+	
+	NSMutableString* hashStr = [NSMutableString string];
+	int i = 0;
+	for (i = 0; i < CC_MD5_DIGEST_LENGTH; ++i)
+		[hashStr appendFormat:@"%02x", outputData[i]];
+	
+	return hashStr;
 }
 
 - (void)uploadImage:(UIImage *)image room:(NSString *)room
 {
   [_queue reset];
-  UploadOperation *uploadOperation = [[UploadOperation alloc] initWithImage:image room:room];
+  
+  NSData *data = UIImagePNGRepresentation(image);
+  
+  NSString *hash = [self MD5StringOfData:data];
+  
+  UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:data room:room];
   [_queue addOperation:uploadOperation];
 }
 

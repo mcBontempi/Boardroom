@@ -29,6 +29,7 @@
 		AFE29EEE12079E88003183E7 /* TestPage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AFE29EED12079E88003183E7 /* TestPage.pdf */; };
 		D619AFBE17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */; };
 		D619AFC017F5E34D008CB66C /* DeckPress.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D619AFBF17F5E34D008CB66C /* DeckPress.pdf */; };
+		D619AFC217F87FBB008CB66C /* WithSheep.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D619AFC117F87FBB008CB66C /* WithSheep.pdf */; };
 		FD2353F917E5A11B00817A2D /* IMW.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353F817E5A11B00817A2D /* IMW.pdf */; };
 		FD2353FB17E6363300817A2D /* motorhome_heating_uk_22374.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */; };
 		FD23540417E73D1A00817A2D /* ImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2353FD17E73D1A00817A2D /* ImageMaker.m */; };
@@ -68,6 +69,7 @@
 		AFE29EED12079E88003183E7 /* TestPage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TestPage.pdf; sourceTree = "<group>"; };
 		D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Perfect Health Diet - Regain Health and Lose Weight.pdf"; sourceTree = "<group>"; };
 		D619AFBF17F5E34D008CB66C /* DeckPress.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DeckPress.pdf; sourceTree = "<group>"; };
+		D619AFC117F87FBB008CB66C /* WithSheep.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = WithSheep.pdf; sourceTree = "<group>"; };
 		FD2353F817E5A11B00817A2D /* IMW.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IMW.pdf; sourceTree = "<group>"; };
 		FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = motorhome_heating_uk_22374.pdf; sourceTree = "<group>"; };
 		FD2353FC17E73D1A00817A2D /* ImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMaker.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D619AFC117F87FBB008CB66C /* WithSheep.pdf */,
 				D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */,
 				2842F69E151015EA00A1611D /* MainStoryboard.storyboard */,
 				D619AFBF17F5E34D008CB66C /* DeckPress.pdf */,
@@ -251,6 +254,7 @@
 				D619AFBE17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf in Resources */,
 				D619AFC017F5E34D008CB66C /* DeckPress.pdf in Resources */,
 				FD2353F917E5A11B00817A2D /* IMW.pdf in Resources */,
+				D619AFC217F87FBB008CB66C /* WithSheep.pdf in Resources */,
 				2842F6A0151015EA00A1611D /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

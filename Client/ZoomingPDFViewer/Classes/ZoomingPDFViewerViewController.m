@@ -89,7 +89,7 @@
   [self.view addSubview:_currentPDFScrollView];
 
   // set the current page
-  NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"DeckPress" withExtension:@"pdf"];
+  NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"IMW" withExtension:@"pdf"];
   CGPDFDocumentRef PDFDocument = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
   CGPDFPageRef PDFPage = CGPDFDocumentGetPage(PDFDocument, page);
   [_currentPDFScrollView setPDFPage:PDFPage];

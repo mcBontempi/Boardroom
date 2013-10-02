@@ -62,7 +62,7 @@ class FileDemo(object):
                 </script>
               </head>
               <body onLoad="refreshIt()">
-                <img id="pic" src="" height = "100%%">
+                <img id="pic" src="" width = "100%%">
               </body>
             </html> """
 
@@ -74,12 +74,16 @@ class FileDemo(object):
     login.exposed = True
 
     def check(self, filename):
-        p = pusher.Pusher(
-        app_id='55201',
-        key='73117b00e748bfc50cb4',
-        secret='c192b64e3f803df1cbc6')
-        p['test_channel'].trigger('my_event', {'message': filename})
-        return "hey there"
+
+        if os.path.exists(filename + '.png'):
+            p = pusher.Pusher(
+            app_id='55201',
+            key='73117b00e748bfc50cb4',
+            secret='c192b64e3f803df1cbc6')
+            p['test_channel'].trigger('my_event', {'message': filename})
+            return "Found"
+        else:
+            return "Not Found"
     check.exposed = True
 
 
@@ -111,7 +115,7 @@ class FileDemo(object):
         app_id='55201',
         key='73117b00e748bfc50cb4',
         secret='c192b64e3f803df1cbc6')
-        p['test_channel'].trigger('my_event', {'message': 'hello world'})
+        p['test_channel'].trigger('my_event', {'message': myFile.filename})
 
         return out % (size, myFile.filename, myFile.type)
 

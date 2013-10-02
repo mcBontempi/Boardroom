@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, UploadState) {
 
 @interface CheckOperation ()
 @property UploadState state;
+@property (readwrite, copy) voidBlock falureBlock;
 @end
 
 @implementation CheckOperation
@@ -22,12 +23,14 @@ typedef NS_ENUM(NSInteger, UploadState) {
   AFHTTPClient *_client;
 }
 
-- (id)initWithHash:(NSString*)hash room:(NSString *)room;
+- (id)initWithHash:(NSString*)hash room:(NSString *)room falureBlock:(voidBlock)falureBlock
 {
   if (self = [super init]) {
     _state = UploadStateNotStarted;
     _room = room;
     _hash = hash;
+    
+    self.falureBlock = falureBlock;
     
     NSString *address;
     
@@ -83,8 +86,11 @@ typedef NS_ENUM(NSInteger, UploadState) {
     
     NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
     
-    
     NSLog(@"responseObject = %@", responseStr);
+    
+    if ([responseStr isEqualToString:@"Not Found"]) {
+      weakSelf.falureBlock();
+    }
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error){
     [weakSelf transitionToState:UploadStateRequestFailed notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];

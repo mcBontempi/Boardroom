@@ -31,7 +31,7 @@
   [_currentPDFScrollView removeFromSuperview];
 
   // add the new page & guesture recognizers
-  _currentPDFScrollView = [[PDFScrollView alloc] initWithFrame:self.view.frame];
+  _currentPDFScrollView = [[PDFScrollView alloc] initWithFrame:CGRectMake(0,0,568,320)];
   UISwipeGestureRecognizer *swipeLeftGuestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
   swipeLeftGuestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
   UISwipeGestureRecognizer *swipeRightGuestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
@@ -43,7 +43,7 @@
   [self.view addSubview:_currentPDFScrollView];
 
   // set the current page
-  NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"WithSheep" withExtension:@"pdf"];
+  NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"r8" withExtension:@"pdf"];
   
   CGPDFDocumentRef PDFDocument = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfURL);
   CGPDFPageRef PDFPage = CGPDFDocumentGetPage(PDFDocument, page);

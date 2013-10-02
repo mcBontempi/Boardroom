@@ -95,7 +95,7 @@
     
     // Determine the size of the PDF page.
     CGRect pageRect = CGPDFPageGetBoxRect(_PDFPage, kCGPDFMediaBox);
-  _PDFScale = 2.0;//self.frame.size.width/pageRect.size.width;
+  _PDFScale = 4.0;//self.frame.size.width/pageRect.size.width;
     pageRect.size = CGSizeMake(pageRect.size.width*_PDFScale, pageRect.size.height*_PDFScale);
   
     /*
@@ -130,7 +130,7 @@
  //   }
    
     self.backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-    self.backgroundImageView.frame = CGRectMake(0,0,320,480);
+    self.backgroundImageView.frame = CGRectMake(0,0,568,320);
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.backgroundImageView];
    

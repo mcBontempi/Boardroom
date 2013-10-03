@@ -61,7 +61,7 @@ class FileDemo(object):
                   }
                 </script>
               </head>
-              <body onLoad="refreshIt()">
+              <body bgcolor="#000000" onLoad="refreshIt()">
                 <img id="pic" src="" width = "100%%">
               </body>
             </html> """

@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D60A18C518169DC300E66DB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A18C418169DC300E66DB9 /* Foundation.framework */; };
+		D60A18C718169DC300E66DB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A18C618169DC300E66DB9 /* CoreGraphics.framework */; };
+		D60A18C918169DC300E66DB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A18C818169DC300E66DB9 /* UIKit.framework */; };
+		D60A18CF18169DC300E66DB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D60A18CD18169DC300E66DB9 /* InfoPlist.strings */; };
+		D60A18D118169DC300E66DB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A18D018169DC300E66DB9 /* main.m */; };
+		D60A18D518169DC300E66DB9 /* DDTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A18D418169DC300E66DB9 /* DDTAppDelegate.m */; };
+		D60A18DE18169DC300E66DB9 /* DDTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A18DD18169DC300E66DB9 /* DDTViewController.m */; };
+		D60A18E018169DC300E66DB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60A18DF18169DC300E66DB9 /* Images.xcassets */; };
+		D60A18E718169DC300E66DB9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A18E618169DC300E66DB9 /* XCTest.framework */; };
+		D60A18E818169DC300E66DB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A18C418169DC300E66DB9 /* Foundation.framework */; };
+		D60A18E918169DC300E66DB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A18C818169DC300E66DB9 /* UIKit.framework */; };
+		D60A18F118169DC300E66DB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D60A18EF18169DC300E66DB9 /* InfoPlist.strings */; };
+		D60A18F318169DC300E66DB9 /* FakeDeckPressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A18F218169DC300E66DB9 /* FakeDeckPressTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D60A18EA18169DC300E66DB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D60A18B918169DC200E66DB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D60A18C018169DC300E66DB9;
+			remoteInfo = FakeDeckPress;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D60A18C118169DC300E66DB9 /* FakeDeckPress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeDeckPress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60A18C418169DC300E66DB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D60A18C618169DC300E66DB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D60A18C818169DC300E66DB9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D60A18CC18169DC300E66DB9 /* FakeDeckPress-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FakeDeckPress-Info.plist"; sourceTree = "<group>"; };
+		D60A18CE18169DC300E66DB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D60A18D018169DC300E66DB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D60A18D218169DC300E66DB9 /* FakeDeckPress-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakeDeckPress-Prefix.pch"; sourceTree = "<group>"; };
+		D60A18D318169DC300E66DB9 /* DDTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDTAppDelegate.h; sourceTree = "<group>"; };
+		D60A18D418169DC300E66DB9 /* DDTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDTAppDelegate.m; sourceTree = "<group>"; };
+		D60A18DC18169DC300E66DB9 /* DDTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDTViewController.h; sourceTree = "<group>"; };
+		D60A18DD18169DC300E66DB9 /* DDTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDTViewController.m; sourceTree = "<group>"; };
+		D60A18DF18169DC300E66DB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D60A18E518169DC300E66DB9 /* FakeDeckPressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeDeckPressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60A18E618169DC300E66DB9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D60A18EE18169DC300E66DB9 /* FakeDeckPressTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FakeDeckPressTests-Info.plist"; sourceTree = "<group>"; };
+		D60A18F018169DC300E66DB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D60A18F218169DC300E66DB9 /* FakeDeckPressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeDeckPressTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D60A18BE18169DC300E66DB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60A18C718169DC300E66DB9 /* CoreGraphics.framework in Frameworks */,
+				D60A18C918169DC300E66DB9 /* UIKit.framework in Frameworks */,
+				D60A18C518169DC300E66DB9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60A18E218169DC300E66DB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60A18E718169DC300E66DB9 /* XCTest.framework in Frameworks */,
+				D60A18E918169DC300E66DB9 /* UIKit.framework in Frameworks */,
+				D60A18E818169DC300E66DB9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D60A18B818169DC200E66DB9 = {
+			isa = PBXGroup;
+			children = (
+				D60A18CA18169DC300E66DB9 /* FakeDeckPress */,
+				D60A18EC18169DC300E66DB9 /* FakeDeckPressTests */,
+				D60A18C318169DC300E66DB9 /* Frameworks */,
+				D60A18C218169DC300E66DB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D60A18C218169DC300E66DB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D60A18C118169DC300E66DB9 /* FakeDeckPress.app */,
+				D60A18E518169DC300E66DB9 /* FakeDeckPressTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D60A18C318169DC300E66DB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D60A18C418169DC300E66DB9 /* Foundation.framework */,
+				D60A18C618169DC300E66DB9 /* CoreGraphics.framework */,
+				D60A18C818169DC300E66DB9 /* UIKit.framework */,
+				D60A18E618169DC300E66DB9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D60A18CA18169DC300E66DB9 /* FakeDeckPress */ = {
+			isa = PBXGroup;
+			children = (
+				D60A18D318169DC300E66DB9 /* DDTAppDelegate.h */,
+				D60A18D418169DC300E66DB9 /* DDTAppDelegate.m */,
+				D60A18DC18169DC300E66DB9 /* DDTViewController.h */,
+				D60A18DD18169DC300E66DB9 /* DDTViewController.m */,
+				D60A18DF18169DC300E66DB9 /* Images.xcassets */,
+				D60A18CB18169DC300E66DB9 /* Supporting Files */,
+			);
+			path = FakeDeckPress;
+			sourceTree = "<group>";
+		};
+		D60A18CB18169DC300E66DB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D60A18CC18169DC300E66DB9 /* FakeDeckPress-Info.plist */,
+				D60A18CD18169DC300E66DB9 /* InfoPlist.strings */,
+				D60A18D018169DC300E66DB9 /* main.m */,
+				D60A18D218169DC300E66DB9 /* FakeDeckPress-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D60A18EC18169DC300E66DB9 /* FakeDeckPressTests */ = {
+			isa = PBXGroup;
+			children = (
+				D60A18F218169DC300E66DB9 /* FakeDeckPressTests.m */,
+				D60A18ED18169DC300E66DB9 /* Supporting Files */,
+			);
+			path = FakeDeckPressTests;
+			sourceTree = "<group>";
+		};
+		D60A18ED18169DC300E66DB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D60A18EE18169DC300E66DB9 /* FakeDeckPressTests-Info.plist */,
+				D60A18EF18169DC300E66DB9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D60A18C018169DC300E66DB9 /* FakeDeckPress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D60A18F618169DC300E66DB9 /* Build configuration list for PBXNativeTarget "FakeDeckPress" */;
+			buildPhases = (
+				D60A18BD18169DC300E66DB9 /* Sources */,
+				D60A18BE18169DC300E66DB9 /* Frameworks */,
+				D60A18BF18169DC300E66DB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeDeckPress;
+			productName = FakeDeckPress;
+			productReference = D60A18C118169DC300E66DB9 /* FakeDeckPress.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D60A18E418169DC300E66DB9 /* FakeDeckPressTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D60A18F918169DC300E66DB9 /* Build configuration list for PBXNativeTarget "FakeDeckPressTests" */;
+			buildPhases = (
+				D60A18E118169DC300E66DB9 /* Sources */,
+				D60A18E218169DC300E66DB9 /* Frameworks */,
+				D60A18E318169DC300E66DB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D60A18EB18169DC300E66DB9 /* PBXTargetDependency */,
+			);
+			name = FakeDeckPressTests;
+			productName = FakeDeckPressTests;
+			productReference = D60A18E518169DC300E66DB9 /* FakeDeckPressTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D60A18B918169DC200E66DB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DDT;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = DarenDavidTaylor.com;
+				TargetAttributes = {
+					D60A18E418169DC300E66DB9 = {
+						TestTargetID = D60A18C018169DC300E66DB9;
+					};
+				};
+			};
+			buildConfigurationList = D60A18BC18169DC200E66DB9 /* Build configuration list for PBXProject "FakeDeckPress" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D60A18B818169DC200E66DB9;
+			productRefGroup = D60A18C218169DC300E66DB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D60A18C018169DC300E66DB9 /* FakeDeckPress */,
+				D60A18E418169DC300E66DB9 /* FakeDeckPressTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D60A18BF18169DC300E66DB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60A18E018169DC300E66DB9 /* Images.xcassets in Resources */,
+				D60A18CF18169DC300E66DB9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60A18E318169DC300E66DB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60A18F118169DC300E66DB9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D60A18BD18169DC300E66DB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60A18D118169DC300E66DB9 /* main.m in Sources */,
+				D60A18DE18169DC300E66DB9 /* DDTViewController.m in Sources */,
+				D60A18D518169DC300E66DB9 /* DDTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60A18E118169DC300E66DB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60A18F318169DC300E66DB9 /* FakeDeckPressTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D60A18EB18169DC300E66DB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D60A18C018169DC300E66DB9 /* FakeDeckPress */;
+			targetProxy = D60A18EA18169DC300E66DB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D60A18CD18169DC300E66DB9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D60A18CE18169DC300E66DB9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D60A18EF18169DC300E66DB9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D60A18F018169DC300E66DB9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D60A18F418169DC300E66DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D60A18F518169DC300E66DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D60A18F718169DC300E66DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeDeckPress/FakeDeckPress-Prefix.pch";
+				INFOPLIST_FILE = "FakeDeckPress/FakeDeckPress-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D60A18F818169DC300E66DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeDeckPress/FakeDeckPress-Prefix.pch";
+				INFOPLIST_FILE = "FakeDeckPress/FakeDeckPress-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D60A18FA18169DC300E66DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FakeDeckPress.app/FakeDeckPress";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeDeckPress/FakeDeckPress-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FakeDeckPressTests/FakeDeckPressTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D60A18FB18169DC300E66DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FakeDeckPress.app/FakeDeckPress";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeDeckPress/FakeDeckPress-Prefix.pch";
+				INFOPLIST_FILE = "FakeDeckPressTests/FakeDeckPressTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D60A18BC18169DC200E66DB9 /* Build configuration list for PBXProject "FakeDeckPress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60A18F418169DC300E66DB9 /* Debug */,
+				D60A18F518169DC300E66DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D60A18F618169DC300E66DB9 /* Build configuration list for PBXNativeTarget "FakeDeckPress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60A18F718169DC300E66DB9 /* Debug */,
+				D60A18F818169DC300E66DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D60A18F918169DC300E66DB9 /* Build configuration list for PBXNativeTarget "FakeDeckPressTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60A18FA18169DC300E66DB9 /* Debug */,
+				D60A18FB18169DC300E66DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D60A18B918169DC200E66DB9 /* Project object */;
+}

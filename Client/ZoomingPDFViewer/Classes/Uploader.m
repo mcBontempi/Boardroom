@@ -1,7 +1,6 @@
 #import "Uploader.h"
 #import "UploadOperation.h"
 #import "UploadOperationQueue.h"
-#import "ImageMaker.h"
 #include <CommonCrypto/CommonDigest.h>
 #import "CheckOperation.h"
 

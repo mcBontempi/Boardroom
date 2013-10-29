@@ -108,6 +108,7 @@
 		CE2E8CBD2EC34097B4FEE3E6 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFNetworking/AFURLConnectionOperation.m; sourceTree = SOURCE_ROOT; };
 		D3D789B7E9DA4A95A0C8A0A6 /* Pods-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AFNetworking-prefix.pch"; sourceTree = SOURCE_ROOT; };
 		D5C52ED1BDE2437DBC1E8F65 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFNetworking/AFHTTPRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		D6EE0C9B181EFAA100985D63 /* SwipeViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwipeViewControllerDelegate.h; path = ../SwipeViewControllerDelegate.h; sourceTree = "<group>"; };
 		DF9B884B219F4A08B372A74C /* libPods-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3188E1BE3A94F61BFA85DD2 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = SOURCE_ROOT; };
 		E7339B031DA74D239EC70AE0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = SOURCE_ROOT; };
@@ -164,6 +165,7 @@
 		41A48228874E44C68DA0FC05 = {
 			isa = PBXGroup;
 			children = (
+				D6EE0C9B181EFAA100985D63 /* SwipeViewControllerDelegate.h */,
 				667F534EF01F42F38F57A57F /* Frameworks */,
 				035BA12FC78A41D3AA832B17 /* Pods */,
 				CE67E39DCEC2484697A0499B /* Products */,

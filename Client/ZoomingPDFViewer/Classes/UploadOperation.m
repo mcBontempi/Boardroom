@@ -1,5 +1,4 @@
 #import "UploadOperation.h"
-#import "ImageMaker.h"
 #import <AFNetworking/AFHTTPClient.h>
 
 typedef NS_ENUM(NSInteger, UploadState) {

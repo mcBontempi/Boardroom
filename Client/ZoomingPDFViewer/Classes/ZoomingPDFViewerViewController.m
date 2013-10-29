@@ -10,7 +10,6 @@
 @implementation ZoomingPDFViewerViewController {
   PDFScrollView *_currentPDFScrollView;
   Uploader *_uploader;
-  NSString *_hash;
 }
 
 

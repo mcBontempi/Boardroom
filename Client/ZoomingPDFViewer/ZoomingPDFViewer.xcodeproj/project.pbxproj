@@ -35,9 +35,10 @@
 		D648A3DB17FCB808004A8AF2 /* DeckPress2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D648A3DA17FCB808004A8AF2 /* DeckPress2.pdf */; };
 		D648A3DD17FCB9BB004A8AF2 /* DeckPress3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D648A3DC17FCB9BB004A8AF2 /* DeckPress3.pdf */; };
 		D686590817FC3B8000A36E92 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D686590717FC3B8000A36E92 /* Default-568h@2x.png */; };
+		D6EE0C93181EEABD00985D63 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE0C92181EEABD00985D63 /* SwipeViewController.m */; };
+		D6EE0C98181EED3500985D63 /* UIImage+PDFMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE0C97181EED3500985D63 /* UIImage+PDFMaker.m */; };
 		FD2353F917E5A11B00817A2D /* IMW.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353F817E5A11B00817A2D /* IMW.pdf */; };
 		FD2353FB17E6363300817A2D /* motorhome_heating_uk_22374.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */; };
-		FD23540417E73D1A00817A2D /* ImageMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2353FD17E73D1A00817A2D /* ImageMaker.m */; };
 		FD23540517E73D1A00817A2D /* Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2353FF17E73D1A00817A2D /* Uploader.m */; };
 		FD23540617E73D1A00817A2D /* UploadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23540117E73D1A00817A2D /* UploadOperation.m */; };
 		FD23540717E73D1A00817A2D /* UploadOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23540317E73D1A00817A2D /* UploadOperationQueue.m */; };
@@ -45,15 +46,15 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* ZoomingPDFViewerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomingPDFViewerAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* ZoomingPDFViewerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomingPDFViewerAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* ZoomingPDFViewerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomingPDFViewerAppDelegate.h; path = Classes/ZoomingPDFViewerAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* ZoomingPDFViewerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoomingPDFViewerAppDelegate.m; path = Classes/ZoomingPDFViewerAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* ZoomingPDFViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomingPDFViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2842F69F151015EA00A1611D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28948FE1150F001600BCC1F2 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		28D7ACF60DDB3853001CB0EB /* ZoomingPDFViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomingPDFViewerViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* ZoomingPDFViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomingPDFViewerViewController.m; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* ZoomingPDFViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoomingPDFViewerViewController.h; path = Classes/ZoomingPDFViewerViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* ZoomingPDFViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoomingPDFViewerViewController.m; path = Classes/ZoomingPDFViewerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ZoomingPDFViewer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomingPDFViewer_Prefix.pch; sourceTree = "<group>"; };
 		7242A5194B724B7E929893B3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -66,11 +67,11 @@
 		AF9862ED1219FFA700843786 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = images/Icon.png; sourceTree = "<group>"; };
 		AF9862EE1219FFA700843786 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "images/Icon@2x.png"; sourceTree = "<group>"; };
 		AF9862EF1219FFA700843786 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = images/iTunesArtwork; sourceTree = "<group>"; };
-		AFE29EA012079441003183E7 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledPDFView.h; sourceTree = "<group>"; };
-		AFE29EA112079441003183E7 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiledPDFView.m; sourceTree = "<group>"; };
+		AFE29EA012079441003183E7 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiledPDFView.h; path = Classes/TiledPDFView.h; sourceTree = "<group>"; };
+		AFE29EA112079441003183E7 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiledPDFView.m; path = Classes/TiledPDFView.m; sourceTree = "<group>"; };
 		AFE29EAB12079822003183E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AFE29EE212079C5C003183E7 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
-		AFE29EE312079C5C003183E7 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PDFScrollView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AFE29EE212079C5C003183E7 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFScrollView.h; path = Classes/PDFScrollView.h; sourceTree = "<group>"; };
+		AFE29EE312079C5C003183E7 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = PDFScrollView.m; path = Classes/PDFScrollView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AFE29EED12079E88003183E7 /* TestPage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TestPage.pdf; sourceTree = "<group>"; };
 		D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Perfect Health Diet - Regain Health and Lose Weight.pdf"; sourceTree = "<group>"; };
 		D619AFBF17F5E34D008CB66C /* DeckPress.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DeckPress.pdf; sourceTree = "<group>"; };
@@ -81,10 +82,12 @@
 		D648A3DA17FCB808004A8AF2 /* DeckPress2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DeckPress2.pdf; sourceTree = "<group>"; };
 		D648A3DC17FCB9BB004A8AF2 /* DeckPress3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DeckPress3.pdf; sourceTree = "<group>"; };
 		D686590717FC3B8000A36E92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D6EE0C91181EEABD00985D63 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		D6EE0C92181EEABD00985D63 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		D6EE0C96181EED3500985D63 /* UIImage+PDFMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PDFMaker.h"; path = "../UIImage+PDFMaker.h"; sourceTree = "<group>"; };
+		D6EE0C97181EED3500985D63 /* UIImage+PDFMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PDFMaker.m"; path = "../UIImage+PDFMaker.m"; sourceTree = "<group>"; };
 		FD2353F817E5A11B00817A2D /* IMW.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IMW.pdf; sourceTree = "<group>"; };
 		FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = motorhome_heating_uk_22374.pdf; sourceTree = "<group>"; };
-		FD2353FC17E73D1A00817A2D /* ImageMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMaker.h; sourceTree = "<group>"; };
-		FD2353FD17E73D1A00817A2D /* ImageMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMaker.m; sourceTree = "<group>"; };
 		FD2353FE17E73D1A00817A2D /* Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Uploader.h; sourceTree = "<group>"; };
 		FD2353FF17E73D1A00817A2D /* Uploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Uploader.m; sourceTree = "<group>"; };
 		FD23540017E73D1A00817A2D /* UploadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadOperation.h; sourceTree = "<group>"; };
@@ -112,24 +115,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FD2353FC17E73D1A00817A2D /* ImageMaker.h */,
-				FD2353FD17E73D1A00817A2D /* ImageMaker.m */,
-				FD2353FE17E73D1A00817A2D /* Uploader.h */,
-				FD2353FF17E73D1A00817A2D /* Uploader.m */,
-				D619AFC617F8924A008CB66C /* CheckOperation.h */,
-				D619AFC717F8924A008CB66C /* CheckOperation.m */,
-				FD23540017E73D1A00817A2D /* UploadOperation.h */,
-				FD23540117E73D1A00817A2D /* UploadOperation.m */,
-				FD23540217E73D1A00817A2D /* UploadOperationQueue.h */,
-				FD23540317E73D1A00817A2D /* UploadOperationQueue.m */,
-				1D3623240D0F684500981E51 /* ZoomingPDFViewerAppDelegate.h */,
-				1D3623250D0F684500981E51 /* ZoomingPDFViewerAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* ZoomingPDFViewerViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* ZoomingPDFViewerViewController.m */,
-				AFE29EE212079C5C003183E7 /* PDFScrollView.h */,
-				AFE29EE312079C5C003183E7 /* PDFScrollView.m */,
-				AFE29EA012079441003183E7 /* TiledPDFView.h */,
-				AFE29EA112079441003183E7 /* TiledPDFView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -145,8 +130,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				D686590717FC3B8000A36E92 /* Default-568h@2x.png */,
-				28948FE1150F001600BCC1F2 /* ReadMe.txt */,
+				D6EE0C9A181EF92300985D63 /* Global */,
+				D6EE0C99181EF90500985D63 /* Old */,
+				D6EE0C95181EED0000985D63 /* Categories */,
+				D6EE0C94181EEB0E00985D63 /* Uploader */,
+				D6EE0C90181EEA8300985D63 /* SwipeViewController */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -169,10 +157,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D686590717FC3B8000A36E92 /* Default-568h@2x.png */,
+				28948FE1150F001600BCC1F2 /* ReadMe.txt */,
 				D619AFC917F96A96008CB66C /* r8.pdf */,
 				D619AFC117F87FBB008CB66C /* WithSheep.pdf */,
 				D619AFBD17F5E262008CB66C /* Perfect Health Diet - Regain Health and Lose Weight.pdf */,
-				2842F69E151015EA00A1611D /* MainStoryboard.storyboard */,
 				D619AFBF17F5E34D008CB66C /* DeckPress.pdf */,
 				AF9862E91219FFA700843786 /* Icon-72.png */,
 				AF9862EA1219FFA700843786 /* Icon-Small-50.png */,
@@ -201,6 +190,64 @@
 				7E37EDDC047B41D4BEBE0441 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6EE0C90181EEA8300985D63 /* SwipeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE0C91181EEABD00985D63 /* SwipeViewController.h */,
+				D6EE0C92181EEABD00985D63 /* SwipeViewController.m */,
+			);
+			name = SwipeViewController;
+			sourceTree = "<group>";
+		};
+		D6EE0C94181EEB0E00985D63 /* Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				FD2353FE17E73D1A00817A2D /* Uploader.h */,
+				FD2353FF17E73D1A00817A2D /* Uploader.m */,
+				D619AFC617F8924A008CB66C /* CheckOperation.h */,
+				D619AFC717F8924A008CB66C /* CheckOperation.m */,
+				FD23540017E73D1A00817A2D /* UploadOperation.h */,
+				FD23540117E73D1A00817A2D /* UploadOperation.m */,
+				FD23540217E73D1A00817A2D /* UploadOperationQueue.h */,
+				FD23540317E73D1A00817A2D /* UploadOperationQueue.m */,
+			);
+			name = Uploader;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D6EE0C95181EED0000985D63 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE0C96181EED3500985D63 /* UIImage+PDFMaker.h */,
+				D6EE0C97181EED3500985D63 /* UIImage+PDFMaker.m */,
+			);
+			name = Categories;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D6EE0C99181EF90500985D63 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* ZoomingPDFViewerViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* ZoomingPDFViewerViewController.m */,
+				AFE29EE212079C5C003183E7 /* PDFScrollView.h */,
+				AFE29EE312079C5C003183E7 /* PDFScrollView.m */,
+				AFE29EA012079441003183E7 /* TiledPDFView.h */,
+				AFE29EA112079441003183E7 /* TiledPDFView.m */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		D6EE0C9A181EF92300985D63 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* ZoomingPDFViewerAppDelegate.h */,
+				1D3623250D0F684500981E51 /* ZoomingPDFViewerAppDelegate.m */,
+				2842F69E151015EA00A1611D /* MainStoryboard.storyboard */,
+			);
+			name = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D619AFC817F8924A008CB66C /* CheckOperation.m in Sources */,
-				FD23540417E73D1A00817A2D /* ImageMaker.m in Sources */,
+				D6EE0C98181EED3500985D63 /* UIImage+PDFMaker.m in Sources */,
 				FD23540517E73D1A00817A2D /* Uploader.m in Sources */,
 				FD23540717E73D1A00817A2D /* UploadOperationQueue.m in Sources */,
 				FD23540617E73D1A00817A2D /* UploadOperation.m in Sources */,
@@ -329,6 +376,7 @@
 				1D3623260D0F684500981E51 /* ZoomingPDFViewerAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ZoomingPDFViewerViewController.m in Sources */,
 				AFE29EA212079441003183E7 /* TiledPDFView.m in Sources */,
+				D6EE0C93181EEABD00985D63 /* SwipeViewController.m in Sources */,
 				AFE29EE412079C5C003183E7 /* PDFScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

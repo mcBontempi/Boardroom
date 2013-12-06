@@ -3,8 +3,9 @@ import os
 import logging
 import pusher
 
-class FileDemo(object):
+class Root(object):
 #def index(self):
+    @cherrypy.expose
 
     def index(self):
         return "<a href='login'>login</a>"
@@ -57,11 +58,40 @@ class FileDemo(object):
 
                   function refreshIt(data) {
                   if (!document.images) return;
-                    document.images['pic'].src = 'http://162.13.5.127:8001/' +  data.message + '.png';
+                    document.images['pic'].src = 'http://162.13.5.127/images/' +  data.message + '.png' ;
                   }
+
+
+function toggleFullScreen() {
+       if (!document.fullscreenElement &&    // alternative standard method
+        !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+         if (document.documentElement.requestFullscreen) {
+           document.documentElement.requestFullscreen();
+         } else if (document.documentElement.mozRequestFullScreen) {
+           document.documentElement.mozRequestFullScreen();
+         } else if (document.documentElement.webkitRequestFullscreen) {
+           document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+         }
+       } else {
+          if (document.cancelFullScreen) {
+             document.cancelFullScreen();
+          } else if (document.mozCancelFullScreen) {
+             document.mozCancelFullScreen();
+          } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+          }
+       }
+     }
+
+
                 </script>
               </head>
-              <body bgcolor="#000000" onLoad="refreshIt()">
+              <body bgcolor="#FFFFFF" onLoad="">
+
+                 <button onclick="toggleFullScreen(); return false">
+        Toggle Fullscreen
+    </button>
+
                 <img id="pic" src="" width = "100%%">
               </body>
             </html> """
@@ -70,7 +100,7 @@ class FileDemo(object):
     serve.exposed = True
 
     def login(self):
-        return "<form name='input' action='http://localhost:8080/serve'>Room: <input type='text' name='room'><input type='submit' value='Submit'></form>"
+        return "<style>input{ color: #781351;background: #fee3ad;border: 100px solid #781351}.submit input{font-size:10% color: #000;background: #ffa20f;border: 2px outset #d7b9c9}</style><form name='input' action='serve'>Room: <input type='text' name='room'><input type='submit' value='Submit'></form>"
     login.exposed = True
 
     def check(self, filename):
@@ -86,6 +116,16 @@ class FileDemo(object):
             return "Not Found"
     check.exposed = True
 
+    def getfile(self, filename):
+
+        if os.path.exists(filename + '.png'):
+
+            f = open(filename, 'wb')
+
+            return f
+        else:
+            return "Not Found"
+    getfile.exposed = True
 
     def upload(self, myFile):
         out = """<html>
@@ -128,6 +168,11 @@ class FileDemo(object):
     list.exposed = True
 
 cherrypy.config.update({'server.socket_host': '0.0.0.0'})
-cherrypy.config.update({'server.socket_port': 8080, })
-cherrypy.quickstart(FileDemo())
+cherrypy.config.update({'server.socket_port': 80, })
+
+conf = {'/images': {'tools.staticdir.on': True,
+        'tools.staticdir.dir': '~/boardroom'}}
+print conf
+cherrypy.quickstart(Root(), '/', config=conf)
+
 

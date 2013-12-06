@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7D75704E-70BB-4C3F-9464-DB05C18B18C2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DeckPress</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2A77303C-216C-44E9-BA4E-F34B6670C03E</key>
+		<string>ssh://github.com/mcBontempi/Boardroom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Client/DeckPress/DeckPress.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2A77303C-216C-44E9-BA4E-F34B6670C03E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/mcBontempi/Boardroom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2A77303C-216C-44E9-BA4E-F34B6670C03E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2A77303C-216C-44E9-BA4E-F34B6670C03E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Boardroom</string>
+		</dict>
+	</array>
+</dict>
+</plist>

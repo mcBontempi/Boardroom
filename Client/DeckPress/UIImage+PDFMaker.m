@@ -43,6 +43,15 @@
   return image;
 }
 
++ (NSInteger)numberOfPagesWithPDFURL:(NSURL *)url
+{
+  NSUInteger pageCount;
+  CGPDFDocumentRef document = CGPDFDocumentCreateWithURL((__bridge CFURLRef)url);
+  pageCount = CGPDFDocumentGetNumberOfPages(document);
+  CGPDFDocumentRelease(document);
+  
+  return pageCount;
+}
 
 
 @end

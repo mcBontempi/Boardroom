@@ -57,7 +57,7 @@
   return _pngsForSwipeView;
 }
 
-- (NSArray *)hashesForSwipeView
+- (NSArray *)hashesForSwipeViewx
 {
   if(!_hashesForSwipeView) {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];

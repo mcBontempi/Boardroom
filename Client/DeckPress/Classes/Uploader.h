@@ -2,7 +2,8 @@
 
 @interface Uploader : NSObject
 
-- (void)uploadPNG:(NSData *)data hash:(NSString *)hash room:(NSString *)room;
+- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index room:(NSString *)room;
+
 
 - (BOOL)isBusy;
 

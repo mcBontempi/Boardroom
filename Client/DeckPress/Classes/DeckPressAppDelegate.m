@@ -1,15 +1,10 @@
 #import "DeckPressAppDelegate.h"
 #import "SwipeViewController.h"
-#import "UIImage+PDFMaker.h"
 #import "Uploader.h"
-#import "PageGenerator.h"
 #import "PageData.h"
+#import "PageGeneratorOperation.h"
 
 @interface DeckPressAppDelegate () <SwipeViewControllerDelegate>
-
-@property (nonatomic, strong) PageGenerator *pageGenerator;
-
-
 @property (nonatomic, strong) NSString *room;
 @end
 
@@ -22,20 +17,18 @@
 
 - (NSURL *)docURL
 {
-    return [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
+    return [[NSBundle mainBundle] URLForResource:@"Alaska" withExtension:@"pdf"];
 }
 
 - (NSUInteger)pageCount
 {
-    return [PageGenerator numberOfPagesWithPDFURL:self.docURL];
+    return [PageGeneratorOperation numberOfPagesWithPDFURL:self.docURL];
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.room = [self getUUID];
-    
-    self.pageGenerator = [[PageGenerator alloc] initWithDocURL:self.docURL];
     
     SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
     
@@ -49,26 +42,21 @@
     return YES;
 }
 
-- (PageData *)turnedToPage:(NSInteger)page
+- (void)turnedToPage:(NSInteger)page
 {
-    return [self uploadPage:page];
+    [self uploadPage:page];
 }
 
 
-- (PageData *)uploadPage:(NSUInteger)index
+- (void)uploadPage:(NSUInteger)index
 {
-    PageData *pageData = [self.pageGenerator objectAtIndex:index];
-    
-    [_uploader uploadPNG:pageData.png hash:pageData.hash room:self.room];
-
-    return pageData;
+    [_uploader makePageDataForURL:self.docURL index:index room:self.room];
 }
 
 
 -(NSString *)getUUID
 {
     return @"2AC9EC35-7CEE-4313-BA67-EF90E301B241";
-    
     
     CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
     NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);

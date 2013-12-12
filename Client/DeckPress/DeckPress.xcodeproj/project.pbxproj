@@ -37,10 +37,10 @@
 		D652EB381851BA2600BD59DE /* Bike.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D652EB371851BA2600BD59DE /* Bike.pdf */; };
 		D652EB3A1851BEDC00BD59DE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D652EB391851BEDC00BD59DE /* MessageUI.framework */; };
 		D686590817FC3B8000A36E92 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D686590717FC3B8000A36E92 /* Default-568h@2x.png */; };
-		D6B0E941185482670052CDC0 /* PageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B0E940185482670052CDC0 /* PageGenerator.m */; };
+		D68827D7185A537900EAF549 /* PageGeneratorOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D68827D6185A537900EAF549 /* PageGeneratorOperation.m */; };
+		D68827D9185A652600EAF549 /* Alaska.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D68827D8185A652600EAF549 /* Alaska.pdf */; };
 		D6B0E9441854829E0052CDC0 /* PageData.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B0E9431854829E0052CDC0 /* PageData.m */; };
 		D6EE0C93181EEABD00985D63 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE0C92181EEABD00985D63 /* SwipeViewController.m */; };
-		D6EE0C98181EED3500985D63 /* UIImage+PDFMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE0C97181EED3500985D63 /* UIImage+PDFMaker.m */; };
 		FD2353F917E5A11B00817A2D /* IMW.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353F817E5A11B00817A2D /* IMW.pdf */; };
 		FD2353FB17E6363300817A2D /* motorhome_heating_uk_22374.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */; };
 		FD23540517E73D1A00817A2D /* Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2353FF17E73D1A00817A2D /* Uploader.m */; };
@@ -85,14 +85,13 @@
 		D652EB371851BA2600BD59DE /* Bike.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Bike.pdf; sourceTree = "<group>"; };
 		D652EB391851BEDC00BD59DE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D686590717FC3B8000A36E92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D6B0E93F185482670052CDC0 /* PageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGenerator.h; sourceTree = "<group>"; };
-		D6B0E940185482670052CDC0 /* PageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGenerator.m; sourceTree = "<group>"; };
+		D68827D5185A537900EAF549 /* PageGeneratorOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGeneratorOperation.h; sourceTree = "<group>"; };
+		D68827D6185A537900EAF549 /* PageGeneratorOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGeneratorOperation.m; sourceTree = "<group>"; };
+		D68827D8185A652600EAF549 /* Alaska.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Alaska.pdf; path = ../Alaska.pdf; sourceTree = "<group>"; };
 		D6B0E9421854829E0052CDC0 /* PageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageData.h; sourceTree = "<group>"; };
 		D6B0E9431854829E0052CDC0 /* PageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageData.m; sourceTree = "<group>"; };
 		D6EE0C91181EEABD00985D63 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
 		D6EE0C92181EEABD00985D63 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
-		D6EE0C96181EED3500985D63 /* UIImage+PDFMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PDFMaker.h"; path = "../UIImage+PDFMaker.h"; sourceTree = "<group>"; };
-		D6EE0C97181EED3500985D63 /* UIImage+PDFMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PDFMaker.m"; path = "../UIImage+PDFMaker.m"; sourceTree = "<group>"; };
 		FD2353F817E5A11B00817A2D /* IMW.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = IMW.pdf; sourceTree = "<group>"; };
 		FD2353FA17E6363300817A2D /* motorhome_heating_uk_22374.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = motorhome_heating_uk_22374.pdf; sourceTree = "<group>"; };
 		FD2353FE17E73D1A00817A2D /* Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Uploader.h; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 				D652EB3518511C5B00BD59DE /* Wide.pdf */,
 				D61F838A1841068C001F20F0 /* DeckPress-Info.plist */,
 				D686590717FC3B8000A36E92 /* Default-568h@2x.png */,
+				D68827D8185A652600EAF549 /* Alaska.pdf */,
 				28948FE1150F001600BCC1F2 /* ReadMe.txt */,
 				D619AFC917F96A96008CB66C /* r8.pdf */,
 				D61F8384183FE91F001F20F0 /* coloringbook.pdf */,
@@ -209,10 +209,10 @@
 		D6B0E93E1854824C0052CDC0 /* PageGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				D6B0E93F185482670052CDC0 /* PageGenerator.h */,
-				D6B0E940185482670052CDC0 /* PageGenerator.m */,
 				D6B0E9421854829E0052CDC0 /* PageData.h */,
 				D6B0E9431854829E0052CDC0 /* PageData.m */,
+				D68827D5185A537900EAF549 /* PageGeneratorOperation.h */,
+				D68827D6185A537900EAF549 /* PageGeneratorOperation.m */,
 			);
 			name = PageGenerator;
 			sourceTree = "<group>";
@@ -245,8 +245,6 @@
 		D6EE0C95181EED0000985D63 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D6EE0C96181EED3500985D63 /* UIImage+PDFMaker.h */,
-				D6EE0C97181EED3500985D63 /* UIImage+PDFMaker.m */,
 			);
 			name = Categories;
 			path = Classes;
@@ -347,6 +345,7 @@
 				D619AFC217F87FBB008CB66C /* WithSheep.pdf in Resources */,
 				D61F8383183FE58B001F20F0 /* mouse.pdf in Resources */,
 				2842F6A0151015EA00A1611D /* MainStoryboard.storyboard in Resources */,
+				D68827D9185A652600EAF549 /* Alaska.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,11 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68827D7185A537900EAF549 /* PageGeneratorOperation.m in Sources */,
 				D6B0E9441854829E0052CDC0 /* PageData.m in Sources */,
 				D619AFC817F8924A008CB66C /* CheckOperation.m in Sources */,
-				D6EE0C98181EED3500985D63 /* UIImage+PDFMaker.m in Sources */,
 				FD23540517E73D1A00817A2D /* Uploader.m in Sources */,
-				D6B0E941185482670052CDC0 /* PageGenerator.m in Sources */,
 				FD23540717E73D1A00817A2D /* UploadOperationQueue.m in Sources */,
 				FD23540617E73D1A00817A2D /* UploadOperation.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,

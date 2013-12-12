@@ -1,55 +1,109 @@
 //
-//  PageGenerator.m
+//  PageGeneratorOperation.m
 //  DeckPress
 //
-//  Created by Daren David Taylor on 08/12/2013.
+//  Created by Daren David Taylor on 12/12/2013.
 //
 //
 
-#import "PageGenerator.h"
-#import "pageData.h"
-#import "UIImage+PDFMaker.h"
+#import "PageGeneratorOperation.h"
+#import "PageData.h"
 #include <CommonCrypto/CommonDigest.h>
 
-@implementation PageGenerator {
-    NSMutableArray *_array;
+typedef NS_ENUM(NSInteger, PageGeneratorState) {
+    PageGeneratorStateNotStarted = 0,
+    PageGeneratorStateQueued,
+    PageGeneratorStateSucceeded,
+};
+
+@interface PageGeneratorOperation ()
+@property PageGeneratorState state;
+
+@end
+
+@implementation PageGeneratorOperation {
     NSURL *_docURL;
+    pageDataBlock _successBlock;
+    PageData *_pageData;
+    NSUInteger _index;
 }
 
-- (id)init
-{
-    assert(0);
-    return nil;
-}
 
-- (id)initWithDocURL:(NSURL *)docURL
+- (id)initWitdocURL:(NSURL *)docURL index:(NSUInteger)index successBlock:(pageDataBlock)successBlock
 {
     if (self = [super init]) {
-        
+        _state = PageGeneratorStateNotStarted;
         _docURL = docURL;
-        _array = [[NSMutableArray alloc] init];
         
-        for (NSUInteger i = 0 ; i < [self.class numberOfPagesWithPDFURL:docURL] ; i++) {
-            [_array addObject:[[PageData alloc] init]];
-        }
+        _successBlock = successBlock;
+        
+        _index = index;
     }
-    
     return self;
 }
 
-- (id)objectAtIndex:(NSUInteger)index
+
+
+
+- (BOOL)isFinished
 {
-    PageData *pageData = _array[index];
-    if (!pageData.generated) {
-        pageData.image = [self.class imageWithPDFURL:_docURL pageNumber:index+1];
-        pageData.png = UIImagePNGRepresentation(pageData.image);
-        pageData.hash = [PageGenerator MD5StringOfData:pageData.png];
-        
-        pageData.generated = YES;
+    return self.state == PageGeneratorStateSucceeded;
+}
+
+- (BOOL)isExecuting
+{
+    return self.state == PageGeneratorStateQueued;
+}
+
+- (BOOL)isReady
+{
+    return self.state == PageGeneratorStateNotStarted;
+}
+
+- (BOOL)isConcurrent
+{
+    return NO;
+}
+
+- (void)main
+{
+    [self transitionToState:PageGeneratorStateQueued
+       notifyChangesForKeys:@[@"isExecuting"]];
+    
+    _pageData = [[PageData alloc] init];
+    _pageData.index = _index;
+    _pageData.image = [self.class imageWithPDFURL:_docURL pageNumber:_index+1];
+    _pageData.png = UIImagePNGRepresentation(_pageData.image);
+    _pageData.hash = [self.class MD5StringOfData:_pageData.png];
+    _pageData.generated = YES;
+    
+    
+    [self transitionToState:PageGeneratorStateSucceeded notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
+    _successBlock(_pageData);
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:_pageData];
+    
+
+}
+
+- (void)cancel
+{
+}
+
+- (void)transitionToState:(PageGeneratorState)newState notifyChangesForKeys:(NSArray *)keys
+{
+    for (NSString *key in keys) {
+        [self willChangeValueForKey:key];
     }
     
-    return pageData;
+    _state = newState;
+    
+    for (NSString *key in keys) {
+        [self didChangeValueForKey:key];
+    }
 }
+
+
 
 
 + (NSString*)MD5StringOfData:(NSData*)inputData
@@ -118,6 +172,7 @@
     
     return pageCount;
 }
+
 
 
 

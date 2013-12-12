@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSData *png;
 @property (nonatomic, strong) NSString *hash;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic) NSUInteger index;
 @property (nonatomic) BOOL generated;
 
 @end

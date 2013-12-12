@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad
 {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChangedNotificationHandler:) name:@"pageChangedNotification" object:nil];
+    
     [super viewDidLoad];
     
     //debug
@@ -32,11 +35,18 @@
     
 }
 
+- (void)pageChangedNotificationHandler:(NSNotification *)notification
+{
+    PageData *pageData = (PageData*)notification.object;
+
+//    [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData];
+
+    [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData waitUntilDone:NO];
+}
+
 - (void)showPage:(NSUInteger)index
 {
-    PageData *pageData = [self.delegate turnedToPage:index];
-    
-    [self insertPage:pageData atIndex:index];
+    [self.delegate turnedToPage:index];
 }
 
 - (void)sizeScrollViewContentToPageCount
@@ -48,7 +58,7 @@
 }
 
 
-- (void)insertPage:(PageData *)pageData atIndex:(NSUInteger)index
+- (void)insertPage:(PageData *)pageData
 {
     if (![_hashToImageDictionary objectForKey:pageData.hash]) {
         
@@ -58,12 +68,14 @@
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:pageData.image];
         
-        
         [_hashToImageDictionary setObject:imageView forKey:pageData.hash];
         
-        
-        imageView.frame = CGRectMake(index * pageWidth, 0, pageWidth, pageHeight);
+        imageView.frame = CGRectMake(pageData.index * pageWidth, 0, pageWidth, pageHeight);
         [self.scrollView addSubview:imageView];
+        
+        NSLog(@"updated uiimageview");
+        
+        [self.scrollView setNeedsDisplay];
     }
 }
 
@@ -73,10 +85,8 @@
     if(pageNumber != _pageNumber) {
         _pageNumber = pageNumber;
         if(pageNumber < self.pageCount) {
-            PageData *pageData = [self.delegate turnedToPage:pageNumber];
-            
-            [self insertPage:pageData atIndex:pageNumber];
-        }
+          [self.delegate turnedToPage:pageNumber];
+            }
     }
 }
 

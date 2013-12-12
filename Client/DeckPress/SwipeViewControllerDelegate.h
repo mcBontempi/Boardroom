@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PageData.h"
 
 @protocol SwipeViewControllerDelegate <NSObject>
 
-- (void)turnedToPage:(NSInteger)page;
+- (PageData *)turnedToPage:(NSInteger)page;
 
 @end

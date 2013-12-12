@@ -2,120 +2,79 @@
 #import "SwipeViewController.h"
 #import "UIImage+PDFMaker.h"
 #import "Uploader.h"
+#import "PageGenerator.h"
+#import "PageData.h"
 
 @interface DeckPressAppDelegate () <SwipeViewControllerDelegate>
 
-@property (nonatomic, strong) NSArray *imagesForSwipeView;
-@property (nonatomic, strong) NSArray *pngsForSwipeView;
-@property (nonatomic, strong) NSArray *hashesForSwipeView;
+@property (nonatomic, strong) PageGenerator *pageGenerator;
 
 
 @property (nonatomic, strong) NSString *room;
 @end
 
 @implementation DeckPressAppDelegate {
-  Uploader *_uploader;
+    Uploader *_uploader;
 }
 
 @synthesize window=_window;
 
 
-- (NSArray *)imagesForSwipeView
+- (NSURL *)docURL
 {
-  if(!_imagesForSwipeView) {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (NSInteger i = 0 ;i < 11 ; i++) {
-      [array addObject: [UIImage imageWithPDFURL:url pageNumber:i+1]];
-    }
-    
-    _imagesForSwipeView =  [array copy];
-  }
-  return _imagesForSwipeView;
+    return [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
 }
 
-- (NSArray *)pngsForSwipeView
+- (NSUInteger)pageCount
 {
-  if(!_pngsForSwipeView) {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (NSInteger i = 0 ;i < 11 ; i++) {
-      UIImage *image = [UIImage imageWithPDFURL:url pageNumber:i+1];
-      
-      NSData *data = UIImagePNGRepresentation(image);
-      
-      [array addObject:data];
-    }
-    
-    _pngsForSwipeView = [array copy];
-    
-  }
-  return _pngsForSwipeView;
+    return [PageGenerator numberOfPagesWithPDFURL:self.docURL];
 }
-
-- (NSArray *)hashesForSwipeViewx
-{
-  if(!_hashesForSwipeView) {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (NSInteger i = 0 ;i < 11 ; i++) {
-      UIImage *image = [UIImage imageWithPDFURL:url pageNumber:i+1];
-      
-      NSData *data = UIImagePNGRepresentation(image);
-      
-      NSString *hash = [Uploader MD5StringOfData:data];
-      
-      [array addObject:hash];
-    }
-    
-    _hashesForSwipeView = [array copy];
-    
-  }
-  return _hashesForSwipeView;
-}
-
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  self.room = [self getUUID];
-  
-  
-  SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
-  swipeViewController.images = [self imagesForSwipeView];
-  swipeViewController.delegate = self;
-  swipeViewController.room = self.room;
-  
-  _uploader = [[Uploader alloc] init];
-  [_uploader uploadPNG:self.pngsForSwipeView[0] hash:self.hashesForSwipeView[0] room:self.room];
-  
-  return YES;
+    self.room = [self getUUID];
+    
+    self.pageGenerator = [[PageGenerator alloc] initWithDocURL:self.docURL];
+    
+    SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
+    
+    swipeViewController.pageCount = self.pageCount;
+    
+    swipeViewController.delegate = self;
+    swipeViewController.room = self.room;
+    
+    _uploader = [[Uploader alloc] init];
+    
+    return YES;
 }
 
-- (void)turnedToPage:(NSInteger)page
+- (PageData *)turnedToPage:(NSInteger)page
 {
-  [_uploader uploadPNG:self.pngsForSwipeView[page] hash:self.hashesForSwipeView[page] room:self.room];
-  
+    return [self uploadPage:page];
+}
+
+
+- (PageData *)uploadPage:(NSUInteger)index
+{
+    PageData *pageData = [self.pageGenerator objectAtIndex:index];
+    
+    [_uploader uploadPNG:pageData.png hash:pageData.hash room:self.room];
+
+    return pageData;
 }
 
 
 -(NSString *)getUUID
 {
-  return @"2AC9EC35-7CEE-4313-BA67-EF90E301B241";
-  
-  
-  CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
-  NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
-  CFRelease(newUniqueId);
-  
-  return uuidString;
+    return @"2AC9EC35-7CEE-4313-BA67-EF90E301B241";
+    
+    
+    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
+    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
+    CFRelease(newUniqueId);
+    
+    return uuidString;
 }
 
 

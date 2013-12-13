@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, UploadState) {
 
 - (BOOL)isConcurrent
 {
-  return NO;
+  return YES;
 }
 
 - (void)main
@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger, UploadState) {
     [weakSelf transitionToState:UploadStateRequestFailed notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
     NSLog(@"Shit something went wrong!");
     
-    [[[UIAlertView alloc] initWithTitle:@"connection error" message:@"when uploading" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil] show];
+ //   [[[UIAlertView alloc] initWithTitle:@"connection error" message:@"when uploading" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil] show];
     
   }];
   [_client enqueueHTTPRequestOperation:operation];

@@ -26,6 +26,11 @@
 - (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index room:(NSString *)room
 {
     
+    //[_queue cancelOperationWithTypeArray:@[CheckOperation.class, UploadOperation.class]];
+    
+    //[_queue cancelAll]
+    
+    
     __weak Uploader *weakSelf = self;
     
     PageGeneratorOperation *operation = [[PageGeneratorOperation alloc] initWitdocURL:docURL index:index successBlock:^(PageData *pageData) {
@@ -43,10 +48,6 @@
   _hash = hash;
   
   NSLog(@"hash = %@", _hash);
-  
-    
-    
-    
     
    CheckOperation *checkOperation = [[CheckOperation alloc] initWithHash:_hash room:room falureBlock: ^{
    UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:_data hash:_hash room:room];

@@ -16,4 +16,6 @@
 
 - (BOOL)isBusy;
 
+- (void)cancelOperationWithTypeArray:(NSArray *)cancelOperationClasses;
+
 @end

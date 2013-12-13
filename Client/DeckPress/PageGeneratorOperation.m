@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
 
 - (BOOL)isConcurrent
 {
-    return NO;
+    return YES;
 }
 
 - (void)main
@@ -76,12 +76,12 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
     _pageData.png = UIImagePNGRepresentation(_pageData.image);
     _pageData.hash = [self.class MD5StringOfData:_pageData.png];
     _pageData.generated = YES;
-    
+  
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:_pageData];
     
     [self transitionToState:PageGeneratorStateSucceeded notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
     _successBlock(_pageData);
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:_pageData];
     
 
 }

@@ -17,7 +17,7 @@
 
 - (NSURL *)docURL
 {
-    return [[NSBundle mainBundle] URLForResource:@"Alaska" withExtension:@"pdf"];
+    return [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
 }
 
 - (NSUInteger)pageCount

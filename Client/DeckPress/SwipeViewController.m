@@ -61,8 +61,6 @@
 - (void)insertPage:(PageData *)pageData
 {
     if (![_hashToImageDictionary objectForKey:pageData.hash]) {
-        
-        
         CGFloat pageWidth = self.scrollView.frame.size.width;
         CGFloat pageHeight = self.scrollView.frame.size.height;
         
@@ -71,6 +69,7 @@
         [_hashToImageDictionary setObject:imageView forKey:pageData.hash];
         
         imageView.frame = CGRectMake(pageData.index * pageWidth, 0, pageWidth, pageHeight);
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.scrollView addSubview:imageView];
         
         NSLog(@"updated uiimageview");

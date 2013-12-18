@@ -9,4 +9,6 @@
 
 - (void)showPage:(NSUInteger)index;
 
+- (NSUInteger)currentPage;
+
 @end

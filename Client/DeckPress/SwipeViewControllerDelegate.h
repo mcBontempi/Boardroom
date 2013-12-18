@@ -11,6 +11,7 @@
 
 @protocol SwipeViewControllerDelegate <NSObject>
 
-- (void)turnedToPage:(NSInteger)page;
+- (void)doUpload:(PageData *)pageData;
+- (void)makePageData:(NSUInteger)index;
 
 @end

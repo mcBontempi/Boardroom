@@ -10,9 +10,6 @@
 @implementation Uploader
 {
   UploadOperationQueue *_queue;
-  
-  NSData *_data;
-  NSString *_hash;
 }
 
 - (id) init
@@ -31,26 +28,20 @@
     //[_queue cancelAll]
     
     
-    __weak Uploader *weakSelf = self;
+    //__weak Uploader *weakSelf = self;
     
     PageGeneratorOperation *operation = [[PageGeneratorOperation alloc] initWitdocURL:docURL index:index successBlock:^(PageData *pageData) {
-        [weakSelf uploadPNG:pageData.png hash:pageData.hash room:room];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:pageData];
+       // [weakSelf uploadPNG:pageData.png hash:pageData.hash room:room];
     }];
 
     [_queue addOperation:operation];
 }
 
-
-
-- (void)uploadPNG:(NSData *)data hash:(NSString *)hash room:(NSString *)room
+- (void)doUpload:(PageData *)pageData room:(NSString *)room
 {
-  _data = data;
-  _hash = hash;
-  
-  NSLog(@"hash = %@", _hash);
-    
-   CheckOperation *checkOperation = [[CheckOperation alloc] initWithHash:_hash room:room falureBlock: ^{
-   UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:_data hash:_hash room:room];
+   CheckOperation *checkOperation = [[CheckOperation alloc] initWithHash:pageData.hash room:room falureBlock: ^{
+   UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:pageData.png hash:pageData.hash room:room];
    [_queue addOperation:uploadOperation];} ];
    [_queue addOperation:checkOperation];
 }

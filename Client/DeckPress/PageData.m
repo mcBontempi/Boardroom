@@ -2,4 +2,9 @@
 
 @implementation PageData
 
+- (void)dealloc
+{
+    
+}
+
 @end

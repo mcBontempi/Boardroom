@@ -7,14 +7,8 @@
 
 @implementation SwipeViewController {
     NSInteger _pageNumber;
-    NSMutableDictionary *_hashToImageDictionary;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self showPage:0];
+    NSMutableArray *_displayedPages;
+    UIView *_slideContainerView;
 }
 
 - (void)viewDidLoad
@@ -29,10 +23,14 @@
     
     [self sizeScrollViewContentToPageCount];
     
-    _hashToImageDictionary = [[NSMutableDictionary alloc] init];
+    _displayedPages = [[NSMutableArray alloc] init];
     
     self.scrollView.delegate = self;
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self slideCheck];
 }
 
 - (void)pageChangedNotificationHandler:(NSNotification *)notification
@@ -40,13 +38,7 @@
     PageData *pageData = (PageData*)notification.object;
 
 //    [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData];
-
     [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData waitUntilDone:NO];
-}
-
-- (void)showPage:(NSUInteger)index
-{
-    [self.delegate turnedToPage:index];
 }
 
 - (void)sizeScrollViewContentToPageCount
@@ -55,27 +47,50 @@
     CGFloat pageHeight = self.scrollView.frame.size.height;
     
     self.scrollView.contentSize = CGSizeMake(pageWidth*self.pageCount, pageHeight);
+    
+    _slideContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, pageWidth*self.pageCount, pageHeight)];
+    
+    [self.scrollView addSubview:_slideContainerView];
+    
+    for (NSUInteger i = 0 ; i < self.pageCount ; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:nil];
+        imageView.backgroundColor = [UIColor redColor];
+        imageView.frame = CGRectMake(i * pageWidth, 0, pageWidth, pageHeight);
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [_slideContainerView addSubview:imageView];
+    }
 }
-
 
 - (void)insertPage:(PageData *)pageData
 {
-    if (![_hashToImageDictionary objectForKey:pageData.hash]) {
+    
+    
+    
+  //  if (![_hashToImageDictionary objectForKey:pageData.hash]) {
         CGFloat pageWidth = self.scrollView.frame.size.width;
         CGFloat pageHeight = self.scrollView.frame.size.height;
         
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:pageData.image];
-        
-        [_hashToImageDictionary setObject:imageView forKey:pageData.hash];
-        
-        imageView.frame = CGRectMake(pageData.index * pageWidth, 0, pageWidth, pageHeight);
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.scrollView addSubview:imageView];
-        
+    
+   //     [_hashToImageDictionary setObject:imageView forKey:pageData.hash];
+    
+    
+    UIImageView *imageView = _slideContainerView.subviews[pageData.index];
+    
+    imageView.image = [pageData.image copy];
+    
         NSLog(@"updated uiimageview");
         
         [self.scrollView setNeedsDisplay];
+ //   }
+    
+    // do ther actual upload / check if we are on the page
+    if(pageData.index == self.currentPage) {
+        
+   //     [self.delegate doUpload:pageData];
     }
+    
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
@@ -84,8 +99,22 @@
     if(pageNumber != _pageNumber) {
         _pageNumber = pageNumber;
         if(pageNumber < self.pageCount) {
-          [self.delegate turnedToPage:pageNumber];
+     //     [self.delegate doUpload:<#(PageData *)#>:pageNumber];
             }
+    }
+}
+
+- (NSUInteger)currentPage
+{
+    return (int)((self.scrollView.contentOffset.x+(self.scrollView.frame.size.width/2) ) / self.scrollView.frame.size.width);
+}
+
+
+// checks to see if we have a nice collection of prerendered slides around our current slide
+- (void)slideCheck
+{
+    for (NSUInteger i = 0 ; i < self.pageCount ; i++) {
+        [self.delegate makePageData:i];
     }
 }
 

@@ -25,7 +25,6 @@
     return [PageGeneratorOperation numberOfPagesWithPDFURL:self.docURL];
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.room = [self getUUID];
@@ -42,17 +41,15 @@
     return YES;
 }
 
-- (void)turnedToPage:(NSInteger)page
-{
-    [self uploadPage:page];
-}
-
-
-- (void)uploadPage:(NSUInteger)index
+- (void)makePageData:(NSUInteger)index
 {
     [_uploader makePageDataForURL:self.docURL index:index room:self.room];
 }
 
+- (void)doUpload:(PageData *)pageData
+{
+    [_uploader doUpload:pageData room:self.room];
+}
 
 -(NSString *)getUUID
 {
@@ -64,10 +61,5 @@
     
     return uuidString;
 }
-
-
-
-
-
 
 @end

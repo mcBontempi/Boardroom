@@ -36,6 +36,7 @@
 		D652EB3618511C5B00BD59DE /* Wide.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D652EB3518511C5B00BD59DE /* Wide.pdf */; };
 		D652EB381851BA2600BD59DE /* Bike.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D652EB371851BA2600BD59DE /* Bike.pdf */; };
 		D652EB3A1851BEDC00BD59DE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D652EB391851BEDC00BD59DE /* MessageUI.framework */; };
+		D6628DE51861DB4B0031E621 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = D6628DE41861DB4B0031E621 /* Document.m */; };
 		D686590817FC3B8000A36E92 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D686590717FC3B8000A36E92 /* Default-568h@2x.png */; };
 		D68827D7185A537900EAF549 /* PageGeneratorOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D68827D6185A537900EAF549 /* PageGeneratorOperation.m */; };
 		D68827D9185A652600EAF549 /* Alaska.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D68827D8185A652600EAF549 /* Alaska.pdf */; };
@@ -84,6 +85,8 @@
 		D652EB3518511C5B00BD59DE /* Wide.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Wide.pdf; sourceTree = "<group>"; };
 		D652EB371851BA2600BD59DE /* Bike.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Bike.pdf; sourceTree = "<group>"; };
 		D652EB391851BEDC00BD59DE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D6628DE31861DB4B0031E621 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		D6628DE41861DB4B0031E621 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		D686590717FC3B8000A36E92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D68827D5185A537900EAF549 /* PageGeneratorOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGeneratorOperation.h; sourceTree = "<group>"; };
 		D68827D6185A537900EAF549 /* PageGeneratorOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGeneratorOperation.m; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				D6B0E9431854829E0052CDC0 /* PageData.m */,
 				D68827D5185A537900EAF549 /* PageGeneratorOperation.h */,
 				D68827D6185A537900EAF549 /* PageGeneratorOperation.m */,
+				D6628DE31861DB4B0031E621 /* Document.h */,
+				D6628DE41861DB4B0031E621 /* Document.m */,
 			);
 			name = PageGenerator;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				FD23540617E73D1A00817A2D /* UploadOperation.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				D61F83881841064D001F20F0 /* DeckPressAppDelegate.m in Sources */,
+				D6628DE51861DB4B0031E621 /* Document.m in Sources */,
 				D6EE0C93181EEABD00985D63 /* SwipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

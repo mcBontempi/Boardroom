@@ -1,5 +1,6 @@
 #import "SwipeViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "PageData.h"
 
 @interface SwipeViewController () <UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -7,7 +8,6 @@
 
 @implementation SwipeViewController {
     NSInteger _pageNumber;
-    NSMutableArray *_displayedPages;
     UIView *_slideContainerView;
 }
 
@@ -23,9 +23,9 @@
     
     [self sizeScrollViewContentToPageCount];
     
-    _displayedPages = [[NSMutableArray alloc] init];
-    
     self.scrollView.delegate = self;
+    
+    [self.document turnedToPage:0];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -37,7 +37,6 @@
 {
     PageData *pageData = (PageData*)notification.object;
 
-//    [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData];
     [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData waitUntilDone:NO];
 }
 
@@ -46,13 +45,13 @@
     CGFloat pageWidth = self.scrollView.frame.size.width;
     CGFloat pageHeight = self.scrollView.frame.size.height;
     
-    self.scrollView.contentSize = CGSizeMake(pageWidth*self.pageCount, pageHeight);
+    self.scrollView.contentSize = CGSizeMake(pageWidth*self.document.pageCount, pageHeight);
     
-    _slideContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, pageWidth*self.pageCount, pageHeight)];
+    _slideContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, pageWidth*self.document.pageCount, pageHeight)];
     
     [self.scrollView addSubview:_slideContainerView];
     
-    for (NSUInteger i = 0 ; i < self.pageCount ; i++) {
+    for (NSUInteger i = 0 ; i < self.document.pageCount ; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:nil];
         imageView.backgroundColor = [UIColor redColor];
         imageView.frame = CGRectMake(i * pageWidth, 0, pageWidth, pageHeight);
@@ -86,8 +85,7 @@
     
     // do ther actual upload / check if we are on the page
     if(pageData.index == self.currentPage) {
-        
-   //     [self.delegate doUpload:pageData];
+        [self.document turnedToPageKnowingImageCorrect:pageData.index];
     }
     
     
@@ -98,8 +96,8 @@
     NSInteger pageNumber = (int)((self.scrollView.contentOffset.x+(self.scrollView.frame.size.width/2) ) / self.scrollView.frame.size.width);
     if(pageNumber != _pageNumber) {
         _pageNumber = pageNumber;
-        if(pageNumber < self.pageCount) {
-     //     [self.delegate doUpload:<#(PageData *)#>:pageNumber];
+        if(pageNumber < self.document.pageCount) {
+            [self.document turnedToPage:pageNumber];
             }
     }
 }
@@ -113,15 +111,15 @@
 // checks to see if we have a nice collection of prerendered slides around our current slide
 - (void)slideCheck
 {
-    for (NSUInteger i = 0 ; i < self.pageCount ; i++) {
-        [self.delegate makePageData:i];
+    for (NSUInteger i = 0 ; i < self.document.pageCount ; i++) {
+   //     [self.document turnedToPage:i];
     }
 }
 
 - (void)shareRoom
 {
     NSString *emailTitle = @"Invitation to join a DeckPress presentation sharing session";
-    NSString *messageBody = [NSString stringWithFormat:@"http://162.13.5.127/serve?room=%@", self.room];
+    NSString *messageBody = [NSString stringWithFormat:@"http://162.13.5.127/serve?room=%@", @"needs room"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;

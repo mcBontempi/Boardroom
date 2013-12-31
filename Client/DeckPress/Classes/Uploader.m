@@ -9,46 +9,40 @@
 
 @implementation Uploader
 {
-  UploadOperationQueue *_queue;
+    UploadOperationQueue *_queue;
+    NSString *_room;
 }
 
-- (id) init
+- (id) initWithRoom:(NSString *)room
 {
-  if (self = [super init]) {
-    _queue = [[UploadOperationQueue alloc] init];
-  }
-  return self;
+    if (self = [super init]) {
+        _queue = [[UploadOperationQueue alloc] init];
+        _room = room;
+    }
+    return self;
 }
 
-- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index room:(NSString *)room
+- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index
 {
-    
-    //[_queue cancelOperationWithTypeArray:@[CheckOperation.class, UploadOperation.class]];
-    
-    //[_queue cancelAll]
-    
-    
-    //__weak Uploader *weakSelf = self;
-    
     PageGeneratorOperation *operation = [[PageGeneratorOperation alloc] initWitdocURL:docURL index:index successBlock:^(PageData *pageData) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:pageData];
-       // [weakSelf uploadPNG:pageData.png hash:pageData.hash room:room];
+        // [weakSelf uploadPNG:pageData.png hash:pageData.hash room:room];
     }];
-
+    
     [_queue addOperation:operation];
 }
 
-- (void)doUpload:(PageData *)pageData room:(NSString *)room
+- (void)doUpload:(PageData *)pageData
 {
-   CheckOperation *checkOperation = [[CheckOperation alloc] initWithHash:pageData.hash room:room falureBlock: ^{
-   UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:pageData.png hash:pageData.hash room:room];
-   [_queue addOperation:uploadOperation];} ];
-   [_queue addOperation:checkOperation];
+    CheckOperation *checkOperation = [[CheckOperation alloc] initWithHash:pageData.hash room:_room falureBlock: ^{
+        UploadOperation *uploadOperation = [[UploadOperation alloc] initWithData:pageData.png hash:pageData.hash room:_room];
+        [_queue addOperation:uploadOperation];} ];
+    [_queue addOperation:checkOperation];
 }
 
 - (BOOL)isBusy
 {
-  return _queue.isBusy;
+    return _queue.isBusy;
 }
 
 @end

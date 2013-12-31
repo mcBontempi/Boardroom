@@ -10,4 +10,11 @@
 
 @interface Document : NSObject
 
+- (id)initWithURL:(NSURL *)url room:(NSString *)room;
+
+- (void)turnedToPage:(NSUInteger)index;
+- (void)turnedToPageKnowingImageCorrect:(NSUInteger)index;
+- (NSUInteger)pageCount;
+
+
 @end

@@ -1,13 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "SwipeViewControllerDelegate.h"
+#import "Document.h"
 
 @interface SwipeViewController : UIViewController
 
-@property (nonatomic) NSUInteger pageCount;
-@property (nonatomic, weak) id<SwipeViewControllerDelegate> delegate;
-@property (nonatomic, strong) NSString *room;
-
-- (void)showPage:(NSUInteger)index;
+@property (nonatomic, strong) Document *document;
 
 - (NSUInteger)currentPage;
 

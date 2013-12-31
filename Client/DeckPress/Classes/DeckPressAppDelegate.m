@@ -1,57 +1,23 @@
 #import "DeckPressAppDelegate.h"
 #import "SwipeViewController.h"
-#import "Uploader.h"
-#import "PageData.h"
-#import "PageGeneratorOperation.h"
 
-@interface DeckPressAppDelegate () <SwipeViewControllerDelegate>
-@property (nonatomic, strong) NSString *room;
+@interface DeckPressAppDelegate ()
+
 @end
 
-@implementation DeckPressAppDelegate {
-    Uploader *_uploader;
-}
-
+@implementation DeckPressAppDelegate
 @synthesize window=_window;
-
-
-- (NSURL *)docURL
-{
-    return [[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"];
-}
-
-- (NSUInteger)pageCount
-{
-    return [PageGeneratorOperation numberOfPagesWithPDFURL:self.docURL];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.room = [self getUUID];
-    
     SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
+    swipeViewController.document = [[Document alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"] room:self.UUID];
     
-    swipeViewController.pageCount = self.pageCount;
-    
-    swipeViewController.delegate = self;
-    swipeViewController.room = self.room;
-    
-    _uploader = [[Uploader alloc] init];
     
     return YES;
 }
 
-- (void)makePageData:(NSUInteger)index
-{
-    [_uploader makePageDataForURL:self.docURL index:index room:self.room];
-}
-
-- (void)doUpload:(PageData *)pageData
-{
-    [_uploader doUpload:pageData room:self.room];
-}
-
--(NSString *)getUUID
+-(NSString *)UUID
 {
     return @"2AC9EC35-7CEE-4313-BA67-EF90E301B241";
     

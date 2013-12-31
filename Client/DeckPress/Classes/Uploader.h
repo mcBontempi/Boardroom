@@ -3,8 +3,10 @@
 
 @interface Uploader : NSObject
 
-- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index room:(NSString *)room;
-- (void)doUpload:(PageData *)pageData room:(NSString *)room;
+- (id)initWithRoom:(NSString *)room;
+
+- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index;
+- (void)doUpload:(PageData *)pageData;
 - (BOOL)isBusy;
 
 @end

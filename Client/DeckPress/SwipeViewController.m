@@ -13,24 +13,19 @@
 
 - (void)viewDidLoad
 {
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChangedNotificationHandler:) name:@"pageChangedNotification" object:nil];
-    
     [super viewDidLoad];
-    
-    //debug
-    //  [self shareRoom];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChangedNotificationHandler:) name:@"pageChangedNotification" object:nil];
+}
+
+- (void)setDocument:(Document *)document
+{
+    _document = document;
     
     [self sizeScrollViewContentToPageCount];
     
     self.scrollView.delegate = self;
     
     [self.document turnedToPage:0];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self slideCheck];
 }
 
 - (void)pageChangedNotificationHandler:(NSNotification *)notification
@@ -89,14 +84,6 @@
     return (int)((self.scrollView.contentOffset.x+(self.scrollView.frame.size.width/2) ) / self.scrollView.frame.size.width);
 }
 
-
-// checks to see if we have a nice collection of prerendered slides around our current slide
-- (void)slideCheck
-{
-    for (NSUInteger i = 0 ; i < self.document.pageCount ; i++) {
-        //     [self.document turnedToPage:i];
-    }
-}
 
 - (void)shareRoom
 {

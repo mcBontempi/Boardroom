@@ -11,9 +11,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
+
     swipeViewController.document = [[Document alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"] room:self.UUID];
     
-    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
+    swipeViewController.document = [[Document alloc] initWithURL:url room:self.UUID];
+
     return YES;
 }
 

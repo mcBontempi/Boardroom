@@ -11,28 +11,30 @@
 #import "Uploader.h"
 
 @implementation Document {
-    NSArray *_pages;
+    NSMutableArray *_pages;
     Uploader *_uploader;
     NSURL *_url;
+    
+    NSUInteger _currentPage;
 }
 
 - (id)initWithURL:(NSURL *)url room:(NSString *)room
 {
     if (self = [super init]) {
         
+        _url = url;
         
-        NSMutableArray *mutablePages = [[NSMutableArray alloc] init];
+        _currentPage = 0;
+        
+        _pages = [[NSMutableArray alloc] init];
         
         for (NSUInteger i = 0 ; i < self.pageCount ; i++) {
             PageData *pageData = [[PageData alloc] init];
-            [mutablePages addObject:pageData];
+            [_pages addObject:pageData];
         }
-        
-        _pages = [mutablePages copy];
         
         _uploader = [[Uploader alloc] initWithRoom:room];
         
-        _url = url;
     }
     
     return self;
@@ -41,35 +43,61 @@
 
 - (NSUInteger)pageCount
 {
-    return [PageGeneratorOperation numberOfPagesWithPDFURL:_url];
+    if(!_pageCount) {
+        _pageCount = [PageGeneratorOperation numberOfPagesWithPDFURL:_url];
+    }
+    
+    return _pageCount;
 }
 
 - (void)turnedToPage:(NSUInteger)index
 {
-     [_uploader makePageDataForURL:_url index:index];
+    _currentPage = index;
     
-   // [_uploader doUpload:pageData ];
-}
-
-- (void)turnedToPageKnowingImageCorrect:(NSUInteger)index
-{
     PageData *pageData = _pages[index];
     
-    if (pageData) {
-        [_uploader doUpload:pageData];
+    if(!pageData.generated) {
+        
+        [_uploader makePageDataForURL:_url index:index succcessBlock:^(PageData *pageData){      [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:pageData];
+            [_uploader doUpload:pageData];
+        }];
+    }
+    else {
+        [_uploader doUpload:pageData ];
+    }
+    
+    [self checkSurroundingPages];
+}
+
+- (void)checkSurroundingPages
+{
+    if(_currentPage+1 < self.pageCount) {
+        
+        PageData *pageData = _pages[_currentPage+1];
+        
+        if(!pageData.generated) {
+            [_uploader makePageDataForURL:_url index:_currentPage+1 succcessBlock:^(PageData *pageData){ [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:pageData];
+                
+                [self storePage:pageData];
+            }];
+        }
     }
 }
 
 
+- (void)storePage:(PageData *)pageData
+{
+    _pages[pageData.index] = pageData;
+}
 
 - (void)makePageData:(NSUInteger)index
 {
-   
+    
 }
 
 - (void)doUpload:(PageData *)pageData
 {
-
+    
 }
 
 

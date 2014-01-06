@@ -36,7 +36,7 @@
 - (void)pageChangedNotificationHandler:(NSNotification *)notification
 {
     PageData *pageData = (PageData*)notification.object;
-
+    
     [self performSelectorOnMainThread:@selector(insertPage:) withObject:pageData waitUntilDone:NO];
 }
 
@@ -63,31 +63,13 @@
 
 - (void)insertPage:(PageData *)pageData
 {
-    
-    
-    
-  //  if (![_hashToImageDictionary objectForKey:pageData.hash]) {
-        CGFloat pageWidth = self.scrollView.frame.size.width;
-        CGFloat pageHeight = self.scrollView.frame.size.height;
-        
-    
-   //     [_hashToImageDictionary setObject:imageView forKey:pageData.hash];
-    
-    
     UIImageView *imageView = _slideContainerView.subviews[pageData.index];
     
     imageView.image = [pageData.image copy];
     
-        NSLog(@"updated uiimageview");
-        
-        [self.scrollView setNeedsDisplay];
- //   }
+    NSLog(@"updated uiimageview");
     
-    // do ther actual upload / check if we are on the page
-    if(pageData.index == self.currentPage) {
-        [self.document turnedToPageKnowingImageCorrect:pageData.index];
-    }
-    
+    [self.scrollView setNeedsDisplay];
     
 }
 
@@ -98,7 +80,7 @@
         _pageNumber = pageNumber;
         if(pageNumber < self.document.pageCount) {
             [self.document turnedToPage:pageNumber];
-            }
+        }
     }
 }
 
@@ -112,7 +94,7 @@
 - (void)slideCheck
 {
     for (NSUInteger i = 0 ; i < self.document.pageCount ; i++) {
-   //     [self.document turnedToPage:i];
+        //     [self.document turnedToPage:i];
     }
 }
 

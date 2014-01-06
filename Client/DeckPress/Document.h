@@ -14,7 +14,8 @@
 
 - (void)turnedToPage:(NSUInteger)index;
 - (void)turnedToPageKnowingImageCorrect:(NSUInteger)index;
-- (NSUInteger)pageCount;
+
+@property (nonatomic) NSUInteger pageCount;
 
 
 @end

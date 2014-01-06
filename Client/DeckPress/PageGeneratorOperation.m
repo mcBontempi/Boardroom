@@ -28,7 +28,6 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
     NSUInteger _index;
 }
 
-
 - (id)initWitdocURL:(NSURL *)docURL index:(NSUInteger)index successBlock:(pageDataBlock)successBlock
 {
     if (self = [super init]) {
@@ -41,9 +40,6 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
     }
     return self;
 }
-
-
-
 
 - (BOOL)isFinished
 {
@@ -67,6 +63,8 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
 
 - (void)main
 {
+    NSLog(@"generating page %d", _index);
+    
     [self transitionToState:PageGeneratorStateQueued
        notifyChangesForKeys:@[@"isExecuting"]];
     
@@ -79,7 +77,7 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
     
     [self transitionToState:PageGeneratorStateSucceeded notifyChangesForKeys:@[@"isExecuting", @"isFinished"]];
     _successBlock(_pageData);
-
+    
 }
 
 - (void)cancel
@@ -168,11 +166,5 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
     
     return pageCount;
 }
-
-
-
-
-
-
 
 @end

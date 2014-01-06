@@ -2,8 +2,6 @@
 #import "UploadOperation.h"
 #import "UploadOperationQueue.h"
 #import "CheckOperation.h"
-#import "PageGeneratorOperation.h"
-#import "PageData.h"
 
 // uploader can only check for / upload one image at a time
 
@@ -22,11 +20,10 @@
     return self;
 }
 
-- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index
+- (void)makePageDataForURL:(NSURL *)docURL index:(NSUInteger)index succcessBlock:(pageDataBlock) successBlock
 {
     PageGeneratorOperation *operation = [[PageGeneratorOperation alloc] initWitdocURL:docURL index:index successBlock:^(PageData *pageData) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:pageData];
-        // [weakSelf uploadPNG:pageData.png hash:pageData.hash room:room];
+        successBlock(pageData);
     }];
     
     [_queue addOperation:operation];

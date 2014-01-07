@@ -20,8 +20,12 @@
 - (void)setDocument:(Document *)document
 {
     _document = document;
+ 
+    [_slideContainerView removeFromSuperview];
     
     [self sizeScrollViewContentToPageCount];
+    
+    self.scrollView.contentOffset = CGPointMake(0,0);
     
     self.scrollView.delegate = self;
     
@@ -48,7 +52,6 @@
     
     for (NSUInteger i = 0 ; i < self.document.pageCount ; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:nil];
-        imageView.backgroundColor = [UIColor redColor];
         imageView.frame = CGRectMake(i * pageWidth, 0, pageWidth, pageHeight);
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         
@@ -60,11 +63,15 @@
 {
     UIImageView *imageView = _slideContainerView.subviews[pageData.index];
     
+    imageView.alpha = 0.0;
+    
     imageView.image = [pageData.image copy];
     
     NSLog(@"updated uiimageview");
     
     [self.scrollView setNeedsDisplay];
+    
+    [UIView animateWithDuration:0.2 animations:^{imageView.alpha = 1.0; }];
     
 }
 

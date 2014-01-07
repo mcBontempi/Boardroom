@@ -8,11 +8,20 @@
 @implementation DeckPressAppDelegate
 @synthesize window=_window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)delayedSetDocument:(NSNotification *)notification
 {
     SwipeViewController *swipeViewController = (SwipeViewController *)self.window.rootViewController;
 
-    swipeViewController.document = [[Document alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"] room:self.UUID];
+    swipeViewController.document = notification;
+}
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+   
+    [self performSelector:@selector(delayedSetDocument:) withObject:[[Document alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"] room:self.UUID] afterDelay:1.0];
+    
+    
     
     return YES;
 }

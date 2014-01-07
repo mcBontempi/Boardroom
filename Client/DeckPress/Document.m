@@ -59,6 +59,9 @@
     if(!pageData.generated) {
         
         [_uploader makePageDataForURL:_url index:index succcessBlock:^(PageData *pageData){      [[NSNotificationCenter defaultCenter] postNotificationName:@"pageChangedNotification" object:pageData];
+   
+            [self storePage:pageData];
+            
             [_uploader doUpload:pageData];
         }];
     }
@@ -83,6 +86,7 @@
         }
     }
 }
+
 
 
 - (void)storePage:(PageData *)pageData

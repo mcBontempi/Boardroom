@@ -5,5 +5,7 @@
 
 @property (nonatomic, strong) UIWindow *window;
 
+- (NSString *)UUID;
+
 @end
 

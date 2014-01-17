@@ -1,6 +1,7 @@
 #import "SwipeViewController.h"
 #import <MessageUI/MessageUI.h>
 #import "PageData.h"
+#import "DeckPressAppDelegate.h"
 
 @interface SwipeViewController () <UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -91,45 +92,23 @@
     return (int)((self.scrollView.contentOffset.x+(self.scrollView.frame.size.width/2) ) / self.scrollView.frame.size.width);
 }
 
-
-- (void)shareRoom
-{
-    NSString *emailTitle = @"Invitation to join a DeckPress presentation sharing session";
-    NSString *messageBody = [NSString stringWithFormat:@"http://162.13.5.127/serve?room=%@", @"needs room"];
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:nil];
-    
-    [self presentViewController:mc animated:YES completion:NULL];
+- (IBAction)sendPressed:(id)sender {
+  
+  DeckPressAppDelegate *deckPressAppDelegate = [[UIApplication sharedApplication] delegate];
+  
+ // NSString *shareString = @"Invitation to join a DeckPress presentation sharing session";
+ // UIImage *shareImage = [UIImage imageNamed:@"icon.png"];
+  NSURL *shareUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://162.13.5.127/serve?room=%@", [deckPressAppDelegate UUID]]];
+  
+  NSArray *activityItems = [NSArray arrayWithObjects: shareUrl, nil];
+  
+  UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+  activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+  
+  [self presentViewController:activityViewController animated:YES completion:nil];
+  
+  
 }
-
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-            break;
-        default:
-            break;
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
 
 
 @end

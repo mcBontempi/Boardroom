@@ -34,7 +34,7 @@
     return YES;
 }
 
--(NSString *)UUID
+- (NSString *)UUID
 {
     return @"2AC9EC35-7CEE-4313-BA67-EF90E301B241";
     

@@ -21,6 +21,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0sW-CF-Xll" appends="YES" id="xs2-lA-8Dl"/>
+                                </connections>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjf-KN-7ik">
                                 <rect key="frame" x="0.0" y="276" width="568" height="44"/>
@@ -31,13 +35,30 @@
                                             <action selector="sendPressed:" destination="KBC-b7-pyU" id="Myx-JA-U6f"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Upload" id="IFZ-TR-drA">
+                                        <connections>
+                                            <action selector="uploadTapped:" destination="KBC-b7-pyU" id="Kq7-kO-nH4"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztw-ae-4Eb">
+                                <rect key="frame" x="0.0" y="-12" width="568" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJC-xi-0rC">
+                                <rect key="frame" x="142" y="80" width="284" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sjf-KN-7ik" secondAttribute="bottom" id="tRG-pD-DcP"/>
+                            <constraint firstItem="Ztw-ae-4Eb" firstAttribute="top" secondItem="ajt-i7-aQx" secondAttribute="top" constant="-12" id="xRT-vR-VaD"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -45,9 +66,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="scrollView" destination="sBv-Hm-kka" id="HVE-tF-2Hg"/>
+                        <outlet property="toolBar" destination="sjf-KN-7ik" id="n9d-lr-5xz"/>
+                        <outlet property="topToolBar" destination="Ztw-ae-4Eb" id="OVa-7z-k05"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVV-yB-jg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0sW-CF-Xll">
+                    <connections>
+                        <action selector="screenTapped:" destination="KBC-b7-pyU" id="sPt-2q-G9x"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="713" y="42"/>
         </scene>

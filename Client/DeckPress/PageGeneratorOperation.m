@@ -125,7 +125,7 @@ typedef NS_ENUM(NSInteger, PageGeneratorState) {
     
     // Determine the size of the PDF page.
     CGRect pageRect = CGPDFPageGetBoxRect(pdf, kCGPDFMediaBox);
-    CGFloat scale = 1.0;//self.frame.size.width/pageRect.size.width;
+    CGFloat scale = 0.5;//self.frame.size.width/pageRect.size.width;
     pageRect.size = CGSizeMake(pageRect.size.width*scale, pageRect.size.height*scale);
     
     UIGraphicsBeginImageContext(pageRect.size);

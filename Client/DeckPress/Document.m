@@ -104,6 +104,13 @@
     
 }
 
+- (void)uploadAll
+{
+  for (NSInteger index = 0 ; index < self.pageCount ; index++) {
+    [self turnedToPage:index];
+  }
+}
+
 
 
 

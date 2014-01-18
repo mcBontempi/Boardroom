@@ -4,18 +4,26 @@
 #import "DeckPressAppDelegate.h"
 
 @interface SwipeViewController () <UIScrollViewDelegate, MFMailComposeViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIToolbar *topToolBar;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation SwipeViewController {
     NSInteger _pageNumber;
     UIView *_slideContainerView;
+    BOOL _toolbarVisible;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChangedNotificationHandler:) name:@"pageChangedNotification" object:nil];
+  
+  _toolbarVisible = YES;
+  
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+  
 }
 
 - (void)setDocument:(Document *)document
@@ -106,9 +114,23 @@
   activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
   
   [self presentViewController:activityViewController animated:YES completion:nil];
-  
-  
 }
 
+- (IBAction)uploadTapped:(id)sender
+{
+  [self.document uploadAll];
+}
+
+- (IBAction)screenTapped:(id)sender
+{
+  
+  
+  [UIView animateWithDuration:0.5 animations:^{   self.topToolBar.alpha = self.toolBar.alpha = _toolbarVisible ? 0.0 : 1.0;
+  }];
+  [[UIApplication sharedApplication] setStatusBarHidden:_toolbarVisible withAnimation:UIStatusBarAnimationFade];
+  
+  _toolbarVisible = !_toolbarVisible;
+  
+}
 
 @end

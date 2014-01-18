@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
    
-    [self performSelector:@selector(delayedSetDocument:) withObject:[[Document alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"] room:self.UUID] afterDelay:1.0];
+  //  [self performSelector:@selector(delayedSetDocument:) withObject:[[Document alloc] initWithURL:[[NSBundle mainBundle] URLForResource:@"Bike" withExtension:@"pdf"] room:self.UUID] afterDelay:1.0];
     
     
     
